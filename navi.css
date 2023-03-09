@@ -1,0 +1,16 @@
+.navigation {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(40, 40, 40);
+    overflow: auto;
+}
+.navigation li {
+    float: left;
+}
+.navigation li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 15px 10px;
+}
