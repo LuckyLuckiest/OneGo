@@ -5,18 +5,17 @@
         <title>One Go</title>
     </head>
     <body>
-        <ul class="navigation">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="car-rental.html">Car Rental</a></li>
-            <li><a href="flights.html" id="active">Flights</a></li>
-            <li><a href="stays.html">Stays</a></li>
-            <li><a href="login.html" target="_blank">Log in</a></li>
-        </ul>
+        <div class="navigation">
+            <a href="index.html">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn" id="active">Services &#11167;</button>
+                <div class="drop-c">
+                    <a href="car-rental.html">Car Rental</a>
+                    <a href="flights.html" id="active">Flights</a>
+                    <a href="stays.html">Stays</a>
+                </div>
+            </div>
+            <a href="login.html" class="split" target="_blank">Log in</a>
+        </div>
     </body>
 </html>
-<style>
-    #active {
-        background-color: greenyellow;
-        color: green;
-    }
-</style>
