@@ -23,7 +23,7 @@
     color: green;
 }
 #active:hover {
-    background-color: var(--clr-accent)
+    /* background-color: var(--clr-accent); */
 }
 .navigation a.split {
     float: right;
