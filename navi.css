@@ -1,20 +1,64 @@
 .navigation {
-    list-style-type: none;
     margin: 0px;
     padding: 0px;
     background-color: #333;
-    overflow: auto;
+    overflow: hidden;
 }
-.navigation li {
+.navigation a {
+    text-align: center;
+    margin: inherit;
+    padding: 15px 10px;
     float: left;
-}
-.navigation li a {
     display: block;
     text-decoration: none;
     color: white;
-    padding: 15px 10px;
 }
-.navigation li a:hover {
+.navigation a, .dropdown .dropbtn {
+    transition: all 0.2s ease-in;
+}
+.navigation a:hover, .dropdown:hover .dropbtn, #active:hover {
     background-color: rgb(255, 255, 255);
     color: rgb(40, 40, 40);
+}
+.navigation a:active, #active {
+    background-color: greenyellow;
+    color: green;
+}
+.navigation a.split {
+    float: right;
+}
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+.dropdown .dropbtn {
+    border: none;
+    outline: none;
+    color: white;
+    padding: 13.6px 10px;
+    background-color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+}
+.drop-c {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.drop-c a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.drop-c a:hover {
+    background-color: #ddd;
+}
+.dropdown:hover .drop-c {
+    display: block;
 }
