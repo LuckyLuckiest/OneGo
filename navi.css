@@ -12,18 +12,17 @@
     display: block;
     text-decoration: none;
     color: white;
-    transition: all 0.2s;
 }
-.navigation a:hover, .dropdown:hover .dropbtn {
+.navigation a, .dropdown .dropbtn {
+    transition: all 0.2s ease-in;
+}
+.navigation a:hover, .dropdown:hover .dropbtn, #active:hover {
     background-color: rgb(255, 255, 255);
     color: rgb(40, 40, 40);
 }
 .navigation a:active, #active {
     background-color: greenyellow;
     color: green;
-}
-#active:hover {
-    /* background-color: var(--clr-accent); */
 }
 .navigation a.split {
     float: right;
