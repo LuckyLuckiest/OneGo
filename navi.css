@@ -44,10 +44,8 @@
     background-color: inherit;
     display: block;
 }
-.navigation a, .dropbtn {
-    transition: all 0.2s ease-in;
-}
 .navigation a:hover, .dropbtn:hover, #active:hover {
+    transition: all 0.2s ease-in;
     background-color: rgb(255, 255, 255);
     color: rgb(40, 40, 40);
 }
