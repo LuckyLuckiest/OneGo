@@ -13,10 +13,18 @@
     text-decoration: none;
     color: white;
 }
-.navigation a, .dropdown .dropbtn {
+.dropbtn {
+    text-align: center;
+    margin: inherit;
+    padding: 15px 10px;
+    color: white;
+    background-color: inherit;
+    display: block;
+}
+.navigation a, .dropbtn {
     transition: all 0.2s ease-in;
 }
-.navigation a:hover, .dropdown:hover .dropbtn, #active:hover {
+.navigation a:hover, .dropbtn:hover, #active:hover {
     background-color: rgb(255, 255, 255);
     color: rgb(40, 40, 40);
 }
@@ -30,15 +38,6 @@
 .dropdown {
     float: left;
     overflow: hidden;
-}
-.dropdown .dropbtn {
-    border: none;
-    outline: none;
-    color: white;
-    padding: 13.6px 10px;
-    background-color: inherit;
-    font-family: inherit;
-    font-size: inherit;
 }
 .drop-c {
     display: none;
