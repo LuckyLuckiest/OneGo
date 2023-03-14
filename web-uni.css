@@ -6,9 +6,10 @@ body {
     font-size: 15px;
 }
 .title {
-    margin: 0px;
+    margin: 50px;
     padding: 0px;
     text-align: center;
     font-size: 50px;
     color: rgba(255, 255, 255, 0.6);
+    text-shadow: 1px 1px 5px #afadad;
 }
