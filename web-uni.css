@@ -5,3 +5,10 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
 }
+.title {
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    font-size: 50px;
+    color: rgba(255, 255, 255, 0.6);
+}
