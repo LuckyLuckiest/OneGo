@@ -30,9 +30,7 @@ label {
 	margin-bottom: 10px;
 }
 
-input[type="text"],
-input[type="email"],
-textarea {
+input[type="text"], input[type="email"], textarea {
 	padding: 10px;
 	border-radius: 5px;
 	border: none;
