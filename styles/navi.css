@@ -76,9 +76,17 @@
 .no-style {
     flex-grow: 1;
 }
+.no-style {
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+}
+.no-style .logo-wrapper {
+    display: flex;
+    align-items: center; /* Center the image vertically */
+}
 .no-style img {
     width: 40px;
     height: auto;
     display: block;
-    margin: 0px auto;
+    margin: 0; /* Remove the margin */
 }
