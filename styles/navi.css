@@ -9,7 +9,7 @@
     justify-content: space-between;
 }
 /* Each button link except the dropdown */
-.navigation a:not(.no-style) {
+.navigation a:not(.no-style):not(.drop-c) {
     width: 80px;
     height: auto;
     text-align: center;
@@ -52,7 +52,7 @@
 .drop-c {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    /* background-color: #f9f9f9; */
     min-width: auto;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -68,7 +68,6 @@
 }
 .drop-c a:hover {
     background-color: #ddd;
-    color: white;
 }
 .dropdown:hover .drop-c {
     display: block;
@@ -78,15 +77,15 @@
 }
 .no-style {
     display: flex;
-    justify-content: center; /* Center the image horizontally */
+    justify-content: center;
 }
 .no-style .logo-wrapper {
     display: flex;
-    align-items: center; /* Center the image vertically */
+    align-items: center;
 }
 .no-style img {
     width: 40px;
     height: auto;
     display: block;
-    margin: 0; /* Remove the margin */
+    margin: 0;
 }
