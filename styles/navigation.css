@@ -80,6 +80,7 @@ nav ul li.dropdown ul li {
     justify-content: center;
     position: relative;
     background: linear-gradient(to bottom, rgb(55, 55, 55), #333);
+    height: auto;
 }
 
 .logo a img {

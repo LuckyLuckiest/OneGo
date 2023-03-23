@@ -1,11 +1,11 @@
-body {
-    color: white;
+main {
     text-align: center;
 }
 
 form {
     display: inline-block;
     text-align: left;
+    color: white;
 }
 input[type=text], input[type=password] {
     font-size: larger;
