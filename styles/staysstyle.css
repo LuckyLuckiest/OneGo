@@ -1,16 +1,19 @@
-body{
+body {
     margin: 0;
     font-family: Arial;
 }
+
 .container {
     margin: 10px;
 }
+
 .container-item {
     display: flex;
-    height: 500px;
+
     flex-direction: row;
     flex-wrap: wrap;
 }
+
 .hotels {
     margin: 20px;
     border: 1px solid white;
@@ -18,25 +21,27 @@ body{
     height: fit-content;
     border-radius: 10%;
     background-color: #dfd8ce;
-    
+
 }
+
 img {
     border-radius: 10%;
     margin-left: auto;
     margin-right: auto;
     width: 70%;
     height: 100px;
-    display:block;
+    display: block;
 
 }
+
 #header {
-    text-align:  center;
+    text-align: center;
     color: white;
     font-size: 30px;
 
 }
 
-p {
+.container-item p {
     color: rgb(0, 0, 0);
     font-size: small;
     padding: 10px;
@@ -45,27 +50,28 @@ p {
 }
 
 input[type="submit"] {
-	background-color: #333;
-	color: #fff;
-	border: 1px solid #333;
-	padding: 10px 20px;
-	border-radius: 5px;
-	margin-top: 10px;
-	cursor: pointer;
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
     margin-left: 30%;
     box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
-  backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
 
 }
 
 input:hover {
     border: 1px solid black;
     transform: scale(1.05);
-  }
-  
+}
+
 input:active {
     transform: scale(0.95) rotateZ(1.7deg);
 }
+
 form {
     align-items: center;
     display: flex;

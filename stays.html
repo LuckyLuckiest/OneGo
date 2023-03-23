@@ -1,130 +1,168 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="/styles/navi.css">
-    <link rel="stylesheet" href="/styles/web-uni.css">
-    <link rel="stylesheet" href="/styles/footer.css">
-    <link rel="stylesheet" href="/styles/staysstyle.css">
+    <link rel="stylesheet" href="styles/web-uni.css">
+    <link rel="stylesheet" href="styles/navigation.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/staysstyle.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <title>One Go</title>
 </head>
 
 <body>
-    <div class="navigation">
-        <a href="index.html">Home</a>
-        <div class="dropdown">
-            <div class="dropbtn" id="active">Services &#9662;</div>
-            <div class="drop-c">
-                <a href="car-rental.html">Car Rental</a>
-                <a href="flights.html">Flights</a>
-                <a href="stays.html" id="active">Stays</a>
-            </div>
+    <!-- This is the navigation tab and would be placed at the top of every page -->
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="asset/logo.png" /></a>
         </div>
-        <a href="index.html" class="no-style">
-            <div class="logo-wrapper">
-                <img src="asset/logo.png"/>
-            </div>
-        </a>
-        <a href="login.html" class="split" target="_blank">Log in</a>
-    </div>
+        <nav>
+            <ul>
+                <a href="index.html">
+                    <li>Home</li>
+                </a>
+                <li class="dropdown" id="active">
+                    Services <span class="bi bi-caret-down-fill" style="font-size: 10px;"></span>
+                    <ul>
+                        <a href="car-rental.html">
+                            <li>Car rentals</li>
+                        </a>
+                        <a href="flights.html">
+                            <li>Flights</li>
+                        </a>
+                        <a href="stays.html">
+                            <li id="active">Stays</li>
+                        </a>
+                    </ul>
+                </li>
+                <a href="contact.html">
+                    <li>Contact Us</li>
+                </a>
+                <a href="about.html">
+                    <li>About Us</li>
+                </a>
+                <a href="login.html" target="_blank">
+                    <li class="split">Log in</li>
+                </a>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Every page contains a title -->
     <div class="title">Stays</div>
 
-    <div class="container">
-        <p id="header">Hotels</p>
-        <br />
-        <div class="container-item">
+    <!-- All the content of the page is here -->
+    <main>
+        <div class="container">
+            <br />
+            <div class="container-item">
+                <div class="hotels">
+                    <img src="/asset/hotel1.jpg" alt="Kompose Boutique Hotel Sarasota"
+                        style="margin-left:auto; margin-right:auto; display:block;">
+                    <p>
+                        Kompose Boutique Hotel Sarasota
+                    </p>
+                    <p>
+                        Location: USA
+                    </p>
+                    <p>
+                        Price: 33 OR for 1 night
+                    </p>
 
-            <div class="hotels">
+                    <form action="checkin.html">
+                        <input type="submit" name="book" value="Book Now">
+                    </form>
+                </div>
+                <div class="hotels">
+                    <img src="/asset/hotel2.jpg" alt="KANANASKIS MOUNTAIN LODGE">
+                    <p>
+                        KANANASKIS MOUNTAIN LODGE
+                    </p>
+                    <p>
+                        Location: USA
+                    </p>
+                    <p>
+                        Price : 28 RO for 1 night
+                    </p>
+                    <form action="checkin.html">
+                        <input type="submit" name="submit" value="Book Now">
+                    </form>
+                </div>
+                <div class="hotels">
+                    <img src="/asset/hotel3.PNG" alt="ARIZONA BILTMORE">
+                    <p>
+                        ARIZONA BILTMORE
+                    </p>
+                    <p>
+                        Location: USA
+                    </p>
+                    <p>
+                        Price: 55 OR for 1 night
+                    </p>
 
-                <img src="/asset/hotel1.jpg" alt="Kompose Boutique Hotel Sarasota"
-                    style="margin-left:auto; margin-right:auto; display:block;">
-                <p>
-                    Kompose Boutique Hotel Sarasota
-                </p>
-                <p>
-                    Location: USA
-                </p>
-                <p>
-                    Price: 33 OR for 1 night
-                </p>
+                    <form action="checkin.html">
+                        <input type="submit" name="book" value="Book Now">
+                    </form>
+                </div>
+                <div class="hotels">
+                    <img src="/asset/hotel4.PNG" alt="Hotel Ormelune">
+                    <p>
+                        Hotel Ormelune
+                    </p>
+                    <p>
+                        Location: France
+                    </p>
+                    <p>
+                        Price: 60 OR for 1 night
+                    </p>
+                    <form action="checkin.html">
+                        <input type="submit" name="book" value="Book Now">
+                    </form>
+                </div>
+                <div class="hotels">
+                    <img src="/asset/hotel5.PNG" alt="Tropical Islands">
+                    <p>
+                        Tropical Islands
+                    </p>
+                    <p>
+                        Location: Germany
+                    </p>
+                    <p>
+                        Price: 53 OR for 1 night
+                    </p>
 
-                <form action="checkin.html">
-                    <input type="submit" name="book" value="Book Now">
-                </form>
-
+                    <form action="checkin.html">
+                        <input type="submit" name="book" value="Book Now">
+                    </form>
+                </div>
             </div>
-            <div class="hotels">
-                <img src="/asset/hotel2.jpg" alt="KANANASKIS MOUNTAIN LODGE">
-                <p>
-                    KANANASKIS MOUNTAIN LODGE
-                </p>
-                <p>
-                    Location: USA
-                </p>
-                <p>
-                    Price : 28 RO for 1 night
-                </p>
-                <form action="checkin.html">
-                    <input type="submit" name="submit" value="Book Now">
-                </form>
-            </div>
-            <div class="hotels">
-
-                <img src="/asset/hotel3.PNG" alt="ARIZONA BILTMORE">
-                <p>
-                    ARIZONA BILTMORE
-                </p>
-                <p>
-                    Location: USA
-                </p>
-                <p>
-                    Price: 55 OR for 1 night
-                </p>
-
-                <form action="checkin.html">
-                    <input type="submit" name="book" value="Book Now">
-                </form>
-
-            </div>
-            <div class="hotels">
-
-                <img src="/asset/hotel4.PNG" alt="Hotel Ormelune">
-                <p>
-                    Hotel Ormelune
-                </p>
-                <p>
-                    Location: France
-                </p>
-                <p>
-                    Price: 60 OR for 1 night
-                </p>
-
-                <form action="checkin.html">
-                    <input type="submit" name="book" value="Book Now">
-                </form>
-
-            </div>
-            <div class="hotels">
-
-                <img src="/asset/hotel5.PNG" alt="Tropical Islands">
-                <p>
-                    Tropical Islands
-                </p>
-                <p>
-                    Location: Germany
-                </p>
-                <p>
-                    Price: 53 OR for 1 night
-                </p>
-
-                <form action="checkin.html">
-                    <input type="submit" name="book" value="Book Now">
-                </form>
-
-            </div>
-
         </div>
+    </main>
 
-    </div>
+    <!-- This would hold the footer of the page -->
+    <footer>
+        <h2>One Go</h2>
+        <ul id="social">
+            <a href="https://gmail.com" target="_blank">
+                <li class="bi bi-envelope"></li>
+            </a>
+            <a href="https://whatsapp.com" target="_blank">
+                <li class="bi bi-whatsapp"></li>
+            </a>
+            <a href="https://instagram.com" target="_blank">
+                <li class="bi bi-instagram"></li>
+            </a>
+            <a href="https://youtube.com" target="_blank">
+                <li class="bi bi-youtube"></li>
+            </a>
+            <a href="https://tiktok.com" target="_blank">
+                <li class="bi bi-tiktok"></li>
+            </a>
+            <a href="https://twitter.com" target="_blank">
+                <li class="bi bi-twitter"></li>
+            </a>
+        </ul>
+        <p>Copyright &copy; 2023 OneGo</p>
+    </footer>
 </body>
 
 <footer>
