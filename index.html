@@ -23,13 +23,13 @@
                     Services <span class="bi bi-caret-down-fill" style="font-size: 10px;"></span>
                     <ul>
                         <a href="car-rental.html">
-                            <li>Car rentals</li>
+                            <li>Car rentals <span class="bi bi-car-front-fill"></span></li>
                         </a>
                         <a href="flights.html">
-                            <li>Flights</li>
+                            <li>Flights <span class="bi bi-airplane-fill"></span></li>
                         </a>
                         <a href="stays.html">
-                            <li>Stays</li>
+                            <li>Stays <span class="bi bi-building-fill"></span></li>
                         </a>
                     </ul>
                 </li>
@@ -46,12 +46,27 @@
         </nav>
     </header>
 
-    <!-- Every page contains a title -->
-    <div class="title">One Go</div>
-
     <!-- All the content of the page is here -->
     <main>
-
+        <!-- Background image for this page -->
+        <img src="asset/background_dark.png" alt="London Bridge in the dark" />
+        <!-- Every page contains a title -->
+        <div class="title">One Go</div>
+        <div class="description">
+            <p>
+                Planning a trip can be stressful, but with our online booking service, you can breathe a sigh of relief.
+                We
+                offer a one-stop-shop for all your travel needs, from booking your flight to reserving your hotel stay
+                and
+                renting a car. Say goodbye to endless hours of research and booking - our platform is designed to make
+                travel planning a breeze. With just a few clicks, you can easily compare prices, browse reviews, and
+                make
+                your reservations. Plus, our user-friendly interface means you can manage your bookings all in one
+                place,
+                saving you time and hassle. So whether you're jetting off for a business trip or taking a well-deserved
+                vacation, trust us to handle your travel arrangements from takeoff to touchdown.
+            </p>
+        </div>
     </main>
 
     <!-- This would hold the footer of the page -->
@@ -82,3 +97,21 @@
 </body>
 
 </html>
+
+<style>
+    body img {
+        width: 100%;
+        height: auto;
+    }
+
+    body main div.description {
+        background-color: #333;
+        display: flex;
+        justify-content: center;
+    }
+
+    body main div.description p {
+        width: 50%;
+        text-justify: auto;
+    }
+</style>

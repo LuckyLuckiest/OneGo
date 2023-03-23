@@ -4,7 +4,7 @@ nav {
     padding: 0;
     color: white;
     width: 100%;
-    background: linear-gradient(to top, rgb(55, 55, 55), #333);
+    background: linear-gradient(to top, rgb(30, 30, 30), rgb(40, 40, 40));
 }
 
 nav ul {
@@ -91,7 +91,7 @@ nav ul li.dropdown ul li {
     flex-grow: 1;
     justify-content: center;
     position: relative;
-    background: linear-gradient(to bottom, rgb(55, 55, 55), #333);
+    background-color: rgb(40, 40, 40);
     height: auto;
 }
 
