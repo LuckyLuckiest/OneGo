@@ -1,11 +1,10 @@
-/* General navigation */
+/* Navigation configurations */
 nav {
     margin: 0;
     padding: 0;
-    background-color: #333;
     color: white;
     width: 100%;
-    background: linear-gradient(to right, rgb(55, 55, 55), #333);
+    background: linear-gradient(to top, rgb(55, 55, 55), #333);
 }
 
 nav ul {
@@ -31,7 +30,9 @@ nav ul li.split {
     float: right;
 }
 
-nav ul li:hover, nav ul li#active:hover, nav ul li#split:hover {
+nav ul li:hover,
+nav ul li#active:hover,
+nav ul li#split:hover {
     transition: all 0.2s ease-in;
     background-color: white;
     color: rgb(40, 40, 40);
@@ -70,18 +71,18 @@ nav ul li.dropdown ul li {
     padding: 15px 10px;
 }
 
+/* Logo configurations */
 .logo {
-    background-color: rgb(55, 55, 55);
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-grow: 1;
     justify-content: center;
     position: relative;
-    transition: background-color 0.5s ease-in-out;
+    background: linear-gradient(to bottom, rgb(55, 55, 55), #333);
 }
 
 .logo a img {
     width: 40px;
     height: auto;
-    margin: 0;
-    padding: 0;
 }
