@@ -7,7 +7,7 @@ body{
 }
 .container-item {
     display: flex;
-    height: 500px;
+
     flex-direction: row;
     flex-wrap: wrap;
 }
