@@ -1,3 +1,7 @@
+html {
+    height: 100%;
+}
+
 body {
     margin: 0px;
     padding: 0px;
@@ -5,6 +9,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
 }
+
 .title {
     margin: 50px;
     padding: 0px;
