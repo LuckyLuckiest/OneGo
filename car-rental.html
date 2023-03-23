@@ -1,35 +1,48 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="/styles/navi.css">
     <link rel="stylesheet" href="/styles/web-uni.css">
+    <link rel="stylesheet" href="/styles/navigation.css">
     <link rel="stylesheet" href="/styles/footer.css">
     <title>One Go</title>
 </head>
 
 <body>
-    <div class="navigation">
-        <a href="index.html">Home</a>
-        <div class="dropdown">
-            <div class="dropbtn" id="active">Services &#9662;</div>
-            <div class="drop-c">
-                <a href="car-rental.html" id="active">Car Rental</a>
-                <a href="flights.html">Flights</a>
-                <a href="stays.html">Stays</a>
-            </div>
-        </div>
-        <a href="index.html" class="no-style">
-            <div class="logo-wrapper">
-                <img src="asset/logo.png"/>
-            </div>
-        </a>
-        <a href="login.html" class="split" target="_blank">Log in</a>
+    <div class="logo">
+        <a href="index.html"><img src="asset/logo.png" /></a>
     </div>
+    <!-- This is the navigation tab and would be placed at the top of every page -->
+    <nav>
+        <ul>
+            <a href="index.html">
+                <li id="active">Home</li>
+            </a>
+            <li class="dropdown">
+                Services <span style="font-size: 10px;">&#9662;</span>
+                <ul>
+                    <a href="car-rental.html">
+                        <li>Car rentals</li>
+                    </a>
+                    <a href="flights.html">
+                        <li>Flights</li>
+                    </a>
+                    <a href="stays.html">
+                        <li>Stays</li>
+                    </a>
+                </ul>
+            </li>
+            <a href="login.html" target="_blank">
+                <li id="split">Log in</li>
+            </a>
+        </ul>
+    </nav>
     <div class="title">Car Rentals</div>
-    <div class="footer">
-        <a href="contact.html">Contact Us</a>
-        <a href="about.html">About Us</a>
-    </div>
 </body>
+
+<!-- This would hold the footer of the page -->
+<footer>
+    <a href="contact.html">Contact Us</a>
+    <a href="about.html">About Us</a>
+</footer>
 
 </html>

@@ -26,6 +26,7 @@ nav ul li {
 
 nav ul li#split {
     float: right;
+    color: white;
 }
 
 nav ul li a {
@@ -35,13 +36,13 @@ nav ul li a {
     display: block;
 }
 
-nav li:hover, nav li#active {
+nav ul li:hover, nav ul li#active:hover, nav ul li#split:hover {
     transition: all 0.2s ease-in;
     background-color: white;
     color: rgb(40, 40, 40);
 }
 
-nav li#active {
+nav ul li#active {
     background-color: greenyellow;
     color: green;
 }
