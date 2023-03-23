@@ -36,7 +36,7 @@ footer #social a:hover {
     color: greenyellow;
 }
 
-footer p {
+footer #copyright {
     margin: 0;
     padding: 50px;
     display: flex;
