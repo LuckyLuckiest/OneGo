@@ -1,9 +1,9 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="styles/web-uni.css">
-    <link rel="stylesheet" href="styles/navigation.css">
-    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="/styles/web-uni.css">
+    <link rel="stylesheet" href="/styles/navigation.css">
+    <link rel="stylesheet" href="/styles/footer.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <title>One Go</title>
 </head>
@@ -12,45 +12,44 @@
     <!-- This is the navigation tab and would be placed at the top of every page -->
     <header>
         <div class="logo">
-            <a href="index.html"><img src="asset/logo.png" /></a>
+            <a href="/index.html"><img src="/asset/logo.png" /></a>
         </div>
         <nav>
             <ul>
-                <a href="index.html">
+                <a href="/index.html">
                     <li>Home</li>
                 </a>
                 <li class="dropdown" id="active">
                     Services <span class="bi bi-caret-down-fill" style="font-size: 10px;"></span>
                     <ul>
-                        <a href="car-rental.html">
+                        <a href="/services/car-rental.html">
                             <li>Car rentals <span class="bi bi-car-front-fill"></span></li>
                         </a>
-                        <a href="flights.html" id="active">
+                        <a href="/services/flights.html" id="active">
                             <li>Flights <span class="bi bi-airplane-fill"></span></li>
                         </a>
-                        <a href="stays.html">
+                        <a href="/services/stays.html">
                             <li>Stays <span class="bi bi-building-fill"></span></li>
                         </a>
                     </ul>
                 </li>
-                <a href="contact.html">
+                <a href="/contact.html">
                     <li>Contact Us</li>
                 </a>
-                <a href="about.html">
+                <a href="/about.html">
                     <li>About Us</li>
                 </a>
-                <a href="login.html" target="_blank">
+                <a href="/login.html" target="_blank">
                     <li class="split">Log in</li>
                 </a>
             </ul>
         </nav>
     </header>
 
-    <!-- Every page contains a title -->
-    <div class="title">Flights</div>
-
     <!-- All the content of the page is here -->
     <main>
+        <!-- Every page contains a title -->
+        <h1 class="title">Flights</h1>
         <form action="https://www.makemytrip.com/international-flights/"
             style="text-align: center;font-size: 200% ;color: white;">
             <label for="date">Date:</label>

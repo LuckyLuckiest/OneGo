@@ -52,32 +52,31 @@
         <!-- Background image for this page -->
         <img src="asset/background_dark.png" alt="London Bridge in the dark" />
         <!-- Every page contains a title -->
-        <div class="title">One Go</div>
-        <div class="description">
-            <hr>
-            <p>
-                Whether you're looking to book a hotel room, rent a car, or buy a flight ticket, our online booking
-                service has you covered - experience the convenience and ease of seamless travel planning all in one
-                place.
-            </p>
-            <hr>
-        </div>
-        <table>
-            <tr>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
+        <h1 class="title">One Go</h1>
+        <p id="description">
+            Whether you're looking to book a hotel room, rent a car, or buy a flight ticket, our online booking
+            service has you covered - experience the convenience and ease of seamless travel planning all in one
+            place.
+        </p>
+        <hr>
+        <h2 class="head">Our offers</h2>
         <div class="container">
             <div class="box">
-                <img src="asset/dark_hotel.jpg" alt="Dark hotel room" />
+                <a href="services/stays.html"><img src="asset/hotel_room.png" alt="Hotel room" /></a>
                 <p>Book now through our user-friendly online service and experience the perfect blend of comfort and
                     sophistication in our cozy and intimate reservation room.</p>
             </div>
             <div class="box">
-                <img src="asset/luxury_hotel.jpg" alt="Luxury hotel swimming pool" />
-                <p>Enjoy breathtaking views from our hotel room with our easy online booking service. Book now for an
-                    unforgettable experience surrounded by natural beauty.</p>
+                <a href="services/flights.html"><img src="asset/airplane_window_view.png"
+                        alt="Airplane window view" /></a>
+                <p>Experience the world from a new perspective and book your next adventure with our online booking
+                    service for breathtaking airplane views.</p>
+            </div>
+            <div class="box">
+                <a href="services/car-rental.html"><img src="asset/rental_cars.png"
+                        alt="Collection of rental cars" /></a>
+                <p>Get ready to hit the road in style and ease by booking your next car rental through our convenient
+                    and reliable online booking service.</p>
             </div>
         </div>
     </main>
@@ -117,21 +116,18 @@
         height: auto;
     }
 
-    body main div.description {
-        display: flex;
-        justify-content: center;
-    }
-
-    body main div.description p {
+    body main p#description {
         width: 50%;
-        text-align: center;
+        margin: auto;
         color: #F2F2F2;
         font-size: 20px;
+        text-align: center;
+        text-shadow: 2px 1px 5px rgba(242, 244, 243, 0.4);
     }
 
     body main hr {
-        border-style: solid;
-        color: #4a7b9d;
+        border: 1px solid black;
+        margin: 100px;
     }
 
     body main div.container {
@@ -143,19 +139,19 @@
 
     body main div.container .box {
         width: 500px;
-        height: 300px;
+        height: 350px;
         padding: 20px;
         margin: 20px;
         box-sizing: content-box;
         background-color: rgba(119, 134, 127, 0.6);
         border-radius: 10px;
-        box-shadow: 0px 0px 5px 5px rgba(242, 244, 243, 0.2);
+        box-shadow: 0px 0px 5px 5px rgba(20, 20, 20, 0.2);
     }
 
     body main div.container .box img {
         display: block;
         margin: auto;
-        max-width: 95%;
+        width: 95%;
         height: auto;
         border: 5px solid rgba(74, 123, 157, 0.3);
         border-radius: 10px;

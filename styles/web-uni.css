@@ -8,11 +8,22 @@ body {
     font-size: 15px;
 }
 
-.title {
+h1.title {
     margin: 50px;
-    padding: 0px;
+    padding: 0;
     text-align: center;
     font-size: 50px;
+    font-weight: normal;
     color: rgba(255, 255, 255, 0.6);
     text-shadow: 1px 1px 5px #afadad;
+}
+
+h2.head {
+   margin: 50px;
+   padding: 0;
+   text-align: center;
+   font-size: 40px;
+   font-weight: normal;
+   color:rgba(255, 255, 255, 0.6);
+   text-shadow: 1px 1px 5px #afadad; 
 }
