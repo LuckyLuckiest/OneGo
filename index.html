@@ -69,11 +69,15 @@
             </tr>
         </table>
         <div class="container">
-            <div class="container-c">
+            <div class="box">
                 <img src="asset/dark_hotel.jpg" alt="Dark hotel room" />
+                <p>Book now through our user-friendly online service and experience the perfect blend of comfort and
+                    sophistication in our cozy and intimate reservation room.</p>
             </div>
-            <div class="container-c">
+            <div class="box">
                 <img src="asset/luxury_hotel.jpg" alt="Luxury hotel swimming pool" />
+                <p>Enjoy breathtaking views from our hotel room with our easy online booking service. Book now for an
+                    unforgettable experience surrounded by natural beauty.</p>
             </div>
         </div>
     </main>
@@ -131,12 +135,40 @@
     }
 
     body main div.container {
-        width: 50%;
-        height: auto;
-        display: inline-block;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
     }
 
-    body main div.container .container-c {
-        display: inline-block;
+    body main div.container .box {
+        width: 500px;
+        height: 300px;
+        padding: 20px;
+        margin: 20px;
+        box-sizing: content-box;
+        background-color: rgba(119, 134, 127, 0.6);
+        border-radius: 10px;
+        box-shadow: 0px 0px 5px 5px rgba(242, 244, 243, 0.2);
+    }
+
+    body main div.container .box img {
+        display: block;
+        margin: auto;
+        max-width: 95%;
+        height: auto;
+        border: 5px solid rgba(74, 123, 157, 0.3);
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    body main div.container .box p {
+        font-size: 0.9rem;
+        text-align: center;
+        padding: 5px;
+        color: black;
+        font-weight: bold;
+        border-radius: 10px;
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
     }
 </style>
