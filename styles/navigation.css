@@ -2,9 +2,9 @@
 nav {
     margin: 0;
     padding: 0;
-    color: white;
+    color: #F2F4F3;
     width: 100%;
-    background: linear-gradient(to top, rgb(30, 30, 30), rgb(40, 40, 40));
+    background: linear-gradient(to top, #1b1a1b, #282828);
 }
 
 nav ul {
@@ -23,7 +23,7 @@ nav ul li {
     text-align: center;
     font-weight: bold;
     text-decoration: none;
-    color: white;
+    color: #F2F4F3;
 }
 
 nav ul li.split {
@@ -34,13 +34,13 @@ nav ul li:hover,
 nav ul li#active:hover,
 nav ul li#split:hover {
     transition: all 0.2s ease-in;
-    background-color: white;
+    background-color: #F2F4F3;
     color: rgb(40, 40, 40);
 }
 
 nav ul li#active {
-    background-color: greenyellow;
-    color: green;
+    background-color: #4a7b9d;
+    color: #F2F4F3;
 }
 
 /* Dropdown menu */
@@ -57,7 +57,7 @@ nav ul li.dropdown ul {
     left: 0;
     opacity: 0;
     box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.2);
-    background-color: rgb(60, 60, 60);
+    background-color: #282828;
     z-index: 1;
     animation: dropdown 0.5s ease-in-out forwards;
 }
@@ -91,7 +91,7 @@ nav ul li.dropdown ul li {
     flex-grow: 1;
     justify-content: center;
     position: relative;
-    background-color: rgb(40, 40, 40);
+    background-color: #282828;
     height: auto;
 }
 
