@@ -53,7 +53,54 @@
 
     <!-- All the content of the page is here -->
     <main>
-        <h1></h1>
+        <!-- Every page contains a title -->
+        <h1 class="title">Register</h1>
+
+        <div class="container col-sm-5 p-4 mb-5">
+            <form action="" class="row">
+                <div class="row p-3">
+                    <div class="col">
+                        <label for="fname" class="form-label">First name</label>
+                        <input type="text" class="form-control" id="fname" style="width:95%;" required>
+                    </div>
+                    <div class="col">
+                        <label for="lname" class="form-label">Last name</label>
+                        <input type="text" class="form-control" id="lname" style="width:95%;" required>
+                    </div>
+                </div>
+                <div class="row p-3">
+                    <div class="col">
+                        <label for="emailadd" class="form-label">Email address</label>
+                        <input email="email" class="form-control" id="emailadd" style="width:95%;" placeholder="name@example.com" required>
+                    </div>
+                </div>
+                <div class="row p-3">
+                    <div class="col">
+                        <label for="pwd" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="pwd" style="width:95%;" required>
+                    </div>
+                </div>
+                <div class="row p-3">
+                    <div class="col">
+                        <label for="cpwd" class="form-label">Confirm password</label>
+                        <input type="password" class="form-control" id="cpwd" style="width:95%;" required>
+                    </div>
+                </div>
+                <div class="row p-3">
+                    <div class="col">
+                        <div class="form-check">
+                            <label class="form-check-label" for="remember">Remember password</label>
+                            <input class="form-check-input" type="checkbox" id="remember">
+                        </div>
+                    </div>
+                </div>
+                <div class="row p-2">
+                    <div class="col">
+                        <button class="btn btn-dark" type="submit" style="width:100%;">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </main>
 
     <!-- This would hold the footer of the page -->
@@ -84,3 +131,11 @@
 </body>
 
 </html>
+
+<style>
+    .container {
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: #F2F4F3;
+    }
+</style>
