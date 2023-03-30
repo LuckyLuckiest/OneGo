@@ -1,12 +1,11 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <!-- navigation bar from bootstrap -->
-    <link href="styles/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles/web-uni.css">
     <link rel="stylesheet" href="styles/navigation.css">
+    <!-- navigation bar from bootstrap -->
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/web-uni.css">
     <link rel="stylesheet" href="styles/footer.css">
     <title>One Go</title>
 </head>
@@ -56,37 +55,47 @@
         <!-- Every page contains a title -->
         <h1 class="title">Register</h1>
 
-        <div class="container col-sm-5 p-4 mb-5">
-            <form action="" class="row">
-                <div class="row p-3">
+        <div class="container col-sm-3 p-4 mb-5">
+            <form action="" class="row justify-content-md-center">
+                <div class="row p-2">
                     <div class="col">
-                        <label for="fname" class="form-label">First name</label>
-                        <input type="text" class="form-control" id="fname" style="width:95%;" required>
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="fname" placeholder="first name" required>
+                            <label for="fname" class="form-label">First name</label>
+                        </div>
                     </div>
                     <div class="col">
-                        <label for="lname" class="form-label">Last name</label>
-                        <input type="text" class="form-control" id="lname" style="width:95%;" required>
-                    </div>
-                </div>
-                <div class="row p-3">
-                    <div class="col">
-                        <label for="emailadd" class="form-label">Email address</label>
-                        <input email="email" class="form-control" id="emailadd" style="width:95%;" placeholder="name@example.com" required>
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="lname" placeholder="last name" required>
+                            <label for="lname" class="form-label">Last name</label>
+                        </div>
                     </div>
                 </div>
-                <div class="row p-3">
+                <div class="row p-2">
                     <div class="col">
-                        <label for="pwd" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="pwd" style="width:95%;" required>
+                        <div class="form-floating">
+                            <input type="email" class="form-control" id="emailadd" placeholder="email" required>
+                            <label for="emailadd" class="form-label">Email address</label>
+                        </div>
                     </div>
                 </div>
-                <div class="row p-3">
+                <div class="row p-2">
                     <div class="col">
-                        <label for="cpwd" class="form-label">Confirm password</label>
-                        <input type="password" class="form-control" id="cpwd" style="width:95%;" required>
+                        <div class="form-floating">
+                            <input type="password" class="form-control" id="pwd" placeholder="password" required>
+                            <label for="pwd" class="form-label">Password</label>
+                        </div>
                     </div>
                 </div>
-                <div class="row p-3">
+                <div class="row p-2">
+                    <div class="col">
+                        <div class="form-floating">
+                            <input type="password" class="form-control" id="cpwd" placeholder="confirm" required>
+                            <label for="cpwd" class="form-label">Confirm password</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row p-2">
                     <div class="col">
                         <div class="form-check">
                             <label class="form-check-label" for="remember">Remember password</label>
