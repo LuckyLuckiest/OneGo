@@ -2,6 +2,7 @@
 
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
     <link rel="stylesheet" href="styles/web-uni.css">
     <link rel="stylesheet" href="styles/navigation.css">
     <link rel="stylesheet" href="styles/footer.css">
@@ -61,23 +62,81 @@
         </p>
         <hr>
         <h2 class="head">Our offers</h2>
-        <div class="container">
-            <div class="box">
-                <a href="stays.html"><img src="asset/hotel_room.png" alt="Hotel room" /></a>
-                <p>Book now through our user-friendly online service and experience the perfect blend of comfort and
-                    sophistication in our cozy and intimate reservation room.</p>
+        <div class="offers">
+            <div class="container">
+                <div class="row">
+                    <div class="card col">
+                        <a href="stays.html"><img src="asset/hotel_room.png" class="card-img-top"
+                                alt="Hotel room" /></a>
+                        <p class="card-text">
+                            Book now through our user-friendly online service and experience the perfect
+                            blend of comfort and sophistication in our cozy and intimate reservation room
+                        </p>
+                    </div>
+                    <div class="card col">
+                        <a href="flights.html"><img src="asset/airplane_window_view.png" class="card-img-top"
+                                alt="Airplane window view" /></a>
+                        <p class="card-text">
+                            Experience the world from a new perspective and book your next adventure with
+                            our online booking service for breathtaking airplane views
+                        </p>
+                    </div>
+                    <div class="card col">
+                        <a href="car-rental.html"><img src="asset/rental_cars.png" class="card-img-top"
+                                alt="Collection of rental cars" /></a>
+                        <p class="card-text">
+                            Get ready to hit the road in style and ease by booking your next car rental
+                            through our convenient and reliable online booking service
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div class="box">
-                <a href="flights.html"><img src="asset/airplane_window_view.png"
-                        alt="Airplane window view" /></a>
-                <p>Experience the world from a new perspective and book your next adventure with our online booking
-                    service for breathtaking airplane views.</p>
-            </div>
-            <div class="box">
-                <a href="car-rental.html"><img src="asset/rental_cars.png"
-                        alt="Collection of rental cars" /></a>
-                <p>Get ready to hit the road in style and ease by booking your next car rental through our convenient
-                    and reliable online booking service.</p>
+        </div>
+        <div class="customer-service">
+            <div class="container p-4">
+                <!-- Card 1 -->
+                <div class="card mb-2">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="asset/promotional/CustomerService.png" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h4 class="card-title">Always here</h5>
+                                    <p class="card-text">Agents on the clock 24/7 provinding customer support</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="card mb-2">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="asset/promotional/FreeCancellation.png" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h4 class="card-title">Anytime cancellation</h5>
+                                    <p class="card-text">Up to 24 hours before pickup cancellation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="card mb-2">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="asset/promotional/Reviews.png" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h4 class="card-title">Loved by millions</h5>
+                                    <p class="card-text">Locals to tourists enjoy our service</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </main>
@@ -112,6 +171,34 @@
 </html>
 
 <style>
+    body main .offers div.card {
+        padding: 20px;
+        margin: 20px;
+        box-sizing: content-box;
+        background-color: rgba(119, 134, 127, 0.6);
+        border-radius: 10px;
+        box-shadow: 0px 0px 5px 5px rgba(20, 20, 20, 0.2);
+    }
+
+    body main .offers div.card img {
+        display: block;
+        margin: auto;
+        width: 95%;
+        height: auto;
+        border: 5px solid rgba(74, 123, 157, 0.3);
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    body main .offers div.card p {
+        font-size: 1rem;
+        text-align: justify;
+        padding: 10px;
+        color: black;
+        border-radius: 10px;
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    }
+
     body .picture {
         height: 750px;
         overflow: hidden;
@@ -119,11 +206,12 @@
     }
 
     body main .picture img {
+        display: flex;
         width: 100%;
         height: auto;
         object-fit: cover;
         position: absolute;
-        top: -110px;
+        top: -10%;
     }
 
     body main p#description {
@@ -140,36 +228,5 @@
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-    }
-
-    body main div.container .box {
-        width: 500px;
-        height: 350px;
-        padding: 20px;
-        margin: 20px;
-        box-sizing: content-box;
-        background-color: rgba(119, 134, 127, 0.6);
-        border-radius: 10px;
-        box-shadow: 0px 0px 5px 5px rgba(20, 20, 20, 0.2);
-    }
-
-    body main div.container .box img {
-        display: block;
-        margin: auto;
-        width: 95%;
-        height: auto;
-        border: 5px solid rgba(74, 123, 157, 0.3);
-        border-radius: 10px;
-        box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    body main div.container .box p {
-        font-size: 1.1rem;
-        text-align: center;
-        padding: 5px;
-        color: black;
-        font-weight: bold;
-        border-radius: 10px;
-        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
     }
 </style>
