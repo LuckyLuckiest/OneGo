@@ -49,49 +49,203 @@
     <!-- All the content of the page is here -->
     <main>
         <!-- Every page contains a title -->
+        <div id="picture-container2">
+            <div class="picture2"> <img src="/asset/flights/flys.jpeg" alt="Picture 3"></div>
+          </div>
         <h1 class="title">Flights</h1>
+    <style>
+     
+      input {
+        display: inline-block;
+        margin-right: 10px;
+      }
+      
+     
+      #picture-container {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .picture2 {
+        flex: 0 0 calc(33.33% - 20px);
+        height: 500px;
+        background-color: #eee;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+      }
+    
+		.container {
+			display: inline-block;
+			padding: 10px;
+			border: black;
+            border-style: groove;
+            border-radius: 5%;
+            background-color: white;
+		}
 
-        <form action="https://www.makemytrip.com/international-flights/">
-            <label style="font-size: xx-large; color: #eee; margin-left:2%;" for="class">From:</label>
-            <select id="class" name="class"
-                style="padding: 6px 14px;font-size: 14px;border-radius: 4px; margin-top: 5%;">
-                <option value="economy">Dubai</option>
-                <option value="business">Delhi</option>
-                <option value="first">New York</option>
-            </select>
+		select {
+			padding: 5px;
+			margin: 5px;
+			border: none;
+			border-radius: 3px;
+			background-color: white;
+            text-align: center;
+		}
+        .container2{
+            display: inline-block;
+            padding-top: 57px;
+            padding-bottom: 24px;
+			border: black;
+            border-style: groove;
+            border-radius: 5%;
+            background-color: white;
+        }
+        
+       
+      
+    
+      .picture {
+        flex: 0 0 calc(33.33% - 20px);
+        height: 350px;
+        margin-right: 20px;
+        margin-bottom: 150px;
+        background-color: #eee;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        margin-top: 5%;
+      }
 
-            <label style="font-size: xx-large; color: #eee; margin-left:2%;" for="class">To:</label>
-            <select id="class" name="class"
-                style="padding: 6px 14px;font-size: 14px;border-radius: 4px; margin-top: 5%;">
-                <option value="economy">Dubai</option>
-                <option value="business">Delhi</option>
-                <option value="first">New York</option>
-            </select>
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit:fill;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
 
-            <label style="font-size: xx-large; color: #eee;margin-left:2%; " for="date">Departure:</label>
-            <input type="date" id="date" name="date" style="padding: 6px 14px;font-size: 14px;border-radius: 4px;">
-
-            <label style="font-size: xx-large; color: #eee;margin-left:2%; " for="date">Return:</label>
-            <input type="date" id="date" name="date" style="padding: 6px 14px;font-size: 14px;border-radius: 4px;">
-
-            <label style="font-size: xx-large; color: #eee; margin-left:3%;" for="class">Class:</label>
-            <select id="class" name="class"
-                style="padding: 6px 14px;font-size: 14px;border-radius: 4px; margin-top: 5%;">
-                <option value="economy">Economy</option>
-                <option value="business">Business</option>
-                <option value="first">First Class</option>
-            </select><br></br>
-
-            <input
-                style="text-align: center; margin-left: 40%; margin-top: 5%;padding: 12px 24px;font-size: 24px;border-radius: 6px;"
-                type="submit" value="Search Flights">
-        </form>
-
-        <div id="picture-container">
-            <div class="picture"><img src="asset/flights/kuala.webp" alt="Picture 1"></div>
-            <div class="picture"><img src="asset/flights/newyork.webp" alt="Picture 2"></div>
-            <div class="picture"><img src="asset/flights/aussie.webp" alt="Picture 3"></div>
+    </style>
+  </head>
+    <form action="/schedule.html">
+        <div class="container">
+            <label style="font-size: large; color: black; margin-left:2%; display: inline-block; "for="country" >From:</label>
+            <select id="country" name="country" style="padding: 16px 24px;font-size: 24px;border-radius: 10px; margin-top: 5%;background-color: white; color: black; ">
+                <option value="country">Dubai</option>
+                <option value="country">Delhi</option>
+                <option value="country">New York</option>
+                <option value="country">Muscat</option>
+              </select>
         </div>
+        <div class="container">
+            <label style="font-size: large; color: black; margin-left:2%; "for="country">To:</label>
+            <select id="country" name="country" style="padding: 16px 24px;font-size: 24px;border-radius: 10px; margin-top: 5%;background-color: white; color: black; ">
+                <option value="country">Dubai</option>
+                <option value="country">Delhi</option>
+                <option value="country">New York</option>
+                <option value="country">Muscat</option>
+              </select>
+        </div>
+     <div class="container2">
+      <label  style="font-size: large; color: black; " for="date">Departure:</label>
+      <input type="date" id="date" name="date" style="padding: 6px 14px;font-size: 14px;border-radius: 4px;">
+    </div>
+    <div class="container2">
+      <label  style="font-size: large; color: black; " for="date">Return:</label>
+      <input type="date" id="date" name="date" style="padding: 6px 14px;font-size: 14px;border-radius: 4px;">
+    </div>
+
+      <div class="container">
+      <label  style="font-size: large; color: black; margin-left:2%;" for="class">Class:</label>
+      <select id="class" name="class" style="padding: 16px 24px;font-size: 24px;border-radius: 10px; margin-top: 5%;">
+        <option value="economy">Economy</option>
+        <option value="business">Business</option>
+        <option value="first">First Class</option>
+      </select>
+      </div>
+      <input style="text-align: center; margin-left: 43%; margin-top: 5%;padding: 12px 24px;font-size: 24px;border-radius: 6px;" type="submit" value="Search Flights">
+    </form>
+    
+    <div id="picture-container">
+      <div class="picture"> <img src="/asset/flights/kuala.webp" alt="Picture 1"></div>
+      <div class="picture"> <img src="/asset/flights/newyork.webp" alt="Picture 2"></div>
+      <div class="picture"><img src="/asset/flights/aussie.webp" alt="Picture 2"></div>
+    </div>
+    <style>
+        table {
+          border-collapse: collapse;
+          border: 1px solid white;
+          margin-bottom: 5%;
+          width: 20%;
+        }
+        th, td {
+          border: 1px solid white;
+          text-align: left;
+          padding: 5px;
+        }
+        th{
+          color:lightslategray ;
+        }
+      </style>
+    <table style="font-size: x-large; color: white; border-color: #eee; border: thick;">
+        <caption style="text-align: left; margin-bottom: 0.5cm;">Available days for booking</caption>
+        <tr>
+            <th>Month</th>
+            <th>Day</th>
+          </tr>
+          <tr>
+            <td>January</td>
+            <td>1-20</td>
+          </tr>
+          <tr>
+            <td>February</td>
+            <td>3-28</td>
+          </tr>
+          <tr>
+            <td>March</td>
+            <td>4-19</td>
+          </tr>
+          <tr>
+            <td>April</td>
+            <td>1-30</td>
+          </tr>
+          <tr>
+            <td>May</td>
+            <td>9-29</td>
+          </tr>
+          <tr>
+            <td>June</td>
+            <td>1-30</td>
+          </tr>
+          <tr>
+            <td>July</td>
+            <td>2-26</td>
+          </tr>
+          <tr>
+            <td>August</td>
+            <td>3-29</td>
+          </tr>
+          <tr>
+            <td>September</td>
+            <td>1-30</td>
+          </tr>
+          <tr>
+            <td>October</td>
+            <td>3-29</td>
+          </tr>
+          <tr>
+            <td>November</td>
+            <td>5-30</td>
+          </tr>
+          <tr>
+            <td>December</td>
+            <td>5-29</td>
+          </tr>
+
+    </table>
+
     </main>
 
     <!-- This would hold the footer of the page -->
@@ -123,37 +277,3 @@
 
 
 </html>
-
-<style>
-    input {
-        display: inline-block;
-        margin-right: 10px;
-    }
-
-
-    #picture-container {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-
-    .picture {
-        flex: 0 0 calc(33.33% - 20px);
-        height: 350px;
-        margin-right: 20px;
-        margin-bottom: 150px;
-        background-color: #eee;
-        width: 100%;
-        position: relative;
-        overflow: hidden;
-        margin-top: 5%;
-    }
-
-    main img {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-        position: absolute;
-        top: -50px;
-    }
-</style>
