@@ -50,9 +50,44 @@
 
     <!-- All the content of the page is here -->
     <main>
+        <!-- Background image for this page -->
+        <div class="picture">
+            <img src="asset/car_rental_background.jpg" alt="Car in highway" />
+        </div>
+
         <!-- Every page contains a title -->
         <h1 class="title">Car Rentals</h1>
+        <p id="description">
+            Discover the ultimate driving experience with our supercars and casual vehicles. Great deals at great prices
+            make your purchase stress-free
+        </p>
 
+        <div class="customer-service">
+            <div class="container" style="padding-top:25px; padding-bottom:25px;">
+                <div class="row justify-content-center">
+                    <div class="col-11">
+                        <h2>Popular car hire brands</h2>
+                    </div>
+                    <div class="col-2">
+                        <img src="asset/cars/brands/Europcar.png" alt="Europcar">
+                    </div>
+                    <div class="col-2">
+                        <img src="asset/cars/brands/Interrent.png" alt="Interrent">
+                    </div>
+                    <div class="col-2">
+                        <img src="asset/cars/brands/SixtOman.png" alt="SixtOman">
+                    </div>
+                    <div class="col-2">
+                        <img src="asset/cars/brands/Thrifty.png" alt="Thrifty">
+                    </div>
+                    <div class="col-2">
+                        <img src="asset/cars/brands/Enterprise.png" alt="Thrifty">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
         <h1 class="subtitle">SuperCars</h1>
         <hr>
         <div class="container">
@@ -123,6 +158,7 @@
             </div>
         </div>
 
+        <hr>
         <h1 class="subtitle">PersonalCars</h1>
         <h2 class="subtitle">(Sedans)</h2>
         <hr>
@@ -196,6 +232,7 @@
             </div>
         </div>
 
+        <hr>
         <h1 class="subtitle">Electric</h1>
         <hr>
         <div class="container">
@@ -236,6 +273,20 @@
                 <a href="checkin.html" class="btn btn-outline-dark">Rent</a>
             </div>
         </div>
+
+        <div class="customer-service">
+            <div class="container">
+                <div class="card" style="height:fit-content;">
+                    <a href="policy.html" style="text-decoration: none; color: inherit;">
+                        <div class="card-body">
+                            <p class="card-text"
+                                style="text-align: center; font-size:15px; font-weight:bold;font-style: italic;">Read
+                                car rental policy</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
     </main>
 
     <!-- This would hold the footer of the page -->
@@ -267,6 +318,25 @@
 
 </html>
 <style>
+    body main p#description {
+        width: 50%;
+        margin: auto;
+        color: #F2F2F2;
+        font-size: 20px;
+        text-align: center;
+        text-shadow: 2px 1px 5px rgba(242, 244, 243, 0.4);
+    }
+
+    body main .customer-service .container img {
+        border-radius: 5px;
+        border: 2px solid #5c5b5b;
+    }
+
+    body main hr {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
     .container {
         display: flex;
         flex-wrap: wrap;
