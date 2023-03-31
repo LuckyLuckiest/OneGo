@@ -3,11 +3,96 @@
 
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
     <link rel="stylesheet" href="styles/web-uni.css">
     <link rel="stylesheet" href="styles/navigation.css">
     <link rel="stylesheet" href="styles/footer.css">
     <link rel="stylesheet" href="styles/contactstyle.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <title>One Go</title>
+    <style>
+        .icon {
+            float: left;
+            display: flex;
+            height: 40;
+            width: 10%;
+            margin: 0 20;
+        }
+
+        .contact-info {
+            display: flex;
+            margin-top: 12px;
+        }
+
+        .img {
+            margin-right: 20px;
+        }
+
+        .info {
+            font-size: 15;
+            color: white;
+        }
+
+        .text {
+            font-size: 35;
+            margin: 10px;
+            color: white;
+        }
+
+        #image {
+            height: 40px;
+            border-radius: 70%;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            margin-bottom: 20px;
+        }
+
+        textarea {
+            height: 100px;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            border: 1px solid #333;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: white;
+            color: #333;
+            border: 1px solid #333;
+        }
+
+        .contact {
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #f2f2f2;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 
 <body>
@@ -53,43 +138,48 @@
     <main>
         <!-- Every page contains a title -->
         <h1 class="title">Contact Us</h1>
-        <div class="container">
-            <div class="container-item">
-                <div class="text">
-                    <h2>
-                        Let's contact
-                    </h2>
-                </div>
-                <div class="contact-info">
-                    <div class="img"><img src="asset/Email.jpg" id="image"></div>
-                    <div class="info">
-                        <p>support@onego.com</p>
+        <div class="container my-5">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="text">
+                        <h2>
+                            Let's contact
+                        </h2>
+                    </div>
+                    <div class="contact-info">
+                        <div class="img"><img src="asset/Email.jpg" id="image"></div>
+                        <div class="info">
+                            <p>support@onego.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-info">
+                        <div class="img"><img src="asset/phone.PNG" id="image"></div>
+                        <div class="info">
+                            <p>+968-1234-5678</p>
+                        </div>
                     </div>
                 </div>
-                <div class="contact-info">
-                    <div class="img"><img src="asset/phone.PNG" id="image"></div>
-                    <div class="info">
-                        <p>+968-1234-5678</p>
+                <div class="col-sm-4">
+                    <div class="contact">
+                        <h1>Contact Us</h1>
+                        <form action="mailto:example@gmail.com">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                            <input type="submit" name="submit">
+                        </form>
                     </div>
                 </div>
-            </div>
-            <div class="container-item">
-                <div class="contact">
-                    <h1>Contact Us</h1>
-                    <form action="mailto:example@gmail.com">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
-
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" required></textarea>
-                        <input type="submit" name="submit">
-                    </form>
+                <div class="col-sm-4">
                 </div>
             </div>
         </div>
+        <br />
     </main>
 
     <!-- This would hold the footer of the page -->
