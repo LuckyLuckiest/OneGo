@@ -50,35 +50,83 @@
     <main>
         <!-- Every page contains a title -->
         <h1 class="title">Flights</h1>
-        <form action="https://www.makemytrip.com/international-flights/"
-            style="text-align: center;font-size: 200% ;color: white;">
-            <label for="date">Date:</label>
-            <input type="date" id="date" name="date"><br><br>
-            </select>
-            <label for="wherefrom">Where From:</label>
-            <select id="wherefrom" name="wherefrom">
-                <option value="paris">Paris</option>
-                <option value="tokyo">Tokyo</option>
-                <option value="sydney">Sydney</option>
-                <option value="rio">Muscat</option>
-                <option value="cape-town">Delhi</option>
-            </select><br><br>
-            <label for="destination">Where to:</label>
-            <select id="destination" name="destination">
-                <option value="paris">Paris</option>
-                <option value="tokyo">Tokyo</option>
-                <option value="sydney">Sydney</option>
-                <option value="rio">Muscat</option>
-                <option value="cape-town">Delhi</option>
-            </select><br><br>
-            <label for="class">Class:</label>
-            <select id="class" name="class">
-                <option value="economy">Economy</option>
-                <option value="business">Business</option>
-                <option value="first">First Class</option>
-            </select><br><br>
-            <input type="submit" value="Submit">
-        </form>
+    <style>
+     
+      input {
+        display: inline-block;
+        margin-right: 10px;
+      }
+      
+     
+      #picture-container {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      
+    
+      .picture {
+        flex: 0 0 calc(33.33% - 20px);
+        height: 350px;
+        margin-right: 20px;
+        margin-bottom: 150px;
+        background-color: #eee;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        margin-top: 5%;
+      }
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit:fill;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+    <form action="https://www.makemytrip.com/international-flights/">
+        <label  style="font-size: xx-large; color: #eee; margin-left:2%;" for="class">From:</label>
+        <select id="class" name="class" style="padding: 6px 14px;font-size: 14px;border-radius: 4px; margin-top: 5%;">
+          <option value="economy">Dubai</option>
+          <option value="business">Delhi</option>
+          <option value="first">New York</option>
+        </select>
+        
+        <label  style="font-size: xx-large; color: #eee; margin-left:2%;" for="class">To:</label>
+        <select id="class" name="class" style="padding: 6px 14px;font-size: 14px;border-radius: 4px; margin-top: 5%;">
+          <option value="economy">Dubai</option>
+          <option value="business">Delhi</option>
+          <option value="first">New York</option>
+        </select>
+
+      <label  style="font-size: xx-large; color: #eee;margin-left:2%; " for="date">Departure:</label>
+      <input type="date" id="date" name="date" style="padding: 6px 14px;font-size: 14px;border-radius: 4px;">
+
+      <label  style="font-size: xx-large; color: #eee;margin-left:2%; " for="date">Return:</label>
+      <input type="date" id="date" name="date" style="padding: 6px 14px;font-size: 14px;border-radius: 4px;">
+      
+
+      
+      <label  style="font-size: xx-large; color: #eee; margin-left:3%;" for="class">Class:</label>
+      <select id="class" name="class" style="padding: 6px 14px;font-size: 14px;border-radius: 4px; margin-top: 5%;">
+        <option value="economy">Economy</option>
+        <option value="business">Business</option>
+        <option value="first">First Class</option>
+      </select><br></br>
+      
+      <input style="text-align: center; margin-left: 40%; margin-top: 5%;padding: 12px 24px;font-size: 24px;border-radius: 6px;" type="submit" value="Search Flights">
+    </form>
+    
+    <div id="picture-container">
+      <div class="picture"> <img src="/asset/flights/kuala.webp" alt="Picture 1"></div>
+      <div class="picture"> <img src="/asset/flights/newyork.webp" alt="Picture 2"></div>
+      <div class="picture"><img src="/asset/flights/aussie.webp" alt="Picture 2"></div>
+    </div>
+
     </main>
 
     <!-- This would hold the footer of the page -->
