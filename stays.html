@@ -51,74 +51,59 @@
     <!-- All the content of the page is here -->
     <main>
         <div class="picture">
-            <img src="asset/hotels/hotel.png" alt="hotel" class="img-fluid"/>
+            <img src="asset/hotel.png" alt="hotel" class="img-fluid" />
         </div>
         <!-- Every page contains a title -->
+        <h1 class="title">Stays</h1>
         <div class="container pb-2">
-            <h1 class="title">Stays</h1>
-            <div class="row">
-                <div class="card text-white mx-3 my-3" style="width:300px; background-color: rgb(39, 47, 42);">
-                    <img class="card-img-top" src="asset/hotels/hotel1.jpg" alt="Kompose Boutique Hotel Sarasota"
-                        style="width:100%">
+            <div class="row justify-content-md-center">
+                <div class="card text-white mx-3 my-3">
+                    <img class="card-img-top" src="asset/hotels/hotel1.jpg" alt="Kompose Boutique Hotel Sarasota">
                     <div class="card-body">
                         <h4 class="card-title">Kompose Boutique Hotel Sarasota</h4>
                         <p class="card-text">Location : USA</p>
                         <p class="card-text">Price : 33 R.O for one night</p>
-
                     </div>
-                    <div class="card-fotter">
-                        <a href="checkin.html" class="btn btn-dark mb-3" style="width: 80%;">BOOK NOW</a>
-                    </div>
+                    <a href="checkin.html" class="btn btn-outline-dark">Rent</a>
                 </div>
-                <div class="card  text-white mx-3 my-3" style="width:300px; background-color: rgb(39, 47, 42);">
-                    <img class="card-img-top" src="asset/hotels/hotel2.jpg" alt="KANANASKIS MOUNTAIN LODGE"
-                        style="width:100%">
+                <div class="card  text-white mx-3 my-3">
+                    <img class="card-img-top" src="asset/hotels/hotel2.jpg" alt="KANANASKIS MOUNTAIN LODGE">
                     <div class="card-body">
                         <h4 class="card-title">KANANASKIS MOUNTAIN LODGE</h4>
                         <p class="card-text">Location : USA</p>
                         <p class="card-text">Price : 28 RO for 1 night</p>
                     </div>
-
-                    <div class="card-fotter">
-                        <a href="checkin.html" class="btn btn-dark mb-3" style="width: 80%;">BOOK NOW</a>
-                    </div>
+                    <a href="checkin.html" class="btn btn-outline-dark">Rent</a>
                 </div>
 
-                <div class="card text-white mx-3 my-3" style="width:300px; background-color: rgb(39, 47, 42);">
-                    <img class="card-img-top" src="asset/hotels/hotel3.PNG" alt="ARIZONA BILTMORE" style="width:100%">
+                <div class="card text-white mx-3 my-3">
+                    <img class="card-img-top" src="asset/hotels/hotel3.PNG" alt="ARIZONA BILTMORE">
                     <div class="card-body">
                         <h4 class="card-title">ARIZONA BILTMORE</h4>
                         <p class="card-text">Location : USA</p>
                         <p class="card-text">Price : 55 R.O for one night</p>
                     </div>
-                    <div class="card-fotter">
-                        <a href="checkin.html" class="btn btn-dark mb-3" style="width: 80%;">BOOK NOW</a>
-                    </div>
+                    <a href="checkin.html" class="btn btn-outline-dark">Rent</a>
                 </div>
 
-                <div class="card text-white mx-3 my-3" style="width:300px; background-color: rgb(39, 47, 42);">
-                    <img class="card-img-top" src="asset/hotels/hotel5.PNG" alt="Tropical Islands" style="width:100%">
+                <div class="card text-white mx-3 my-3">
+                    <img class="card-img-top" src="asset/hotels/hotel5.PNG" alt="Tropical Islands">
                     <div class="card-body">
                         <h4 class="card-title">Tropical Islands</h4>
                         <p class="card-text">Location : Germany</p>
                         <p class="card-text">Price : 34 R.O for one night</p>
                     </div>
-                    <div class="card-fotter">
-                        <a href="checkin.html" class="btn btn-dark mb-3" style="width: 80%;">BOOK NOW</a>
-                    </div>
+                    <a href="checkin.html" class="btn btn-outline-dark">Rent</a>
                 </div>
 
-                <div class="card text-white mx-3 my-3" style="width:300px; background-color: rgb(39, 47, 42);">
-                    <img class="card-img-top" src="asset/hotels/hotel4.PNG" alt="Kompose Boutique Hotel Sarasota"
-                        style="width:100%">
+                <div class="card text-white mx-3 my-3">
+                    <img class="card-img-top" src="asset/hotels/hotel4.PNG" alt="Kompose Boutique Hotel Sarasota">
                     <div class="card-body">
                         <h4 class="card-title">Kompose Boutique Hotel Sarasota</h4>
                         <p class="card-text">Location : USA</p>
                         <p class="card-text">Price : 87 R.O for one night</p>
                     </div>
-                    <div class="card-fotter">
-                        <a href="checkin.html" class="btn btn-dark mb-3" style="width: 80%;">BOOK NOW</a>
-                    </div>
+                    <a href="checkin.html" class="btn btn-outline-dark">Rent</a>
                 </div>
             </div>
         </div>
@@ -152,3 +137,31 @@
 </body>
 
 </html>
+
+<style>
+    div.card {
+        width: 25%;
+        height: 25rem;
+        padding: 20px;
+        margin: 2%;
+        box-sizing: content-box;
+        background-color: rgba(119, 134, 127, 0.6);
+        border-radius: 10px;
+        box-shadow: 0px 0px 5px 5px rgba(20, 20, 20, 0.2);
+    }
+
+    div.card img {
+        display: block;
+        margin: auto;
+        width: 95%;
+        height: 10rem;
+        border: 5px solid rgba(74, 123, 157, 0.3);
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.2);
+        object-fit: cover;
+    }
+
+    .card-text {
+        text-align: justify;
+    }
+</style>
