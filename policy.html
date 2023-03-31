@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="styles/web-uni.css">
+    <link rel="stylesheet" href="styles/navigation.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/contactstyle.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <title>One Go</title>
+    <style>
+        .container {
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+table {
+    margin: auto;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+
+}
+
+td, th {
+    border: 1px solid #484646;
+    text-align: left;
+    padding: 8px;
+    color: rgb(174, 166, 166);
+}
+
+tr:nth-child(even) {
+  background-color: #484646;
+}
+#Policies {
+    width: 200px;
+    font-size: 30px;
+}
+    </style>
+</head>
+
+<body>
+    <!-- This is the navigation tab and would be placed at the top of every page -->
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="asset/logo.png" /></a>
+        </div>
+        <nav>
+            <ul>
+                <a href="index.html">
+                    <li>Home</li>
+                </a>
+                <li class="dropdown">
+                    Services <span class="bi bi-caret-down-fill" style="font-size: 10px;"></span>
+                    <ul>
+                        <a href="services/car-rental.html">
+                            <li>Car rentals <span class="bi bi-car-front-fill"></span></li>
+                        </a>
+                        <a href="services/flights.html">
+                            <li>Flights <span class="bi bi-airplane-fill"></span></li>
+                        </a>
+                        <a href="services/stays.html">
+                            <li>Stays <span class="bi bi-building-fill"></span></li>
+                        </a>
+                    </ul>
+                </li>
+                <a href="contact.html">
+                    <li id="active">Contact Us</li>
+                </a>
+                <a href="about.html">
+                    <li>About Us</li>
+                </a>
+                <a href="login.html" target="_blank">
+                    <li class="split">Log in</li>
+                </a>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+        <div class="container">
+
+
+        <table>            
+            <caption style="font-size: 30px; font-weight: 300; color: white;">Policies of car rentals</caption>
+            <tr> <th rowspan="20" id="Policies">car rentals Policies</th></tr>
+              <tr>
+                <th>Policy</th>
+                <th>Description</th>
+              </tr>
+
+
+              <tr>
+                <td>Age Restrictions</td>
+                <td>Typically, renters must be at least 21 years old to rent a car. Drivers under 25 may be subject to an additional young driver surcharge.</td>
+              </tr>
+              <tr>
+                <td>Driver's License</td>
+                <td>Renters must have a valid driver's license and a major credit card in their name to rent a car. Some car rental companies may also require an International Driving Permit (IDP) for foreign renters.</td>
+              </tr>
+              <tr>
+                <td>Insurance</td>
+                <td>Car rental companies offer a range of insurance options, including collision damage waiver (CDW), supplemental liability insurance (SLI), and personal accident insurance (PAI). It's important to carefully review the terms and conditions of each insurance option to determine which, if any, are necessary for your rental.</td>
+              </tr>
+              <tr>
+                <td>Fuel Policy</td>
+                <td>Renters are typically responsible for refilling the gas tank before returning the car, unless they opt for a prepaid fuel option. Failure to refill the tank can result in additional fees.</td>
+              </tr>
+              <tr>
+                <td>Rental Duration</td>
+                <td>Most car rental companies have a minimum rental period of 24 hours, although some may offer shorter rentals for an additional fee.</td>
+              </tr>
+              <tr>
+                <td>Additional Drivers</td>
+                <td>Renters can usually add additional drivers to the rental agreement for an additional fee. Additional drivers must meet the same age and license requirements as the primary driver.</td>
+              </tr>
+              <tr>
+                <td>Mileage Limitations</td>
+                <td>Some car rental companies impose mileage limitations on rentals, with additional fees for exceeding the limit. Others may offer unlimited mileage.</td>
+              </tr>
+              <tr>
+                <td>Late Returns</td>
+                <td>Late returns may result in additional fees. Some car rental companies offer a grace period of up to 29 minutes, while others charge fees for any portion of an hour that the car is late.</td>
+              </tr>
+              <tr>
+                <td>Smoking and Pets</td>
+                <td>Most car rental companies have strict policies against smoking or allowing pets in their rental cars. Violating these policies can result in significant cleaning fees.</td>
+              </tr>
+
+          </table>
+        </div>
+          
+    </main>
+
+    <footer>
+        <h2>One Go</h2>
+        <ul id="social">
+            <a href="https://gmail.com" target="_blank">
+                <li class="bi bi-envelope"></li>
+            </a>
+            <a href="https://whatsapp.com" target="_blank">
+                <li class="bi bi-whatsapp"></li>
+            </a>
+            <a href="https://instagram.com" target="_blank">
+                <li class="bi bi-instagram"></li>
+            </a>
+            <a href="https://youtube.com" target="_blank">
+                <li class="bi bi-youtube"></li>
+            </a>
+            <a href="https://tiktok.com" target="_blank">
+                <li class="bi bi-tiktok"></li>
+            </a>
+            <a href="https://twitter.com" target="_blank">
+                <li class="bi bi-twitter"></li>
+            </a>
+        </ul>
+        <p>Copyright &copy; 2023 OneGo</p>
+    </footer>
+    </body>
+</html>
