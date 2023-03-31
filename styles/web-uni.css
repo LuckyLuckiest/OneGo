@@ -32,3 +32,27 @@ h2.head {
    color:rgba(255, 255, 255, 0.6);
    text-shadow: 1px 1px 5px #afadad; 
 }
+
+body main div.customer-service {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    background-color: rgba(119, 134, 127, 0.6);
+    border: 2px solid black;
+    border-right: none;
+    border-left: none;
+}
+
+body main div.customer-service .card {
+    max-width: 400px;
+    background-color: inherit;
+    border: none;
+}
+
+body main div.customer-service .card h4 {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+body main div.customer-service .card p {
+    font-size: 13px;
+}
