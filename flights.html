@@ -2,6 +2,7 @@
 
 <head>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+	<link rel="stylesheet" href="styles/bootstrap.min.css">
 	<link rel="stylesheet" href="styles/web-uni.css">
 	<link rel="stylesheet" href="styles/navigation.css">
 	<link rel="stylesheet" href="styles/footer.css">
@@ -50,11 +51,12 @@
 	<main>
 		<!-- Every page contains a title -->
 		<div class="picture">
-			<img src="asset/airplane_background.jpg" alt="Picture 3" />
+			<img src="asset/airplane_background.jpg" alt="Picture 3">
 		</div>
 		<h1 class="title">Flights</h1>
+
 		</head>
-		<form action="/schedule.html">
+		<form action="schedule.html">
 			<div class="container">
 				<label style="font-size: large; color: black; margin-left:2%; display: inline-block; "
 					for="country">From:</label>
@@ -100,9 +102,9 @@
 		</form>
 
 		<div id="picture-container">
-			<div class="picture2"> <img src="/asset/flights/kuala.webp" alt="Picture 1"></div>
-			<div class="picture2"> <img src="/asset/flights/newyork.webp" alt="Picture 2"></div>
-			<div class="picture2"><img src="/asset/flights/aussie.webp" alt="Picture 2"></div>
+			<div class="picture2"> <img src="asset/flights/kuala.webp" alt="Picture 1"></div>
+			<div class="picture2"> <img src="asset/flights/newyork.webp" alt="Picture 2"></div>
+			<div class="picture2"><img src="asset/flights/aussie.webp" alt="Picture 2"></div>
 		</div>
 		<table style="font-size: x-large; color: white; border-color: #eee; border: thick;">
 			<caption style="text-align: left; margin-bottom: 0.5cm;">Available days for booking</caption>
@@ -194,36 +196,15 @@
 </html>
 
 <style>
-	table {
-		border-collapse: collapse;
-		border: 1px solid white;
-		margin-bottom: 5%;
-		width: 20%;
-	}
-
-	th,
-	td {
-		border: 1px solid white;
-		text-align: left;
-		padding: 5px;
-	}
-
-	th {
-		color: lightslategray;
-	}
-
 	input {
 		display: inline-block;
 		margin-right: 10px;
 	}
 
-	.picture {
-		flex: 0 0 calc(33.33% - 20px);
-		height: 500px;
-		background-color: #eee;
-		width: 100%;
-		position: relative;
-		overflow: hidden;
+
+	#picture-container {
+		display: flex;
+		flex-wrap: wrap;
 	}
 
 	.container {
@@ -254,6 +235,9 @@
 		background-color: white;
 	}
 
+
+
+
 	.picture2 {
 		flex: 0 0 calc(33.33% - 20px);
 		height: 350px;
@@ -267,8 +251,29 @@
 	}
 
 	body main img {
+		object-fit: fill;
+		position: absolute;
+		top: 0;
+		left: 0;
 		width: 100%;
 		height: auto;
-		position: absolute;
+	}
+
+	table {
+		border-collapse: collapse;
+		border: 1px solid white;
+		margin-bottom: 5%;
+		width: 20%;
+	}
+
+	th,
+	td {
+		border: 1px solid white;
+		text-align: left;
+		padding: 5px;
+	}
+
+	th {
+		color: lightslategray;
 	}
 </style>
