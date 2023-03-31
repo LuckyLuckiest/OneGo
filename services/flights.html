@@ -49,6 +49,9 @@
     <!-- All the content of the page is here -->
     <main>
         <!-- Every page contains a title -->
+        <div id="picture-container2">
+            <div class="picture2"> <img src="/asset/flights/flys.jpeg" alt="Picture 3"></div>
+          </div>
         <h1 class="title">Flights</h1>
     <style>
      
@@ -61,6 +64,14 @@
       #picture-container {
         display: flex;
         flex-wrap: wrap;
+      }
+      .picture2 {
+        flex: 0 0 calc(33.33% - 20px);
+        height: 500px;
+        background-color: #eee;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
       }
     
 		.container {
