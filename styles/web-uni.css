@@ -8,6 +8,11 @@ body {
     font-size: 15px;
 }
 
+body main hr {
+    border: 1px solid black;
+    margin: 100px;
+}
+
 h1.title {
     margin: 50px;
     padding: 0;
