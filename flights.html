@@ -58,54 +58,69 @@
 		</head>
 		<form action="schedule.html">
 			<div class="container">
-				<label style="font-size: large; color: black; margin-left:2%; display: inline-block; "
-					for="country">From:</label>
-				<select id="country" name="country"
-					style="padding: 16px 24px;font-size: 24px;border-radius: 10px; margin-top: 5%;background-color: white; color: black; ">
-					<option value="country">Dubai</option>
-					<option value="country">Delhi</option>
-					<option value="country">New York</option>
-					<option value="country">Muscat</option>
-				</select>
-			</div>
-			<div class="container">
-				<label style="font-size: large; color: black; margin-left:2%; " for="country">To:</label>
-				<select id="country" name="country"
-					style="padding: 16px 24px;font-size: 24px;border-radius: 10px; margin-top: 5%;background-color: white; color: black; ">
-					<option value="country">Dubai</option>
-					<option value="country">Delhi</option>
-					<option value="country">New York</option>
-					<option value="country">Muscat</option>
-				</select>
-			</div>
-			<div class="container2">
-				<label style="font-size: large; color: black; " for="date">Departure:</label>
-				<input type="date" id="date" name="date" style="padding: 6px 14px;font-size: 14px;border-radius: 4px;">
-			</div>
-			<div class="container2">
-				<label style="font-size: large; color: black; " for="date">Return:</label>
-				<input type="date" id="date" name="date" style="padding: 6px 14px;font-size: 14px;border-radius: 4px;">
-			</div>
-
-			<div class="container">
-				<label style="font-size: large; color: black; margin-left:2%;" for="class">Class:</label>
-				<select id="class" name="class"
-					style="padding: 16px 24px;font-size: 24px;border-radius: 10px; margin-top: 5%;">
-					<option value="economy">Economy</option>
-					<option value="business">Business</option>
-					<option value="first">First Class</option>
-				</select>
-			</div>
+				<div class="row">
+				  <div class="col-md-2">
+					<label class="form-label" for="country">From:</label>
+					<select class="form-select" id="country" name="country">
+					  <option value="Dubai">Dubai</option>
+					  <option value="Delhi">Delhi</option>
+					  <option value="New York">New York</option>
+					  <option value="Muscat">Muscat</option>
+					</select>
+				  </div>
+				  <div class="col-md-2">
+					<label class="form-label" for="country">To:</label>
+					<select class="form-select" id="country" name="country">
+					  <option value="Dubai">Dubai</option>
+					  <option value="Delhi">Delhi</option>
+					  <option value="New York">New York</option>
+					  <option value="Muscat">Muscat</option>
+					</select>
+				  </div>
+				  <div class="col-md-2">
+					<label class="form-label" for="date">Departure:</label>
+					<input class="form-control" type="date" id="date" name="date">
+				  </div>
+				  <div class="col-md-2">
+					<label class="form-label" for="date">Return:</label>
+					<input class="form-control" type="date" id="date" name="date">
+				  </div>
+				  <div class="col-md-2">
+					<label class="form-label" for="class">Class:</label>
+					<select class="form-select" id="class" name="class">
+					  <option value="economy">Economy</option>
+					  <option value="business">Business</option>
+					  <option value="first">First Class</option>
+					</select>
+				  </div>
+				</div>
+			  </div>
 			<input
 				style="text-align: center; margin-left: 43%; margin-top: 5%;padding: 12px 24px;font-size: 24px;border-radius: 6px;"
 				type="submit" value="Search Flights">
 		</form>
-
-		<div id="picture-container">
-			<div class="picture2"> <img src="asset/flights/kuala.webp" alt="Picture 1"></div>
-			<div class="picture2"> <img src="asset/flights/newyork.webp" alt="Picture 2"></div>
-			<div class="picture2"><img src="asset/flights/aussie.webp" alt="Picture 2"></div>
-		</div>
+        <div class="picture-container" style="margin-bottom:30%; margin-top: 10%;">
+			<div class="row">
+			  <div class="col-sm">
+				<div class="card">
+				  <img class="card-img-top img-fluid" src="asset/flights/aussie.webp" alt="Image 1"
+				  style="width: fit-content; height: fit-content">>
+				</div>
+			  </div>
+			  <div class="col-sm">
+				<div class="card">
+				  <img class="card-img-top img-fluid" src="asset/flights/kuala.webp" alt="Image 2"
+				  style="width: fit-content; height: fit-content">
+				</div>
+			  </div>
+			  <div class="col-sm">
+				<div class="card">
+				  <img class="card-img-top img-fluid" src="asset/flights/newyork.webp" alt="Image 3"
+				  style="width: fit-content; height: fit-content">>
+				</div>
+			  </div>
+			</div>
+		  </div>
 		<table style="font-size: x-large; color: white; border-color: #eee; border: thick;">
 			<caption style="text-align: left; margin-bottom: 0.5cm;">Available days for booking</caption>
 			<tr>
@@ -208,13 +223,14 @@
 	}
 
 	.container {
-		display: inline-block;
-		padding: 10px;
-		border: black;
-		border-style: groove;
-		border-radius: 5%;
-		background-color: white;
-	}
+			border: 1px solid;
+			border-radius: 10px;
+			background-color: white;
+			margin-left: 5%;
+			font-size: large;
+			padding-top: 2%;
+			padding-bottom: 2%;
+		}
 
 	select {
 		padding: 5px;
@@ -223,31 +239,6 @@
 		border-radius: 3px;
 		background-color: white;
 		text-align: center;
-	}
-
-	.container2 {
-		display: inline-block;
-		padding-top: 57px;
-		padding-bottom: 24px;
-		border: black;
-		border-style: groove;
-		border-radius: 5%;
-		background-color: white;
-	}
-
-
-
-
-	.picture2 {
-		flex: 0 0 calc(33.33% - 20px);
-		height: 350px;
-		margin-right: 20px;
-		margin-bottom: 150px;
-		background-color: #eee;
-		width: 100%;
-		position: relative;
-		overflow: hidden;
-		margin-top: 5%;
 	}
 
 	body main img {
