@@ -54,7 +54,43 @@
             <img src="asset/hotel.png" alt="hotel" class="img-fluid" />
         </div>
         <!-- Every page contains a title -->
+        <hr>
         <h1 class="title">Stays</h1>
+        <hr>
+        <p id="description">
+            Each of our stays is carefully selected for its unique character and quality, ensuring that you'll enjoy a comfortable and memorable stay. From the finest linens to the latest technology, we've thought of everything to make your stay as enjoyable as possible.
+        </p>
+
+
+
+        <div class="customer-service">
+            <div class="container" style="padding-top:25px; padding-bottom:25px;">
+                <div class="row justify-content-center">
+                    <div class="col-11">
+                        <h2>Popular car hire brands</h2>
+                    </div>
+                    <div class="col-2">
+                        <img src="asset/hotels/hotellogo1.png" alt="BLUESTEM HOTEL" class="image">
+                    </div>
+                    <div class="col-2">
+                        <img src="asset/hotels/hotellogo2.png" alt="TORVOK HOTEL" class="image">
+                    </div>
+                    <div class="col-2">
+                        <img src="asset/hotels/hotellogo3.png" alt="BASECAMP" class="image">
+                    </div>
+                    <div class="col-2">
+                        <img src="asset/hotels/hotellogo4.png" alt="MOUNTAIN LODGE" class="image">
+                    </div>
+                    <div class="col-2">
+                        <img src="asset/hotels/hotellogo5.png" alt="KAVELRI GRAND" class="image">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
         <div class="container pb-2">
             <div class="row justify-content-md-center">
                 <div class="card text-white mx-3 my-3">
@@ -105,6 +141,36 @@
                     </div>
                     <a href="checkin.html" class="btn btn-outline-dark">Rent</a>
                 </div>
+
+                <div class="card  text-white mx-3 my-3">
+                    <img class="card-img-top" src="asset/hotels/hotel6.png" alt="Hard Roch Hotel">
+                    <div class="card-body">
+                        <h4 class="card-title">Hard Roch Hotel</h4>
+                        <p class="card-text">Location : London</p>
+                        <p class="card-text">Price : 133 RO for 1 night</p>
+                    </div>
+                    <a href="checkin.html" class="btn btn-outline-dark">Rent</a>
+                </div>
+
+                <div class="card  text-white mx-3 my-3">
+                    <img class="card-img-top" src="asset/hotels/hotel7.png" alt="Nobu Hotel">
+                    <div class="card-body">
+                        <h4 class="card-title">Nobu Hotel</h4>
+                        <p class="card-text">Location : London</p>
+                        <p class="card-text">Price : 260 RO for 1 night</p>
+                    </div>
+                    <a href="checkin.html" class="btn btn-outline-dark">Rent</a>
+                </div>
+
+                <div class="card  text-white mx-3 my-3">
+                    <img class="card-img-top" src="asset/hotels/hotel8.png" alt="Ritz Paris">
+                    <div class="card-body">
+                        <h4 class="card-title">Ritz Paris</h4>
+                        <p class="card-text">Location : France</p>
+                        <p class="card-text">Price : 243 RO for 1 night</p>
+                    </div>
+                    <a href="checkin.html" class="btn btn-outline-dark">Rent</a>
+                </div>
             </div>
         </div>
     </main>
@@ -139,6 +205,27 @@
 </html>
 
 <style>
+        body main .customer-service .container img {
+        border-radius: 5px;
+        border: 2px solid #5c5b5b;
+    }
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+        body main p#description {
+        width: 50%;
+        margin: auto;
+        color: #F2F2F2;
+        font-size: 20px;
+        text-align: center;
+        text-shadow: 2px 1px 5px rgba(242, 244, 243, 0.4);
+    }
     div.card {
         width: 25%;
         height: 25rem;
@@ -164,4 +251,10 @@
     .card-text {
         text-align: justify;
     }
+    .image {
+        width: 200px; /* You can set the dimensions to whatever you want */
+        height: 200px;
+        object-fit: cover;
+    }
+
 </style>
