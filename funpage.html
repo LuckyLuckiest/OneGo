@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="styles/web-uni.css">
     <link rel="stylesheet" href="styles/navigation.css">
     <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/game.css">
     <title>One Go</title>
 </head>
 
@@ -51,13 +52,15 @@
     </header>
 
     <main>
+        <!-- Every page contains a title -->
+        <h1 class="title">Jumper</h1>
 
-        <div class="container fun">
-            <div class="row justify-content-md-center">
-
-            </div>
+        <!-- Game canvas -->
+        <div id="fun">
+            <div id="player"></div>
+            <div id="obs"></div>
         </div>
-
+        <script src="scripts/game.js"></script>
     </main>
 
     <footer>
@@ -89,11 +92,11 @@
 </html>
 
 <style>
-    body main div.container.fun {
-        margin-top: 200px;
+    body main #fun {
+        height: 500px;
+        width: 1200px;
         background-color: white;
         border-radius: 5px;
-        height: 500px;
-        width: 1000px;
+        margin: auto;
     }
 </style>
