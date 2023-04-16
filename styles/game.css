@@ -2,10 +2,11 @@
     width: 50px;
     height: 50px;
     background-image: url("/assets/game/dino.png");
+    border: 1px solid black;
     background-size: 50px 50px;
     position: relative;
-    top: 410px;
-    right: -20px;
+    top: 400px;
+    left: 20px;
 }
 
 .move {
@@ -28,7 +29,7 @@
 
 .jump {
     background-image: url("/assets/game/dino.png");
-    animation: jump 0.3s linear;
+    animation: jump 0.5s linear;
 }
 
 @keyframes jump {
@@ -37,18 +38,50 @@
     }
 
     30% {
-        top: 300px;
+        top: 340px;
     }
 
     50% {
-        top: 250px;
+        top: 300px;
     }
 
-    80% {
-        top: 350px;
+    70% {
+        top: 340px;
     }
 
     100% {
-        top: 410px;
+        top: 400px;
     }
+}
+
+#obs {
+    width: 30px;
+    height: 60px;
+    background-color: red;
+    border: 1px solid black;
+    position: relative;
+    top: 340px;
+    right: -1150px;
+    overflow: hidden;
+}
+
+.obsMove {
+    animation: obsMove 3s infinite linear;
+}
+
+@keyframes obsMove {
+    0% {
+        right: -1150px;
+    }
+    100% {
+        right: 0px;
+    }
+}
+
+#background {
+    height: 50px;
+    width: 1200px;
+    position: relative;
+    background-image: url(/assets/);
+    top: 340px;
 }
