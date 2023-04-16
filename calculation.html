@@ -1,59 +1,57 @@
 <html lang="en">
 
 <head>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-	<link rel="stylesheet" href="styles/bootstrap.min.css">
-	<link rel="stylesheet" href="styles/web-uni.css">
-	<link rel="stylesheet" href="styles/navigation.css">
-	<link rel="stylesheet" href="styles/footer.css">
-	<title>One Go</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/web-uni.css">
+    <link rel="stylesheet" href="styles/navigation.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <title>One Go</title>
 </head>
 
 <body>
-	<!-- This is the navigation tab and would be placed at the top of every page -->
-	<header>
-		<div class="logo">
-			<a href="index.html"><img src="asset/logo.png" /></a>
-		</div>
-		<nav>
-			<ul>
-				<a href="index.html">
-					<li>Home</li>
-				</a>
-				<li class="dropdown">
-					Services <span class="bi bi-caret-down-fill" style="font-size: 10px;"></span>
-					<ul>
-						<a href="car-rental.html">
-							<li>Car rentals <span class="bi bi-car-front-fill"></span></li>
-						</a>
-						<a href="flights.html">
-							<li>Flights <span class="bi bi-airplane-fill"></span></li>
-						</a>
-						<a href="stays.html">
-							<li>Stays <span class="bi bi-building-fill"></span></li>
-						</a>
-					</ul>
-				</li>
-				<a href="contact.html">
-					<li>Contact Us</li>
-				</a>
-				<a href="about.html">
-					<li>About Us</li>
-				</a>
-				<a href="login.html" target="_blank">
-					<li class="split">Log in</li>
-				</a>
-			</ul>
-		</nav>
-	</header>
-    <!-- All the content of the page is here -->
-    <div class="picture">
-        <img src="asset/cash.jpg" alt="Picture">
-    </div>
+    <!-- This is the navigation tab and would be placed at the top of every page -->
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="asset/logo.png" /></a>
+        </div>
+        <nav>
+            <ul>
+                <a href="index.html">
+                    <li>Home</li>
+                </a>
+                <li class="dropdown">
+                    Services <span class="bi bi-caret-down-fill" style="font-size: 10px;"></span>
+                    <ul>
+                        <a href="car-rental.html">
+                            <li>Car rentals <span class="bi bi-car-front-fill"></span></li>
+                        </a>
+                        <a href="flights.html">
+                            <li>Flights <span class="bi bi-airplane-fill"></span></li>
+                        </a>
+                        <a href="stays.html">
+                            <li>Stays <span class="bi bi-building-fill"></span></li>
+                        </a>
+                    </ul>
+                </li>
+                <a href="contact.html">
+                    <li>Contact Us</li>
+                </a>
+                <a href="about.html">
+                    <li>About Us</li>
+                </a>
+                <a href="login.html" target="_blank">
+                    <li class="split">Log in</li>
+                </a>
+            </ul>
+        </nav>
+    </header>
     <main>
-		<!-- Every page contains a title -->
-    <head>
-        <title>Calculation page</title>
+        <!-- All the content of the page is here -->
+        <div class="picture">
+            <img src="asset/cash.jpg" alt="Picture">
+        </div>
+        <!-- Every page contains a title -->
         <style>
             /* Add some basic styling to the page */
             main {
@@ -63,46 +61,48 @@
                 font-size: larger;
                 text-align: center;
             }
-             .container {
+
+            .container {
                 width: 600px;
-				border: 5px solid darkgreen;
-				border-radius: 5px;
+                border: 5px solid darkgreen;
+                border-radius: 5px;
                 border-style: dotted;
-				background-color: lightgreen;
-				font-size: large;
-				padding: 2% 5%; 
+                background-color: lightgreen;
+                font-size: large;
+                padding: 2% 5%;
                 margin-bottom: 3%;
-			}
-    
+            }
+
             .main form {
                 margin-bottom: 50px;
             }
-    
+
             .main input[type="submit"] {
                 background-color: greenyellow;
                 color: black;
                 padding: 10px;
                 border: none;
                 cursor: pointer;
-                transition: all 0.3s ease-in-out; 
+                transition: all 0.3s ease-in-out;
             }
+
             .main input[type="submit"]:hover {
-			background-color: darkgreen; 
-		    }
-    
+                background-color: darkgreen;
+            }
+
             .main input[type="text"] {
                 padding: 5px;
                 border: 1px solid #ccc;
                 border-radius: 4px;
                 margin-bottom: 10px;
             }
-    
-            .main label{
+
+            .main label {
                 display: block;
                 margin-bottom: 5px;
                 font-weight: bold;
             }
-    
+
             .error {
                 color: red;
                 font-weight: bold;
@@ -120,36 +120,28 @@
                 margin-left: 5px;
                 display: inline;
             }
-
         </style>
-    </head>
-    <body>
-        
+
         <h1 class="title">Bill Calculator</h1>
         <div class="container">
-        <form class="main" id="bill-form">
-            <label class="main" for="subtotal">Subtotal ($):</label>
-            <input class="main" type="text" id="subtotal" name="subtotal" required style="margin-bottom: 35px;">
+            <form class="main" id="bill-form">
+                <label class="main" for="subtotal">Subtotal ($):</label>
+                <input class="main" type="text" id="subtotal" name="subtotal" required style="margin-bottom: 35px;">
 
-            <label class="main" for="age">Age:</label>
-            <input class="main" type="text" id="age" name="age" style="margin-bottom: 35px;"><br>
-    
-    
-            <label class="main" style="margin-bottom:35px;">Discount (%): <br><br><span id="discount-display"></span></label>
-    
-            <input class="main" type="submit" value="Calculate" style="margin-bottom: 20px; margin-top:35px ;">
-            
-        </form>
-        
-        <div id="result" style="margin-bottom: 40px;  color: black;
-        padding: 5px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        background-color: #eee;
-        padding-right: 170px;
-        padding-bottom: 30px;
-        margin-left: 5px;
-        display: inline-block;"></div>
+                <label class="main" for="age">Age:</label>
+                <input class="main" type="text" id="age" name="age" style="margin-bottom: 35px;"><br>
+
+
+                <label class="main" style="margin-bottom:35px;">Discount (%): <br><br><span
+                        id="discount-display"></span></label>
+
+                <input class="main" type="submit" value="Calculate" style="margin-bottom: 20px; margin-top:35px ;">
+
+            </form>
+
+            <div id="result"
+                style="margin-bottom: 40px;color: black;padding: 5px;border: 1px solid #ccc;border-radius: 4px;background-color: #eee;padding-right: 170px;padding-bottom: 30px;margin-left: 5px;display: inline-block;">
+            </div>
         </div>
         <script>
 
@@ -159,62 +151,60 @@
             const ageInput = document.getElementById('age');
             const resultDiv = document.getElementById('result');
 
-            let discount=0;
+            let discount = 0;
 
-            
-		ageInput.addEventListener('change', () => {
-			const age = Number(ageInput.value);
 
-			if (age > 60 || age < 10) {
-				discount = 10;
-			} else {
-				discount = 0;
-			}
-            
-			discountDisplay.textContent = `${discount}%`;
-		});
-    
+            ageInput.addEventListener('change', () => {
+                const age = Number(ageInput.value);
+
+                if (age > 60 || age < 10) {
+                    discount = 10;
+                } else {
+                    discount = 0;
+                }
+
+                discountDisplay.textContent = `${discount}%`;
+            });
+
             form.addEventListener('submit', (event) => {
-               
+
                 event.preventDefault();
-    
+
                 const subtotal = Number(subtotalInput.value);
                 const age = Number(ageInput.value);
-    
-			let total = subtotal;
-			total *= (100 - discount) / 100;
+
+                let total = subtotal;
+                total *= (100 - discount) / 100;
 
                 resultDiv.innerHTML = `Total cost: $${total.toFixed(2)}`;
             });
         </script>
-    </body>
     </main>
-<!-- This would hold the footer of the page -->
-<footer>
-    <h2>One Go</h2>
-    <ul id="social">
-        <a href="https://gmail.com" target="_blank">
-            <li class="bi bi-envelope"></li>
-        </a>
-        <a href="https://whatsapp.com" target="_blank">
-            <li class="bi bi-whatsapp"></li>
-        </a>
-        <a href="https://instagram.com" target="_blank">
-            <li class="bi bi-instagram"></li>
-        </a>
-        <a href="https://youtube.com" target="_blank">
-            <li class="bi bi-youtube"></li>
-        </a>
-        <a href="https://tiktok.com" target="_blank">
-            <li class="bi bi-tiktok"></li>
-        </a>
-        <a href="https://twitter.com" target="_blank">
-            <li class="bi bi-twitter"></li>
-        </a>
-    </ul>
-    <p>Copyright &copy; 2023 OneGo</p>
-</footer>
+    <!-- This would hold the footer of the page -->
+    <footer>
+        <h2>One Go</h2>
+        <ul id="social">
+            <a href="https://gmail.com" target="_blank">
+                <li class="bi bi-envelope"></li>
+            </a>
+            <a href="https://whatsapp.com" target="_blank">
+                <li class="bi bi-whatsapp"></li>
+            </a>
+            <a href="https://instagram.com" target="_blank">
+                <li class="bi bi-instagram"></li>
+            </a>
+            <a href="https://youtube.com" target="_blank">
+                <li class="bi bi-youtube"></li>
+            </a>
+            <a href="https://tiktok.com" target="_blank">
+                <li class="bi bi-tiktok"></li>
+            </a>
+            <a href="https://twitter.com" target="_blank">
+                <li class="bi bi-twitter"></li>
+            </a>
+        </ul>
+        <p>Copyright &copy; 2023 OneGo</p>
+    </footer>
 </body>
-
 
 </html>
