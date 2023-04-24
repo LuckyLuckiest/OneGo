@@ -162,33 +162,34 @@
 				padding: 2% 5%; 
 				margin-bottom: 50%;
 				margin-top: 6%;
+				margin-left: 320px;
 			}
 			  </style>
 			  <script>
 				function flight(flightNumber, departureCity, departureTime, arrivalCity, arrivalTime, layovers, price) {
-                 this.flightNumber = flightNumber;
-                 this.departureCity = departureCity;
-                 this.departureTime = departureTime;
-                 this.arrivalCity = arrivalCity;
-                 this.arrivalTime = arrivalTime;
-                 this.layovers = layovers;
-                 this.price = price;
+                 this.flightNumber= flightNumber;
+                 this.departureCity= departureCity;
+                 this.departureTime= departureTime;
+                 this.arrivalCity= arrivalCity;
+                 this.arrivalTime= arrivalTime;
+                 this.layovers= layovers;
+                 this.price= price;
 				 this.selected= false;
                 }
 				function flightCollection() {
-                 this.flights = [
-                  new flight('FL001', 'New York', '10:00', 'Dubai', '19:00', '1 Stop', '1500$'),
-                  new flight('FL002', 'Dubai', '18:00', 'Delhi', '22:00', '2 Stops', '500$'),
-                  new flight('FL003', 'Delhi', '14:00', 'New York', '21:00', '1 Stop', '1200$'),
-                  new flight('FL004', 'New York', '09:00', 'Delhi', '19:00', '2 Stops', '900$'),
-                  new flight('FL005', 'Delhi', '06:00', 'Dubai', '12:00', '2 Stops', '500$'),
-                  new flight('FL006', 'Dubai', '00:00', 'New York', '17:00', '2 Stops', '1100$'),
-                  new flight('FL007', 'Dubai', '04:00', 'Muscat', '07:00', '1 Stop', '150$'),
-                  new flight('FL008', 'Muscat', '09:00', 'New York', '20:00', '2 Stops', '1300$'),
-                  new flight('FL009', 'Muscat', '20:00', 'Delhi', '00:00', '1 Stop', '300$'),
-                  new flight('FL010', 'New York', '02:00', 'Muscat', '20:00', '1 Stop', '1600$')
+                 this.flights= [
+                  new flight('FL001', 'New York', '10:00', 'Dubai', '19:00', '1 Stop', '570 OMR'),
+                  new flight('FL002', 'Dubai', '18:00', 'Delhi', '22:00', '2 Stops', '190 OMR'),
+                  new flight('FL003', 'Delhi', '14:00', 'New York', '21:00', '1 Stop', '456 OMR'),
+                  new flight('FL004', 'New York', '09:00', 'Delhi', '19:00', '2 Stops', '342 OMR'),
+                  new flight('FL005', 'Delhi', '06:00', 'Dubai', '12:00', '2 Stops', '190 OMR'),
+                  new flight('FL006', 'Dubai', '00:00', 'New York', '17:00', '2 Stops', '418 OMR'),
+                  new flight('FL007', 'Dubai', '04:00', 'Muscat', '07:00', '1 Stop', '57 OMR'),
+                  new flight('FL008', 'Muscat', '09:00', 'New York', '20:00', '2 Stops', '495 OMR'),
+                  new flight('FL009', 'Muscat', '20:00', 'Delhi', '00:00', '1 Stop', '114 OMR'),
+                  new flight('FL010', 'New York', '02:00', 'Muscat', '20:00', '1 Stop', '610 OMR')
                 ];
-                this.getSelectedFlight = function() {
+                this.getSelectedFlight= function() {
                 for (var i = 0; i < this.flights.length; i++) {
                 if (this.flights[i].selected) {
                 return this.flights[i];
@@ -203,26 +204,26 @@
 					 function displayFlights(flights) {
                       const tableBody = document.querySelector('#flightsTable tbody');
                       flights.forEach((flight) => {
-                      const row = tableBody.insertRow();
-                      row.insertCell().textContent = flight.flightNumber;
-                      row.insertCell().textContent = flight.departureCity;
-                      row.insertCell().textContent = flight.departureTime;
-                      row.insertCell().textContent = flight.arrivalCity;
-                      row.insertCell().textContent = flight.arrivalTime;
-                      row.insertCell().textContent = flight.layovers;
-                      row.insertCell().textContent = flight.price;
+                      const row= tableBody.insertRow();
+                      row.insertCell().textContent= flight.flightNumber;
+                      row.insertCell().textContent= flight.departureCity;
+                      row.insertCell().textContent= flight.departureTime;
+                      row.insertCell().textContent= flight.arrivalCity;
+                      row.insertCell().textContent= flight.arrivalTime;
+                      row.insertCell().textContent= flight.layovers;
+                      row.insertCell().textContent= flight.price;
                       });
                      }
 
 					function searchFlights() {
 
-                      const searchValue = document.getElementById("flightNum").value.toLowerCase();
-                      const table = document.getElementById("flightsTable").getElementsByTagName("tbody")[0];
-                      const rows = table.getElementsByTagName("tr");
+                      const searchValue= document.getElementById("flightNum").value.toLowerCase();
+                      const table= document.getElementById("flightsTable").getElementsByTagName("tbody")[0];
+                      const rows= table.getElementsByTagName("tr");
                       for (let i = 0; i < rows.length; i++) {
-                      const flightnum = rows[i].getElementsByTagName("td")[0].innerHTML.toLowerCase();
+                      const flightnum= rows[i].getElementsByTagName("td")[0].innerHTML.toLowerCase();
                       if (flightnum.includes(searchValue)) {
-                      rows[i].style.display = "";
+                      rows[i].style.display= "";
                     } else {
                       rows[i].style.display = "none";
                     }
@@ -231,29 +232,29 @@
                     }
 					 function addFlight() {
   
-                      const flightNumber = document.getElementById("flightNumber").value;
-                      const departureCity = document.getElementById("departureCity").value;
-                      const departureTime = document.getElementById("departureTime").value;
+                      const flightNumber= document.getElementById("flightNumber").value;
+                      const departureCity= document.getElementById("departureCity").value;
+                      const departureTime= document.getElementById("departureTime").value;
                       const arrivalCity = document.getElementById("arrivalCity").value;
-                      const arrivalTime = document.getElementById("arrivalTime").value;
+                      const arrivalTime= document.getElementById("arrivalTime").value;
                       const layovers = document.getElementById("layovers").value;
-                      const price = document.getElementById("price").value;
-                      const table = document.getElementById("flightsTable").getElementsByTagName("tbody")[0];
+                      const price= document.getElementById("price").value;
+                      const table= document.getElementById("flightsTable").getElementsByTagName("tbody")[0];
                       const newRow = table.insertRow(-1);
-                      const flightNumberCell = newRow.insertCell(0);
+                      const flightNumberCell= newRow.insertCell(0);
                       const departureCityCell = newRow.insertCell(1);
-                      const departureTimeCell = newRow.insertCell(2);
-                      const arrivalCityCell = newRow.insertCell(3);
+                      const departureTimeCell= newRow.insertCell(2);
+                      const arrivalCityCell= newRow.insertCell(3);
                       const arrivalTimeCell = newRow.insertCell(4);
-                      const layoversCell = newRow.insertCell(5);
+                      const layoversCell= newRow.insertCell(5);
                       const priceCell = newRow.insertCell(6);
-                      flightNumberCell.innerHTML = flightNumber;
+                      flightNumberCell.innerHTML= flightNumber;
                       departureCityCell.innerHTML = departureCity;
-                      departureTimeCell.innerHTML = departureTime;
+                      departureTimeCell.innerHTML= departureTime;
                       arrivalCityCell.innerHTML = arrivalCity;
-                      arrivalTimeCell.innerHTML = arrivalTime;
+                      arrivalTimeCell.innerHTML= arrivalTime;
                       layoversCell.innerHTML = layovers;
-                      priceCell.innerHTML = price;
+                      priceCell.innerHTML= price;
                       }
 			</script>
 			</head>

@@ -128,64 +128,266 @@
         <h1 class="title">Bill Calculator</h1>
         <div class="container">
         <form class="main" id="bill-form">
-            <label class="main" for="subtotal">Subtotal ($):</label>
-            <input class="main" type="text" id="subtotal" name="subtotal" required style="margin-bottom: 35px;">
-
-            <label class="main" for="age">Age:</label>
-            <input class="main" type="text" id="age" name="age" style="margin-bottom: 35px;"><br>
-    
-    
+            <label class="main" for="select-opt">Select an option:</label>
+            <select class="main" id="select-opt" name="select-opt" required style="margin-bottom: 35px;">
+              <option value="car">Rent a car</option>
+              <option value="flight">Book a flight</option>
+              <option value="stay">Book a stay</option>
+            </select>
+            <div id="car-options" style="display:none;">
+              <label class="main" for="car-options"> Select a car</label>
+              <select id="car-select">
+              <option value="lambo">Lamborghini</option>
+              <option value="rolls">Rolls-Royce</option>
+              <option value="buggati">Buggati</option>
+              <option value="mclaren">Mclaren 720s</option>
+              <option value="ferrari">Ferrari</option>
+              <option value="audi">Audi R8</option>
+              <option value="camry">Toyota Camry</option>
+              <option value="accord">Honda Accord</option>
+              <option value="sonata">Hyundai Sonata</option>
+              <option value="corolla">Toyota Corolla</option>
+              <option value="civic">Honda Civic</option>
+              <option value="accent">Hyundai Accent</option>
+              <option value="tesla">Tesla x</option>
+              <option value="hummer">Hummer ev</option>
+              <option value="rivian">Rivian R1S</option>
+              </select>
+              </div>
+              <div id="num-nights" style="display: none;">
+              <label for="night-num"> Number of nights:</label>
+              <input type="number" id="night-num" name="night-num">
+              </div>
+              <div id="flight-options" style="display:none;">
+                <label class="main" for="flight-options"> Select a flight</label>
+                <select id="flight-select">
+                <option value="fl001">FL001</option>
+                <option value="fl002">FL002</option>
+                <option value="fl003">FL003</option>
+                <option value="fl004">FL004</option>
+                <option value="fl005">FL005</option>
+                <option value="fl006">FL006</option>
+                <option value="fl007">FL007</option>
+                <option value="fl008">FL008</option>
+                <option value="fl009">FL009</option>
+                <option value="fl010">FL010</option>
+                </select>
+                </div>
+              <div id="stay-options" style="display:none;">
+                <label class="main" for="stay-options"> Select a hotel</label>
+                <select id="hotel-select">
+                  <option value="kompose">Kompose Boutique Hotel Sarasota</option>
+                  <option value="kanaskis">Kananaskis Mountain Lodge</option>
+                  <option value="arizona">Arizona Biltmore</option>
+                  <option value="tropical">Tropical Islands</option>
+                  <option value="komp">Kompose Boutique Hotel Sarasota</option>
+                  <option value="hard">Hard Roch Hotel</option>
+                  <option value="nobu">Nobu Hotel</option>
+                  <option value="ritz">Ritz Paris</option>
+                </select>
+              </div>
+            <input class="main" type="text" id="age" name="age" style="margin-bottom: 35px; display: none;"><br>
             <label class="main" style="margin-bottom:35px;">Discount (%): <br><br><span id="discount-display"></span></label>
-    
-            <input class="main" type="submit" value="Calculate" style="margin-bottom: 20px; margin-top:35px ;">
-            
+            <input class="main" type="submit" value="Calculate" style="margin-bottom: 20px; margin-top:35px ;"><br>
+            <label class="main" for="result">Total:</label>
+            <div  id="result" style="margin-bottom: 40px;  color: black;
+             padding: 5px;
+             border: 1px solid #ccc;
+             border-radius: 4px;
+             background-color: #eee;
+             padding-right: 170px;
+             padding-bottom: 30px;
+             margin-left: 5px;
+             display: inline-block"></div>
         </form>
-        
-        <div id="result" style="margin-bottom: 40px;  color: black;
-        padding: 5px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        background-color: #eee;
-        padding-right: 170px;
-        padding-bottom: 30px;
-        margin-left: 5px;
-        display: inline-block;"></div>
-        </div>
         <script>
-
-            const form = document.getElementById('bill-form');
-            const subtotalInput = document.getElementById('subtotal');
-            const discountDisplay = document.getElementById('discount-display');
-            const ageInput = document.getElementById('age');
-            const resultDiv = document.getElementById('result');
-
-            let discount=0;
-
-            
-		ageInput.addEventListener('change', () => {
-			const age = Number(ageInput.value);
-
-			if (age > 60 || age < 10) {
-				discount = 10;
-			} else {
-				discount = 0;
+            const form= document.getElementById('bill-form');
+            const subtotalInput= document.getElementById('subtotal');
+            const discountDisplay= document.getElementById('discount-display');
+            const ageInput= document.getElementById('age');
+            const age=parseInt(ageInput.value);
+            const resultDiv= document.getElementById('result');
+            const selection= document.getElementById('select-opt');
+            const carselect= document.getElementById('car-options');
+            const carselects= document.getElementById('car-select').value;
+            const flightselect= document.getElementById('flight-options');
+            const flightselects= document.getElementById('flight-select').value;
+            const stayselect= document.getElementById('stay-options');
+            const stayselects= document.getElementById('hotel-select').value;
+            const numselect= document.getElementById('num-nights');
+            const nightNum= parseInt(document.getElementById('night-num').value);
+            const totalsConatiner= document.getElementById('totalConatiner');
+            const select=document.getElementById('select-opt').value;
+            selection.addEventListener('change', () => {
+            if (selection.value == 'car') {
+             carselect.style.display = 'block', carselect.style.marginBottom='25px';
+             flightselect.style.display = 'none';
+             stayselect.style.display = 'none';
+             numselect.style.display='none';
+          } else if (selection.value == 'flight') {
+             carselect.style.display = 'none';
+             flightselect.style.display = 'block', flightselect.style.marginBottom='25px';
+             stayselect.style.display = 'none';
+             numselect.style.display='none';
+          } else if (selection.value =='stay') {
+             carselect.style.display ='none';
+             flightselect.style.display ='none';
+             stayselect.style.display ='block',stayselect.style.marginBottom='25px';
+             numselect.style.display='block', numselect.style.marginBottom='25px';
+          } else {
+             carselect.style.display ='none';
+             flightselect.style.display ='none';
+             stayselect.style.display ='none';
+             numselect.style.display='none';
+          }
+          });
+          
+             let discount=0;
+		     numselect.addEventListener('change', () => {
+             const nightNum= parseInt(document.getElementById('night-num').value);
+			 if (nightNum > 2) {
+				discount = 15;
 			}
-            
 			discountDisplay.textContent = `${discount}%`;
-		});
-    
-            form.addEventListener('submit', (event) => {
-               
-                event.preventDefault();
-    
-                const subtotal = Number(subtotalInput.value);
-                const age = Number(ageInput.value);
-    
-			let total = subtotal;
-			total *= (100 - discount) / 100;
-
-                resultDiv.innerHTML = `Total cost: $${total.toFixed(2)}`;
             });
+		     carselect.addEventListener('change', () => {
+			discountDisplay.textContent = `${discount}%`;
+            });
+            flightselect.addEventListener('change', () => {
+			discountDisplay.textContent = `${discount}%`;
+            });
+                form.addEventListener('submit', (event)=>{
+                event.preventDefault();
+                const form= document.getElementById('bill-form');
+            const subtotalInput= document.getElementById('subtotal');
+            const discountDisplay= document.getElementById('discount-display');
+            const ageInput= document.getElementById('age');
+            const age=parseInt(ageInput.value);
+            const resultDiv= document.getElementById('result');
+            const selection= document.getElementById('select-opt');
+            const carselect= document.getElementById('car-options');
+            const carselects= document.getElementById('car-select').value;
+            const flightselect= document.getElementById('flight-options');
+            const flightselects= document.getElementById('flight-select').value;
+            const stayselect= document.getElementById('stay-options');
+            const stayselects= document.getElementById('hotel-select').value;
+            const numselect= document.getElementById('num-nights');
+            const nightNum= parseInt(document.getElementById('night-num').value);
+            const totalsConatiner= document.getElementById('totalConatiner');
+            const select=document.getElementById('select-opt').value;
+                let price=0;
+                if(selection.value=='car'){
+                if(carselects=='lambo'){
+                    price=1200;
+                }
+                else if(carselects=='buggati'){
+                    price=1500;
+                }
+                else if(carselects=='mclaren'){
+                    price=1500;
+                }
+                else if(carselects=='rolls'){
+                    price=2000;
+                }
+                else if(carselects=='ferrari'){
+                    price=1200;
+                }
+                else if(carselects=='audi'){
+                    price=900;
+                }
+                else if(carselects=='camry'){
+                    price=100;
+                }
+                else if(carselects=='accord'){
+                    price=80;
+                }
+                else if(carselects=='sonata'){
+                    price=75;
+                }
+                else if(carselects=='corolla'){
+                    price=70;
+                }
+                else if(carselects=='civic'){
+                    price=70;
+                }
+                else if(carselects=='accent'){
+                    price=70;
+                }
+                else if(carselects=='tesla'){
+                    price=130;
+                }
+                else if(carselects=='hummer'){
+                    price=150;
+                }
+                else if(carselects=='rivian'){
+                    price=170;
+                }
+               }
+                else if(selection.value=='flight'){
+                 if(flightselects=='fl001'){
+                    price=570;
+                }
+                else if(flightselects=='fl002'){
+                    price=190;
+                }
+                else if(flightselects=='fl003'){
+                    price=456;
+                }
+                else if(flightselects=='fl004'){
+                    price=342;
+                }
+                else if(flightselects=='fl005'){
+                    price=190;
+                }
+                else if(flightselects=='fl006'){
+                    price=418;
+                }
+                else if(flightselects=='fl007'){
+                    price=57;
+                }
+                else if(flightselects=='fl008'){
+                    price=495;
+                }
+                else if(flightselects=='fl009'){
+                    price=114;
+                }
+                else if(flightselects=='fl010'){
+                    price=610;
+                }
+            }
+                else if(selection.value=='stay'){
+    
+                if(stayselects=='kompose'){
+                    price=33*nightNum;
+                }
+                else if(stayselects=='kanaskis'){
+                    price=28*nightNum;
+                }
+                else if(stayselects=='arizona'){
+                    price=55*nightNum;
+                }
+                else if(stayselects=='tropical'){
+                    price=34*nightNum;
+                }
+                else if(stayselects=='komp'){
+                    price=87*nightNum;
+                }
+                else if(stayselects=='hard'){
+                    price=133*nightNum;
+                }
+                else if(stayselects=='nobu'){
+                    price=260*nightNum;
+                }
+                else if(stayselects=='ritz'){
+                    price=243*nightNum;
+                }   
+                }
+                if (nightNum>2) {
+                price=price* 0.85;
+                price=price.toFixed(2);
+                }
+            resultDiv.innerText =price+" OMR";
+             });
         </script>
     </body>
     </main>
