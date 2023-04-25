@@ -179,6 +179,12 @@
             <label for="radio2" class="mannual-btn"></label>
             <label for="radio3" class="mannual-btn"></label>
         </div>
+        <!-- Manual navigation-->
+        <div class="navigation-mannual">
+            <label for="radio1" class="mannual-btn"></label>
+            <label for="radio2" class="mannual-btn"></label>
+            <label for="radio3" class="mannual-btn"></label>
+        </div>
     </div>
     <!-- Album JS-->
     <script>
@@ -189,7 +195,25 @@
             if (counter > 3) {
                 counter = 1;
             }
-        }, 3000)
+        }, 4000)
+    </script>
+    <!-- Time/Date Line-->
+    <div class="hwrap">
+        <div class="hmove">
+            <div class="hitem">
+                <p class="movingline">Today is <span id="p1"></span>, and the time is <span id="p2"></span>.</p>
+            </div>
+        </div>
+    </div>
+    <!-- date JS-->
+    <script>
+        setInterval(function () {
+            var date = new Date();
+            var current_date = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
+            document.getElementById("p1").innerHTML = current_date;
+            var current_time = date.getHours() + ":" + date.getMinutes();
+            document.getElementById("p2").innerHTML = current_time;
+        }, 1000)
     </script>
 
     <!-- This would hold the footer of the page -->
@@ -363,5 +387,43 @@
 
     #radio3:checked~.navigation-auto .auto-btn-3 {
         background-color: white;
+    }
+
+    /*Time/Date line*/
+    .hwrap {
+        overflow: hidden;
+        background: #eee;
+        margin-top: 3rem;
+        background-color: rgba(119, 134, 127, 0.6);
+        border: 2px solid black;
+    }
+
+    .hmove {
+        display: flex;
+    }
+
+    .hitem {
+        flex-shrink: 0;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    .movingline {
+        margin: .5rem;
+    }
+
+    @keyframes tickerh {
+        0% {
+            transform: translate3d(100%, 0, 0);
+        }
+
+        100% {
+            transform: translate3d(-100%, 0, 0);
+        }
+    }
+
+    .hmove {
+        animation: tickerh linear 20s infinite;
     }
 </style>
