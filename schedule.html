@@ -51,6 +51,34 @@
 		<h1 class="title">Flights Schedule</h1>
 
 		<body>
+			<script>
+				function Flight(flightNumber, departureCity, departureTime, arrivalCity, arrivalTime, layovers, price) {
+                 this.flightNumber = flightNumber;
+                 this.departureCity = departureCity;
+                 this.departureTime = departureTime;
+                 this.arrivalCity = arrivalCity;
+                 this.arrivalTime = arrivalTime;
+                 this.layovers = layovers;
+                 this.price = price;
+                }
+				function Search(departureCity, arrivalCity, date) {
+                 this.departureCity = departureCity;
+                 this.arrivalCity = arrivalCity;
+                 this.date = date;
+                }
+				let flights = [
+                  new Flight('FL001', 'New York', '10:00', 'Dubai', '19:00', '1 Stop', '1500$'),
+                  new Flight('FL002', 'Dubai', '18:00', 'Delhi', '22:00', '2 Stops', '500$'),
+                  new Flight('FL003', 'Delhi', '14:00', 'New York', '21:00', '1 Stop', '1200$'),
+                  new Flight('FL004', 'New York', '09:00', 'Delhi', '19:00', '2 Stops', '900$'),
+                  new Flight('FL005', 'Delhi', '06:00', 'Dubai', '12:00', '2 Stops', '500$'),
+                  new Flight('FL006', 'Dubai', '00:00', 'New York', '17:00', '2 Stops', '1100$'),
+                  new Flight('FL007', 'Dubai', '04:00', 'Muscat', '07:00', '1 Stop', '150$'),
+                  new Flight('FL008', 'Muscat', '09:00', 'New York', '20:00', '2 Stops', '1300$'),
+                  new Flight('FL009', 'Muscat', '20:00', 'Delhi', '00:00', '1 Stop', '300$'),
+                  new Flight('FL010', 'New York', '02:00', 'Muscat', '20:00', '1 Stop', '1600$')
+                ];
+			</script>
 			<table style="font-size: x-large; color: white;">
 				<tr>
 					<th>Flight Number</th>
@@ -58,6 +86,8 @@
 					<th>Departure Time</th>
 					<th>Arrival City</th>
 					<th>Arrival Time</th>
+					<th>Layovers</th>
+					<th>Price</th>
 				</tr>
 				<tr>
 					<td>FL001</td>
@@ -65,6 +95,8 @@
 					<td>10:00</td>
 					<td>Dubai</td>
 					<td>19:00</td>
+					<td>1 Stop</td>
+					<td>1500$</td>
 					<td><input type="radio" name="flight"></td>
 				</tr>
 				<tr>
@@ -73,6 +105,8 @@
 					<td>18:00</td>
 					<td>Delhi</td>
 					<td>22:00</td>
+					<td>2 Stops</td>
+					<td>500$</td>
 					<td><input type="radio" name="flight"></td>
 				</tr>
 				<tr>
@@ -81,6 +115,8 @@
 					<td>14:00</td>
 					<td>New York</td>
 					<td>21:00</td>
+					<td>1 Stop</td>
+					<td>1200$</td>
 					<td><input type="radio" name="flight"></td>
 				</tr>
 				<tr>
@@ -89,6 +125,8 @@
 					<td>09:00</td>
 					<td>Delhi</td>
 					<td>19:00</td>
+					<td>2 Stops</td>
+					<td>900$</td>
 					<td><input type="radio" name="flight"></td>
 				</tr>
 				<tr>
@@ -97,6 +135,8 @@
 					<td>06:00</td>
 					<td>Dubai</td>
 					<td>12:00</td>
+					<td>2 Stops</td>
+					<td>500$</td>
 					<td><input type="radio" name="flight"></td>
 				</tr>
 				<tr>
@@ -105,6 +145,8 @@
 					<td>00:00</td>
 					<td>New York</td>
 					<td>17:00</td>
+					<td>2 Stops</td>
+					<td>1100$</td>
 					<td><input type="radio" name="flight"></td>
 				</tr>
 				<tr>
@@ -113,6 +155,8 @@
 					<td>04:00</td>
 					<td>Muscat</td>
 					<td>07:00</td>
+					<td>1 Stop</td>
+					<td>150$</td>
 					<td><input type="radio" name="flight"></td>
 				</tr>
 				<tr>
@@ -121,6 +165,8 @@
 					<td>09:00</td>
 					<td>New York</td>
 					<td>20:00</td>
+					<td>2 Stops</td>
+					<td>1300$</td>
 					<td><input type="radio" name="flight"></td>
 				</tr>
 				<tr>
@@ -129,6 +175,8 @@
 					<td>20:00</td>
 					<td>Delhi</td>
 					<td>00:00</td>
+					<td>1 Stop</td>
+					<td>300$</td>
 					<td><input type="radio" name="flight"></td>
 				</tr>
 				<tr>
@@ -137,10 +185,12 @@
 					<td>02:00</td>
 					<td>Muscat</td>
 					<td>20:00</td>
+					<td>1 Stop</td>
+					<td>1600$</td>
 					<td><input type="radio" name="flight"></td>
 				</tr>
 			</table>
-			<form action="https://www.makemytrip.com">
+			<form action="checkin.html">
 				<input
 					style="text-align: center;margin-left: 45%;margin-bottom: 3%;padding: 12px 24px;font-size: 24px;border-radius: 6px;"
 					type="submit" value="Book">
@@ -158,6 +208,9 @@
 				th{
 				  color:lightslategray ;
 				}
+				tr:nth-child(even) {
+		  	      background-color: grey; 
+		         }
 			  </style>
 			</head>
 		</body>
