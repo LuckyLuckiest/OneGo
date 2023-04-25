@@ -1,3 +1,11 @@
+#fun {
+    height: 500px;
+    width: 1200px;
+    background-color: white;
+    border-radius: 5px;
+    margin: auto;
+}
+
 #player {
     width: 50px;
     height: 50px;
@@ -38,15 +46,15 @@
     }
 
     30% {
-        top: 340px;
+        top: 330px;
     }
 
     50% {
-        top: 300px;
+        top: 280px;
     }
 
     70% {
-        top: 340px;
+        top: 330px;
     }
 
     100% {
