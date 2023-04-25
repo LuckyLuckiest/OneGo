@@ -27,17 +27,6 @@ function obsMove() {
         obs.classList.add("obsMove");
     }
 
-    let minDistance = 300; // minimum distance between obstacles
-    let maxDistance = 800; // maximum distance between obstacles
-    let obsDistance = Math.floor(Math.random() * (maxDistance - minDistance) + minDistance);
-
-    let obsRight = parseInt(getComputedStyle(obs).right); // current right position of the obstacle
-    if (obsRight >= 0) {
-        // reset obstacle position
-        obsRight = -1150;
-        obsDistance = Math.floor(Math.random() * (maxDistance - minDistance) + minDistance);
-    }
-
     setTimeout(function () {
         obs.remove();
     }, 3000);
