@@ -173,23 +173,41 @@
                 <div class="auto-btn-3"></div>
             </div>
         </div>
-            <!-- Manual navigation-->
-            <div class="navigation-mannual">
-                <label for="radio1" class="mannual-btn"></label>
-                <label for="radio2" class="mannual-btn"></label>
-                <label for="radio3" class="mannual-btn"></label>
-            </div>
+        <!-- Manual navigation-->
+        <div class="navigation-mannual">
+            <label for="radio1" class="mannual-btn"></label>
+            <label for="radio2" class="mannual-btn"></label>
+            <label for="radio3" class="mannual-btn"></label>
+        </div>
     </div>
     <!-- Album JS-->
     <script>
         var counter = 1;
-        setInterval(function(){
-            document.getElementById('radio'+counter).checked = true;
+        setInterval(function () {
+            document.getElementById('radio' + counter).checked = true;
             counter++
-            if(counter>3){
+            if (counter > 3) {
                 counter = 1;
             }
-        },3000)
+        }, 4000)
+    </script>
+    <!-- Time/Date Line-->
+    <div class="hwrap">
+        <div class="hmove">
+            <div class="hitem">
+                <p class="movingline">Today is <span id="p1"></span>, and the time is <span id="p2"></span>.</p>
+            </div>
+        </div>
+    </div>
+    <!-- date JS-->
+    <script>
+        setInterval( function (){
+        var date = new Date();
+        var current_date = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
+        document.getElementById("p1").innerHTML = current_date;
+        var current_time = date.getHours() + ":" + date.getMinutes();
+        document.getElementById("p2").innerHTML = current_time;
+        },1000)
     </script>
 
     <!-- This would hold the footer of the page -->
@@ -265,85 +283,139 @@
         justify-content: center;
         align-items: center;
     }
+
     /* album CSS*/
-    .slider{
-            width: 800px;
-            height: 500px;
-            border-radius: 10px;
-            overflow: hidden;
-            margin-left: auto;
-            margin-right: auto;
+    .slider {
+        width: 800px;
+        height: 500px;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .slides {
+        width: 500%;
+        height: 500px;
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .slides input {
+        display: none;
+    }
+
+    .slide {
+        width: 20%;
+        transition: 2s;
+    }
+
+    .slide img {
+        width: 800px;
+        height: 500px;
+    }
+
+    .navigation-mannual {
+        position: absolute;
+        width: 800px;
+        margin-top: -40px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .mannual-btn {
+        border: 2px solid white;
+        padding: 5px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 1s;
+    }
+
+    .mannual-btn:not(:last-child) {
+        margin-right: 40px;
+    }
+
+    .mannual-btn:hover {
+        background-color: gray;
+    }
+
+    #radio1:checked~.first {
+        margin-left: 0;
+    }
+
+    #radio2:checked~.first {
+        margin-left: -20%;
+    }
+
+    #radio3:checked~.first {
+        margin-left: -40%;
+    }
+
+    .navigation-auto {
+        position: absolute;
+        display: flex;
+        width: 800px;
+        justify-content: center;
+        margin-top: 460px;
+    }
+
+    .navigation-auto div {
+        border: 2px solid black;
+        padding: 5px;
+        border-radius: 10px;
+        transition: 1s;
+    }
+
+    .navigation-auto div:not(:last-child) {
+        margin-right: 40px;
+    }
+
+    #radio1:checked~.navigation-auto .auto-btn-1 {
+        background-color: white;
+    }
+
+    #radio2:checked~.navigation-auto .auto-btn-2 {
+        background-color: white;
+    }
+
+    #radio3:checked~.navigation-auto .auto-btn-3 {
+        background-color: white;
+    }
+
+    /*Time/Date line*/
+    .hwrap {
+        overflow: hidden;
+        background: #eee;
+        margin-top: 3rem;
+        background-color: rgba(119, 134, 127, 0.6);
+        border: 2px solid black;
+    }
+
+    .hmove {
+        display: flex;
+    }
+
+    .hitem {
+        flex-shrink: 0;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+    }
+    .movingline{
+        margin: .5rem;
+    }
+    @keyframes tickerh {
+        0% {
+            transform: translate3d(100%, 0, 0);
         }
-        .slides{
-           width: 500%;
-           height: 500px;
-           display: flex; 
-           margin-left: auto;
-           margin-right: auto;
+
+        100% {
+            transform: translate3d(-100%, 0, 0);
         }
-        .slides input{
-            display: none;
-        }
-        .slide{
-            width: 20%;
-            transition: 2s ;
-        }
-        .slide img{
-            width: 800px;
-            height: 500px;
-        }
-        .navigation-mannual{
-            position: absolute;
-            width: 800px;
-            margin-top: -40px;
-            display: flex;
-            justify-content: center;
-        }
-        .mannual-btn{
-            border: 2px solid white;
-            padding: 5px;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: 1s;
-        }
-        .mannual-btn:not(:last-child){
-            margin-right: 40px;
-        }
-        .mannual-btn:hover{
-            background-color: gray;
-        }
-        #radio1:checked ~ .first{
-            margin-left: 0;
-        }
-        #radio2:checked ~ .first{
-            margin-left: -20%;
-        }
-        #radio3:checked ~ .first{
-            margin-left: -40%;
-        }
-        .navigation-auto{
-          position: absolute;  
-          display: flex;
-          width: 800px;
-          justify-content: center;
-          margin-top: 460px;
-        }
-        .navigation-auto div{
-            border: 2px solid black;
-            padding: 5px;
-            border-radius: 10px;
-            transition: 1s;
-        }
-        .navigation-auto div:not(:last-child){
-            margin-right: 40px;
-        }
-        #radio1:checked ~.navigation-auto .auto-btn-1{
-            background-color: white;
-        }
-        #radio2:checked ~.navigation-auto .auto-btn-2{
-            background-color: white;
-        }
-        #radio3:checked ~.navigation-auto .auto-btn-3{
-            background-color: white;
-        }
+    }
+
+    .hmove {
+        animation: tickerh linear 20s infinite;
+    }
 </style>
