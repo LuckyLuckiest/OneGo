@@ -191,29 +191,40 @@
         var counter = 1;
         setInterval(function () {
             document.getElementById('radio' + counter).checked = true;
-            counter++
+            counter++;
             if (counter > 3) {
                 counter = 1;
             }
-        }, 4000)
+        }, 4000);
     </script>
     <!-- Time/Date Line-->
     <div class="hwrap">
         <div class="hmove">
             <div class="hitem">
-                <p class="movingline">Today is <span id="p1"></span>, and the time is <span id="p2"></span>.</p>
+                <p class="movingline">Welcome to OneGo website! Today is <span id="p1"></span>, and the time is <span id="p2"></span>.</p>
             </div>
         </div>
     </div>
-    <!-- date JS-->
+    <!-- date JS -->
     <script>
         setInterval(function () {
             var date = new Date();
-            var current_date = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
-            document.getElementById("p1").innerHTML = current_date;
-            var current_time = date.getHours() + ":" + date.getMinutes();
-            document.getElementById("p2").innerHTML = current_time;
-        }, 1000)
+            var currentDate = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
+            document.getElementById("p1").innerHTML = currentDate;
+            var hours = date.getHours();
+            var time = function() {
+                return hours < 12 ? "AM" : "PM";
+            };
+            var modifiedHours = function() {
+                return hours != 12 ? hours % 12 : hours;
+            };
+            var min = date.getMinutes();
+            var modifiedMinutes = function() {
+                return min < 10 ? "0" + min : min;
+            };
+            var currentTime = modifiedHours() + ":" + modifiedMinutes() + " " + time();
+            document.getElementById("p2").innerHTML = currentTime;
+        }, 1000);
     </script>
 
     <!-- This would hold the footer of the page -->
