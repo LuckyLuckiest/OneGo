@@ -47,11 +47,6 @@
         </nav>
     </header>
     <main>
-        <!-- All the content of the page is here -->
-        <div class="picture">
-            <img src="asset/cash.jpg" alt="Picture">
-        </div>
-        <!-- Every page contains a title -->
         <style>
             /* Add some basic styling to the page */
             main {
@@ -120,9 +115,23 @@
                 margin-left: 5px;
                 display: inline;
             }
-        </style>
 
-        <h1 class="title">Bill Calculator</h1>
+             .bill-image img {
+             display: flex;
+             width: 1368px;
+             margin-left: -3%;
+             height: 480px;
+             margin-top: -19px;
+            }
+
+            
+        </style>
+          <!-- All the content of the page is here -->
+          <div class="bill-image">
+            <img src="asset/cash.jpg" alt="Picture">
+        </div>
+        <!-- Every page contains a title -->
+        <h1 class="title" style="margin-top: 100px; margin-bottom: 50px;">Bill Calculator</h1>
         <div class="container">
         <form class="main" id="bill-form">
             <label class="main" for="select-opt">Select an option:</label>
@@ -275,49 +284,49 @@
                 let price=0;
                 if(selection.value=='car'){
                 if(carselects=='lambo'){
-                    price=1200;
+                    price=455;
                 }
                 else if(carselects=='buggati'){
-                    price=1500;
+                    price=570;
                 }
                 else if(carselects=='mclaren'){
-                    price=1500;
+                    price=570;
                 }
                 else if(carselects=='rolls'){
-                    price=2000;
+                    price=760;
                 }
                 else if(carselects=='ferrari'){
-                    price=1200;
+                    price=445;
                 }
                 else if(carselects=='audi'){
-                    price=900;
+                    price=340;
                 }
                 else if(carselects=='camry'){
-                    price=100;
+                    price=38;
                 }
                 else if(carselects=='accord'){
-                    price=80;
+                    price=30;
                 }
                 else if(carselects=='sonata'){
-                    price=75;
+                    price=27;
                 }
                 else if(carselects=='corolla'){
-                    price=70;
+                    price=25;
                 }
                 else if(carselects=='civic'){
-                    price=70;
+                    price=26;
                 }
                 else if(carselects=='accent'){
-                    price=70;
+                    price=25;
                 }
                 else if(carselects=='tesla'){
-                    price=130;
+                    price=50;
                 }
                 else if(carselects=='hummer'){
-                    price=150;
+                    price=60;
                 }
                 else if(carselects=='rivian'){
-                    price=170;
+                    price=65;
                 }
                }
                 else if(selection.value=='flight'){
@@ -386,6 +395,7 @@
             resultDiv.innerText =price+" OMR";
              });
         </script>
+
     </main>
     <!-- This would hold the footer of the page -->
     <footer>

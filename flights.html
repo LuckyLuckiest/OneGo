@@ -54,11 +54,38 @@
 		<div class="picture">
 			<img src="asset/airplane_background.jpg" alt="Picture 3">
 		</div>
+		<hr>
 		<h1 class="title">Flights</h1>
-		<p id="description">
+		<hr>
+		<p id="description" style="font-size: x-large;">
             Are you looking for a hassle-free way to book your next flight? Look no further! Our flight booking page is designed to make the process quick, easy, and stress-free. 
 			Whether you're travelling for business or pleasure, we've got you covered with a wide selection of flights to destinations all over the world.
         </p>
+		<div class="customer-service">
+            <div class="containers" style="padding-top:25px; padding-bottom:25px;">
+                <div class="row justify-content-center">
+                    <div class="col-11">
+                        <h2 style="font-size: x-large;margin-left: 10px;">Popular Airlines</h2>
+                    </div>
+                    <div class="col-2">
+                        <img src="asset/flights/emirates.webp" alt="Emirates Airlines" class="image">
+                    </div>
+                    <div class="col-2">
+                        <img src="asset/flights/qatar.webp" style="background-color: white;" alt="Qatar Airlines" class="image">
+                    </div>
+                    <div class="col-2">
+                        <img src="asset/flights/turkish.webp" alt="Turkish Airlines" class="image">
+                    </div>
+                    <div class="col-2">
+                        <img src="asset/flights/british.webp" alt="British Airlines" class="image">
+                    </div>
+                    <div class="col-2">
+                        <img src="asset/flights/sri.webp" alt="Srilankan Airlines" class="image">
+                    </div>
+                </div>
+            </div>
+        </div>
+
 		<style>
 			body main p#description {
         width: 50%;
@@ -76,6 +103,7 @@
 				font-size: large;
 				padding-top: 2%;
 				padding-bottom: 2%;
+				margin-top: 140px;
 			}
 			
 		
@@ -110,52 +138,51 @@
 			th {
 				color: lightslategray;
 			}
-			.slider {
-        width: 500px;
-        height: 300px;
-        background-color: gray;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center;
-        overflow: hidden;
-      }
-      .image-container {
-        width: 1500px;
-        background-color: gray;
-        height: 300px;
-        clear: both;
-        position: relative;
-        -webkit-transition: left 2s;
-        -moz-transition: left 2s;
-        -o-transition: left 2s;
-        transition: left 2s;
-      }
-      .slide {
-        float: left;
-        margin: 0px;
-        padding: 0px;
-        position: relative;
-      }
-      #slide-1:target ~ .image-container {
-        left: 0px;
-      }
-      #slide-2:target ~ .image-container {
-        left: -500px;
-      }
-      #slide-3:target ~ .image-container {
-        left: -1000px;
-      }
-      .buttons {
-        position: relative;
-        top: -20px;
-      }
-      .buttons a {
-        display: inline-block;
-        height: 15px;
-        width: 15px;
-        border-radius: 50px;
-        background-color: black;
-      }
+			tr:nth-child(even) {
+		  	      background-color: grey; 
+		         }
+	        .image {
+               width: 200px;
+              /* You can set the dimensions to whatever you want */
+              height: 150px;
+             object-fit: fill;
+		     border-style:ridge;
+            }
+	        body main .customer-service .containers img {
+              border-radius: 5px;
+              border: 2px solid #5c5b5b;
+             }
+
+            .containers {
+             display: flex;
+             flex-wrap: wrap;
+             justify-content: center;
+             align-items: center;
+             }
+			 main * {box-sizing: border-box;}
+             .mySlides {display: none;}
+             img {vertical-align: middle;
+			      width: 800px;
+				  height: 600px;}
+
+            .slideshow-container { 
+            max-width: 800px;
+            position:relative;
+            margin: auto;
+            margin-top: 70px;
+            }
+            .fade{
+            animation-name: fade;
+            animation-duration: 4s;
+            animation-fill-mode: both;
+			
+            }
+
+            @keyframes fade {
+            from {opacity: 0.7} 
+            to{opacity: 1}
+            }
+
     </style>
 		
 
@@ -204,21 +231,48 @@
 			</form>
 		</div>
 
-		<div class="slider" style="margin-top: 8%; margin-bottom: 8%;">
-			<span id="slide-1"></span>
-			<span id="slide-2"></span>
-			<span id="slide-3"></span>
-			<div class="image-container">
-			  <img src="asset/flights/aussie.webp" class="slide" width="500" height="300" />
-			  <img src="asset/flights/kuala.webp" class="slide" width="500" height="300" />
-			  <img src="asset/flights/newyork.webp" class="slide" width="500" height="300" />
+		<div class="slideshow-container">
+
+			<div class="mySlides fade">
+			  <img src="asset/flights/kuala.webp" style="width:100%">
 			</div>
-			<div class="buttons">
-			  <a href="#slide-1"></a>
-			  <a href="#slide-2"></a>
-			  <a href="#slide-3"></a>
+			<div class="mySlides fade">
+			  <img src="asset/flights/newyork.webp" style="width:100%">
 			</div>
-		  </div>
+			<div class="mySlides fade">
+			  <img src="asset/flights/aussie.webp" style="width:100%">
+			</div>
+			<div class="mySlides fade">
+				<img src="asset/flights/japan.jpg" style="width:100%">
+			  </div>
+			  <div class="mySlides fade">
+				<img src="asset/flights/rome.jpeg" style="width:100%">
+			  </div>
+			  <div class="mySlides fade">
+				<img src="asset/flights/paris.jpg" style="width:100%">
+			  </div>
+			  <div class="mySlides fade">
+				<img src="asset/flights/philipines.jpg" style="width:100%">
+			  </div>
+			  <div class="mySlides fade">
+				<img src="asset/flights/thailand.jpeg" style="width:100%">
+			  </div>
+			  <div class="mySlides fade">
+				<img src="asset/flights/tourism1.jpg" style="width:100%">
+			  </div>
+			  <div class="mySlides fade">
+				<img src="asset/flights/malaysia.jpg" style="width:100%">
+			  </div>
+			
+			</div>
+			<br>
+			
+			<div style="text-align:center">
+			  <span class="dot"></span> 
+			  <span class="dot"></span> 
+			  <span class="dot"></span> 
+			</div>
+			
 		  <h1 class="title">Places to visit<h1>
 		  <div class="picture-container" style="margin-bottom:30%; margin-top: 5%;">
 			<div class="row">
@@ -312,6 +366,21 @@
 			</tr>
 
 		</table>
+		<script>
+			let slideIndex= 0;
+			showSlides();
+			function showSlides() {
+			  let i;
+			  let slides= document.getElementsByClassName("mySlides");
+			  for (i= 0; i<slides.length; i++) {
+				slides[i].style.display= "none";  
+			  }
+			  slideIndex++;
+			  if (slideIndex>slides.length) {slideIndex= 1}    
+			  slides[slideIndex-1].style.display= "block";  
+			  setTimeout(showSlides, 2000); 
+			}
+			</script>
 
 	</main>
 
