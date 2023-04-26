@@ -80,7 +80,7 @@ const textarea = document.getElementById("textarea"); // replace 'myInput' with 
 
 textarea.addEventListener('input', function () {
     const value = this.value;
-    const regex = /^[a-zA-Z0-9]*$/; // this regex pattern matches only letters and numbers
+    const regex = /^[A-Za-z0-9\s]+$/; // this regex pattern matches only letters and numbers
     if (!regex.test(value)) {
         this.value = value.slice(0, -1); // remove the last character if it doesn't match the pattern
     }
