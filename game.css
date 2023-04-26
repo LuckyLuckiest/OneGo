@@ -9,7 +9,7 @@
 #player {
     width: 150px;
     height: 100px;
-    background-image: url("/assets/game/bus1.png");
+    background-image: url("assets/game/bus1.png");
     background-size: 150px 100px;
     background-repeat: no-repeat;
     position: relative;
@@ -23,20 +23,20 @@
 
 @keyframes move {
     0% {
-        background-image: url("/assets/game/bus2.png");
+        background-image: url("assets/game/bus2.png");
     }
 
     50% {
-        background-image: url("/assets/game/bus1.png");
+        background-image: url("assets/game/bus1.png");
     }
 
     100% {
-        background-image: url("/assets/game/bus2.png");
+        background-image: url("assets/game/bus2.png");
     }
 }
 
 .jump {
-    background-image: url("/assets/game/bus1.png");
+    background-image: url("assets/game/bus1.png");
     animation: jump 1.5s linear;
 }
 
@@ -61,7 +61,7 @@
 #obs {
     width: 100px;
     height: 130px;
-    background-image: url("/assets/game/building.png");
+    background-image: url("assets/game/building.png");
     background-size: 100px 130px;
     background-repeat: no-repeat;
     position: relative;
