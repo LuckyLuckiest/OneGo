@@ -44,19 +44,19 @@
 					<li class="split">Log in</li>
 				</a>
 				<li class="dropdown split">
-                    Technical <span class="bi bi-caret-down-fill" style="font-size: 10px;"></span>
-                    <ul>
-                        <a href="calculation.html">
-                            <li>Calculation</li>
-                        </a>
-                        <a href="qusionierr.html">
-                            <li>Questionner</li>
-                        </a>
+					Technical <span class="bi bi-caret-down-fill" style="font-size: 10px;"></span>
+					<ul>
+						<a href="calculation.html">
+							<li>Calculation</li>
+						</a>
+						<a href="qusionierr.html">
+							<li>Questionner</li>
+						</a>
 						<a href="funpage.html">
-                            <li>Fun</li>
-                        </a>
-                    </ul>
-                </li>
+							<li>Fun</li>
+						</a>
+					</ul>
+				</li>
 			</ul>
 		</nav>
 	</header>
@@ -64,128 +64,160 @@
 	<!-- All the content of the page is here -->
 	<main>
 		<!-- Every page contains a title -->
-
-		<head>
-			<div class="picture">
-				<img src="assets/airplane_background.jpg" alt="Picture 3">
+		<div class="picture">
+			<img src="assets/airplane_background.jpg" alt="Picture 3">
+		</div>
+		<hr>
+		<h1 class="title">Flights</h1>
+		<hr>
+		<p id="description" style="font-size: x-large;">
+			Are you looking for a hassle-free way to book your next flight? Look no further! Our flight booking page
+			is designed to make the process quick, easy, and stress-free.
+			Whether you're travelling for business or pleasure, we've got you covered with a wide selection of
+			flights to destinations all over the world.
+		</p>
+		<div class="customer-service">
+			<div class="containers" style="padding-top:25px; padding-bottom:25px;">
+				<div class="row justify-content-center">
+					<div class="col-11">
+						<h2 style="font-size: x-large;margin-left: 10px;">Popular Airlines</h2>
+					</div>
+					<div class="col-2">
+						<img src="assets/flights/emirates.webp" alt="Emirates Airlines" class="image">
+					</div>
+					<div class="col-2">
+						<img src="assets/flights/qatar.webp" style="background-color: white;" alt="Qatar Airlines"
+							class="image">
+					</div>
+					<div class="col-2">
+						<img src="assets/flights/turkish.webp" alt="Turkish Airlines" class="image">
+					</div>
+					<div class="col-2">
+						<img src="assets/flights/british.webp" alt="British Airlines" class="image">
+					</div>
+					<div class="col-2">
+						<img src="assets/flights/sri.webp" alt="Srilankan Airlines" class="image">
+					</div>
+				</div>
 			</div>
-			<h1 class="title">Flights</h1>
-			<p id="description">
-				Are you looking for a hassle-free way to book your next flight? Look no further! Our flight booking page
-				is designed to make the process quick, easy, and stress-free.
-				Whether you're travelling for business or pleasure, we've got you covered with a wide selection of
-				flights to destinations all over the world
-			</p>
-			<style>
-				body main p#description {
-					width: 50%;
-					margin: auto;
-					margin-bottom: 40px;
-					color: #F2F2F2;
-					font-size: 20px;
-					text-align: center;
-					text-shadow: 2px 1px 5px rgba(242, 244, 243, 0.4);
+		</div>
+
+		<style>
+			body main p#description {
+				width: 50%;
+				margin: auto;
+				margin-bottom: 40px;
+				color: #F2F2F2;
+				font-size: 20px;
+				text-align: center;
+				text-shadow: 2px 1px 5px rgba(242, 244, 243, 0.4);
+			}
+
+			.container {
+				border: 1px solid darkgray;
+				border-radius: 10px;
+				background-color: lightgray;
+				font-size: large;
+				padding-top: 2%;
+				padding-bottom: 2%;
+				margin-top: 140px;
+			}
+
+
+			input {
+				display: inline-block;
+				margin-right: 10px;
+			}
+
+			select {
+				padding: 5px;
+				margin: 5px;
+				border: none;
+				border-radius: 3px;
+				background-color: lightgray;
+				text-align: center;
+			}
+
+			table {
+				border-collapse: collapse;
+				border: 1px solid white;
+				margin-bottom: 5%;
+				width: 20%;
+			}
+
+			th,
+			td {
+				border: 1px solid white;
+				text-align: left;
+				padding: 5px;
+			}
+
+			th {
+				color: lightslategray;
+			}
+
+			tr:nth-child(even) {
+				background-color: grey;
+			}
+
+			.image {
+				width: 200px;
+				/* You can set the dimensions to whatever you want */
+				height: 150px;
+				object-fit: fill;
+				border-style: ridge;
+			}
+
+			body main .customer-service .containers img {
+				border-radius: 5px;
+				border: 2px solid #5c5b5b;
+			}
+
+			.containers {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				align-items: center;
+			}
+
+			main * {
+				box-sizing: border-box;
+			}
+
+			.mySlides {
+				display: none;
+			}
+
+			img {
+				vertical-align: middle;
+				width: 800px;
+				height: 600px;
+			}
+
+			.slideshow-container {
+				max-width: 800px;
+				position: relative;
+				margin: auto;
+				margin-top: 70px;
+			}
+
+			.fade {
+				animation-name: fade;
+				animation-duration: 4s;
+				animation-fill-mode: both;
+
+			}
+
+			@keyframes fade {
+				from {
+					opacity: 0.7
 				}
 
-				.container {
-					border: 1px solid darkgray;
-					border-radius: 10px;
-					background-color: lightgray;
-					font-size: large;
-					padding-top: 2%;
-					padding-bottom: 2%;
+				to {
+					opacity: 1
 				}
-
-
-				input {
-					display: inline-block;
-					margin-right: 10px;
-				}
-
-				select {
-					padding: 5px;
-					margin: 5px;
-					border: none;
-					border-radius: 3px;
-					background-color: lightgray;
-					text-align: center;
-				}
-
-				table {
-					border-collapse: collapse;
-					border: 1px solid white;
-					margin-bottom: 5%;
-					width: 20%;
-				}
-
-				th,
-				td {
-					border: 1px solid white;
-					text-align: left;
-					padding: 5px;
-				}
-
-				th {
-					color: lightslategray;
-				}
-
-				.slider {
-					width: 500px;
-					height: 300px;
-					background-color: gray;
-					margin-left: auto;
-					margin-right: auto;
-					text-align: center;
-					overflow: hidden;
-				}
-
-				.image-container {
-					width: 1500px;
-					background-color: gray;
-					height: 300px;
-					clear: both;
-					position: relative;
-					-webkit-transition: left 2s;
-					-moz-transition: left 2s;
-					-o-transition: left 2s;
-					transition: left 2s;
-				}
-
-				.slide {
-					float: left;
-					margin: 0px;
-					padding: 0px;
-					position: relative;
-				}
-
-				#slide-1:target~.image-container {
-					left: 0px;
-				}
-
-				#slide-2:target~.image-container {
-					left: -500px;
-				}
-
-				#slide-3:target~.image-container {
-					left: -1000px;
-				}
-
-				.buttons {
-					position: relative;
-					top: -20px;
-				}
-
-				.buttons a {
-					display: inline-block;
-					height: 15px;
-					width: 15px;
-					border-radius: 50px;
-					background-color: black;
-				}
-			</style>
-
-
-		</head>
+			}
+		</style>
 		<div class="container" style="margin-left:auto;margin-right:auto;">
 			<form action="schedule.html">
 				<div class="row justify-content-md-center">
@@ -230,21 +262,48 @@
 			</form>
 		</div>
 
-		<div class="slider" style="margin-top: 8%; margin-bottom: 8%;">
-			<span id="slide-1"></span>
-			<span id="slide-2"></span>
-			<span id="slide-3"></span>
-			<div class="image-container">
-			  <img src="assets/flights/aussie.webp" class="slide" width="500" height="300" />
-			  <img src="assets/flights/kuala.webp" class="slide" width="500" height="300" />
-			  <img src="assets/flights/newyork.webp" class="slide" width="500" height="300" />
+		<div class="slideshow-container">
+
+			<div class="mySlides fade">
+				<img src="assets/flights/kuala.webp" style="width:100%">
 			</div>
-			<div class="buttons">
-				<a href="#slide-1"></a>
-				<a href="#slide-2"></a>
-				<a href="#slide-3"></a>
+			<div class="mySlides fade">
+				<img src="assets/flights/newyork.webp" style="width:100%">
 			</div>
+			<div class="mySlides fade">
+				<img src="assets/flights/aussie.webp" style="width:100%">
+			</div>
+			<div class="mySlides fade">
+				<img src="assets/flights/japan.jpg" style="width:100%">
+			</div>
+			<div class="mySlides fade">
+				<img src="assets/flights/rome.jpeg" style="width:100%">
+			</div>
+			<div class="mySlides fade">
+				<img src="assets/flights/paris.jpg" style="width:100%">
+			</div>
+			<div class="mySlides fade">
+				<img src="assets/flights/philipines.jpg" style="width:100%">
+			</div>
+			<div class="mySlides fade">
+				<img src="assets/flights/thailand.jpeg" style="width:100%">
+			</div>
+			<div class="mySlides fade">
+				<img src="assets/flights/tourism1.jpg" style="width:100%">
+			</div>
+			<div class="mySlides fade">
+				<img src="assets/flights/malaysia.jpg" style="width:100%">
+			</div>
+
 		</div>
+		<br>
+
+		<div style="text-align:center">
+			<span class="dot"></span>
+			<span class="dot"></span>
+			<span class="dot"></span>
+		</div>
+
 		<h1 class="title">Places to visit</h1>
 		<div class="picture-container" style="margin-bottom:30%; margin-top: 5%;">
 			<div class="row">
@@ -351,6 +410,21 @@
 			</tr>
 
 		</table>
+		<script>
+			let slideIndex = 0;
+			showSlides();
+			function showSlides() {
+				let i;
+				let slides = document.getElementsByClassName("mySlides");
+				for (i = 0; i < slides.length; i++) {
+					slides[i].style.display = "none";
+				}
+				slideIndex++;
+				if (slideIndex > slides.length) { slideIndex = 1 }
+				slides[slideIndex - 1].style.display = "block";
+				setTimeout(showSlides, 2000);
+			}
+		</script>
 
 	</main>
 
@@ -383,3 +457,18 @@
 
 
 </html>
+Footer
+© 2023 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+OneGo/flights.html at calculation · LuckyLuckiest/OneGo

@@ -85,6 +85,7 @@
                 background-color: lightgreen;
                 font-size: large;
                 padding: 2% 5%;
+                margin-bottom: 3%;
             }
 
             .main form {
@@ -134,63 +135,299 @@
                 margin-left: 5px;
                 display: inline;
             }
+
+             .bill-image img {
+             display: flex;
+             width: 1368px;
+             margin-left: -3%;
+             height: 500px;
+             margin-top: -19px;
+            }
+
+            
         </style>
-        <h1 class="title">Bill Calculator</h1>
+        <!-- Every page contains a title -->
+        <h1 class="title" style="margin-top: 100px; margin-bottom: 50px;">Bill Calculator</h1>
+        <!-- The following lines contain the labels and the inputs of the bill calculator -->
         <div class="container">
-            <form class="main" id="bill-form">
-                <label class="main" for="subtotal">Subtotal ($):</label>
-                <input class="main" type="text" id="subtotal" name="subtotal" required style="margin-bottom: 35px;">
-
-                <label class="main" for="age">Age:</label>
-                <input class="main" type="text" id="age" name="age" style="margin-bottom: 35px;"><br>
-
-
-                <label class="main" style="margin-bottom:35px;">Discount (%): <br><br><span
-                        id="discount-display"></span></label>
-
-                <input class="main" type="submit" value="Calculate" style="margin-bottom: 20px; margin-top: 35px;">
-
-            </form>
-
-            <div id="result"
-                style="margin-bottom: 40px; color: black; padding: 5px; border: 1px solid #ccc; border-radius: 4px; background-color: #eee; padding-right: 170px; padding-bottom: 30px; margin-left: 5px; display: inline-block;">
-            </div>
-        </div>
+        <form class="main" id="bill-form">
+            <label class="main" for="select-opt">Select an option:</label>
+            <select class="main" id="select-opt" name="select-opt" required style="margin-bottom: 35px;">
+              <option value="car">Rent a car</option>
+              <option value="flight">Book a flight</option>
+              <option value="stay">Book a stay</option>
+            </select>
+            <div id="car-options" style="display:none;">
+              <label class="main" for="car-options"> Select a car</label>
+              <select id="car-select">
+              <option value="lambo">Lamborghini</option>
+              <option value="rolls">Rolls-Royce</option>
+              <option value="buggati">Buggati</option>
+              <option value="mclaren">Mclaren 720s</option>
+              <option value="ferrari">Ferrari</option>
+              <option value="audi">Audi R8</option>
+              <option value="camry">Toyota Camry</option>
+              <option value="accord">Honda Accord</option>
+              <option value="sonata">Hyundai Sonata</option>
+              <option value="corolla">Toyota Corolla</option>
+              <option value="civic">Honda Civic</option>
+              <option value="accent">Hyundai Accent</option>
+              <option value="tesla">Tesla x</option>
+              <option value="hummer">Hummer ev</option>
+              <option value="rivian">Rivian R1S</option>
+              </select>
+              </div>
+              <div id="num-nights" style="display: none;">
+              <label for="night-num"> Number of nights:</label>
+              <input type="number" id="night-num" name="night-num" min="0" max="500">
+              </div>
+              <div id="num-passenger" style="display: none;">
+                <label for="passenger-num"> Number of passengers:</label>
+                <input type="number" id="passenger-num" name="passenger-num" min="0" max="500">
+                </div>
+              <div id="flight-options" style="display:none;">
+                <label class="main" for="flight-options"> Select a flight</label>
+                <select id="flight-select">
+                <option value="fl001">FL001</option>
+                <option value="fl002">FL002</option>
+                <option value="fl003">FL003</option>
+                <option value="fl004">FL004</option>
+                <option value="fl005">FL005</option>
+                <option value="fl006">FL006</option>
+                <option value="fl007">FL007</option>
+                <option value="fl008">FL008</option>
+                <option value="fl009">FL009</option>
+                <option value="fl010">FL010</option>
+                </select>
+                </div>
+              <div id="stay-options" style="display:none;">
+                <label class="main" for="stay-options"> Select a hotel</label>
+                <select id="hotel-select">
+                  <option value="kompose">Kompose Boutique Hotel Sarasota</option>
+                  <option value="kanaskis">Kananaskis Mountain Lodge</option>
+                  <option value="arizona">Arizona Biltmore</option>
+                  <option value="tropical">Tropical Islands</option>
+                  <option value="komp">Kompose Boutique Hotel Sarasota</option>
+                  <option value="hard">Hard Roch Hotel</option>
+                  <option value="nobu">Nobu Hotel</option>
+                  <option value="ritz">Ritz Paris</option>
+                </select>
+              </div>
+            <input class="main" type="text" id="age" name="age" style="margin-bottom: 35px; display: none;"><br>
+            <label class="main" style="margin-bottom:35px;">Discount (%): <br><br><span id="discount-display"></span></label>
+            <input class="main" type="submit" value="Calculate" style="margin-bottom: 20px; margin-top:35px ;"><br>
+            <label class="main" for="result">Total:</label>
+            <div  id="result" style="margin-bottom: 40px;  color: black;
+             padding: 5px;
+             border: 1px solid #ccc;
+             border-radius: 4px;
+             background-color: #eee;
+             padding-right: 170px;
+             padding-bottom: 30px;
+             margin-left: 5px;
+             display: inline-block"></div>
+        </form>
         <script>
-
-            const form = document.getElementById('bill-form');
-            const subtotalInput = document.getElementById('subtotal');
-            const discountDisplay = document.getElementById('discount-display');
-            const ageInput = document.getElementById('age');
-            const resultDiv = document.getElementById('result');
-
-            let discount = 0;
-
-
-            ageInput.addEventListener('change', () => {
-                const age = Number(ageInput.value);
-
-                if (age > 60 || age < 10) {
-                    discount = 10;
-                } else {
-                    discount = 0;
-                }
-
-                discountDisplay.textContent = `${discount}%`;
+            //Define the constants(variables) that are going to be used
+            const form= document.getElementById('bill-form');
+            const subtotalInput= document.getElementById('subtotal');
+            const discountDisplay= document.getElementById('discount-display');
+            const ageInput= document.getElementById('age');
+            const age=parseInt(ageInput.value);
+            const resultDiv= document.getElementById('result');
+            const selection= document.getElementById('select-opt');
+            const carselect= document.getElementById('car-options');
+            const carselects= document.getElementById('car-select').value;
+            const flightselect= document.getElementById('flight-options');
+            const flightselects= document.getElementById('flight-select').value;
+            const stayselect= document.getElementById('stay-options');
+            const stayselects= document.getElementById('hotel-select').value;
+            const numselect= document.getElementById('num-nights');
+            const nightNum= parseInt(document.getElementById('night-num').value);
+            const passelect= document.getElementById('num-passenger');
+            const passNum= parseInt(document.getElementById('passenger-num').value);
+            const totalsConatiner= document.getElementById('totalConatiner');
+            const select=document.getElementById('select-opt').value;
+            // what to be outputted when the first selection input is given
+            selection.addEventListener('change', () => {
+            if (selection.value == 'car') {
+             carselect.style.display = 'block', carselect.style.marginBottom='25px';
+             flightselect.style.display = 'none';
+             stayselect.style.display = 'none';
+             numselect.style.display='none';
+             passelect.style.display='none';
+          } else if (selection.value == 'flight') {
+             carselect.style.display = 'none';
+             flightselect.style.display = 'block', flightselect.style.marginBottom='25px';
+             stayselect.style.display = 'none';
+             numselect.style.display='none';
+             passelect.style.display='block',passelect.style.marginBottom='25px';
+          } else if (selection.value =='stay') {
+             carselect.style.display ='none';
+             flightselect.style.display ='none';
+             stayselect.style.display ='block',stayselect.style.marginBottom='25px';
+             numselect.style.display='block', numselect.style.marginBottom='25px';
+             passelect.style.display='none';
+          } else {
+             carselect.style.display ='none';
+             flightselect.style.display ='none';
+             stayselect.style.display ='none';
+             numselect.style.display='none';
+             passelect.style.display='none';
+          }
+          });
+             // A 15% discount is to be shown in the discount container if the user chose stays and more than two nights.
+             let discount=0;
+		     numselect.addEventListener('change', () => {
+             const nightNum= parseInt(document.getElementById('night-num').value);
+			 if (nightNum > 2) {
+				discount = 15;
+			}
+			discountDisplay.textContent = `${discount}%`;
             });
-
-            form.addEventListener('submit', (event) => {
-
+		     carselect.addEventListener('change', () => {
+			discountDisplay.textContent = `${discount}%`;
+            });
+            flightselect.addEventListener('change', () => {
+			discountDisplay.textContent = `${discount}%`;
+            });
+                form.addEventListener('submit', (event)=>{
                 event.preventDefault();
-
-                const subtotal = Number(subtotalInput.value);
-                const age = Number(ageInput.value);
-
-                let total = subtotal;
-                total *= (100 - discount) / 100;
-
-                resultDiv.innerHTML = `Total cost: $${total.toFixed(2)}`;
-            });
+                const form= document.getElementById('bill-form');
+            const subtotalInput= document.getElementById('subtotal');
+            const discountDisplay= document.getElementById('discount-display');
+            const ageInput= document.getElementById('age');
+            const age=parseInt(ageInput.value);
+            const resultDiv= document.getElementById('result');
+            const selection= document.getElementById('select-opt');
+            const carselect= document.getElementById('car-options');
+            const carselects= document.getElementById('car-select').value;
+            const flightselect= document.getElementById('flight-options');
+            const flightselects= document.getElementById('flight-select').value;
+            const stayselect= document.getElementById('stay-options');
+            const stayselects= document.getElementById('hotel-select').value;
+            const numselect= document.getElementById('num-nights');
+            const nightNum= parseInt(document.getElementById('night-num').value);
+            const passelect= document.getElementById('num-passenger');
+            const passNum= parseInt(document.getElementById('passenger-num').value);
+            const totalsConatiner= document.getElementById('totalConatiner');
+            const select=document.getElementById('select-opt').value;
+                //Calculation of the total price to be outputted in the result container
+                let price=0;
+                if(selection.value=='car'){
+                if(carselects=='lambo'){
+                    price=455;
+                }
+                else if(carselects=='buggati'){
+                    price=570;
+                }
+                else if(carselects=='mclaren'){
+                    price=570;
+                }
+                else if(carselects=='rolls'){
+                    price=760;
+                }
+                else if(carselects=='ferrari'){
+                    price=445;
+                }
+                else if(carselects=='audi'){
+                    price=340;
+                }
+                else if(carselects=='camry'){
+                    price=38;
+                }
+                else if(carselects=='accord'){
+                    price=30;
+                }
+                else if(carselects=='sonata'){
+                    price=27;
+                }
+                else if(carselects=='corolla'){
+                    price=25;
+                }
+                else if(carselects=='civic'){
+                    price=26;
+                }
+                else if(carselects=='accent'){
+                    price=25;
+                }
+                else if(carselects=='tesla'){
+                    price=50;
+                }
+                else if(carselects=='hummer'){
+                    price=60;
+                }
+                else if(carselects=='rivian'){
+                    price=65;
+                }
+               }
+                else if(selection.value=='flight'){
+                 if(flightselects=='fl001'){
+                    price=570*passNum;
+                }
+                else if(flightselects=='fl002'){
+                    price=190*passNum;
+                }
+                else if(flightselects=='fl003'){
+                    price=456*passNum;
+                }
+                else if(flightselects=='fl004'){
+                    price=342*passNum;
+                }
+                else if(flightselects=='fl005'){
+                    price=190*passNum;
+                }
+                else if(flightselects=='fl006'){
+                    price=418*passNum;
+                }
+                else if(flightselects=='fl007'){
+                    price=57*passNum;
+                }
+                else if(flightselects=='fl008'){
+                    price=495*passNum;
+                }
+                else if(flightselects=='fl009'){
+                    price=114*passNum;
+                }
+                else if(flightselects=='fl010'){
+                    price=610*passNum;
+                }
+            }
+                else if(selection.value=='stay'){
+    
+                if(stayselects=='kompose'){
+                    price=33*nightNum;
+                }
+                else if(stayselects=='kanaskis'){
+                    price=28*nightNum;
+                }
+                else if(stayselects=='arizona'){
+                    price=55*nightNum;
+                }
+                else if(stayselects=='tropical'){
+                    price=34*nightNum;
+                }
+                else if(stayselects=='komp'){
+                    price=87*nightNum;
+                }
+                else if(stayselects=='hard'){
+                    price=133*nightNum;
+                }
+                else if(stayselects=='nobu'){
+                    price=260*nightNum;
+                }
+                else if(stayselects=='ritz'){
+                    price=243*nightNum;
+                }   
+                }
+                // A 15% is discounted from the total price when the user chooses stays and more than two nights.
+             let discount=0;
+                if (nightNum>2) {
+                price=price* 0.85;
+                price=price.toFixed(2);
+                }
+            resultDiv.innerText =price+" OMR";
+             });
         </script>
     </main>
     <!-- This would hold the footer of the page -->
@@ -219,6 +456,5 @@
         <p>Copyright &copy; 2023 OneGo</p>
     </footer>
 </body>
-
 
 </html>
