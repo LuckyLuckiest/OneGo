@@ -68,7 +68,7 @@
     background-color: red;
     border: 1px solid black;
     position: relative;
-    top: 340px;
+    /* top: 340px; */
     right: -1150px;
     overflow: hidden;
 }

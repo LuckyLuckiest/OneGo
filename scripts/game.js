@@ -1,6 +1,8 @@
 const canvas = document.getElementById("fun");
 const player = document.getElementById("player");
 var started = false;
+var limit = 2;
+var count = document.getElementsByClassName("obsMove").length;
 
 function move() {
     if (player.classList == "jump") return;
@@ -23,20 +25,22 @@ function obsMove() {
 
     if (obs == null) return;
 
-    if (started && obs.classList != "obsMove") {
-        obs.classList.add("obsMove");
-    }
-
     setTimeout(function () {
         obs.remove();
+        count = document.getElementsByClassName("obsMove").length;
     }, 3000);
 }
 
 function spawnObstacles() {
+    if (count >= limit) return;
     const obs = document.createElement("div");
     obs.id = "obs";
     obs.classList.add("obsMove");
+
+    obs.style.top = "340px";
+
     canvas.appendChild(obs);
+    count = document.getElementsByClassName("obsMove").length;
 
     obsMove();
 }
