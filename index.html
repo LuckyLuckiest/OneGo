@@ -126,7 +126,8 @@
                 <div class="card mb-2">
                     <div class="row g-0">
                         <div class="col-md-4">
-                            <img src="assets/promotional/FreeCancellation.png" class="img-fluid rounded-start" alt="...">
+                            <img src="assets/promotional/FreeCancellation.png" class="img-fluid rounded-start"
+                                alt="...">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
@@ -153,82 +154,83 @@
 
             </div>
         </div>
+        <div class="slider">
+            <div class="slides">
+                <!-- Radio buttons-->
+                <input type="radio" name="radioBtn" id="radio1">
+                <input type="radio" name="radioBtn" id="radio2">
+                <input type="radio" name="radioBtn" id="radio3">
+                <!-- Images -->
+                <div class="slide first">
+                    <img src="assets/photo1.jpg" alt="p1">
+                </div>
+                <div class="slide second">
+                    <img src="assets/photo2.jpg" alt="p2">
+                </div>
+                <div class="slide third">
+                    <img src="assets/photo3.jpg" alt="p3">
+                </div>
+                <div class="navigation-auto">
+                    <div class="auto-btn-1"></div>
+                    <div class="auto-btn-2"></div>
+                    <div class="auto-btn-3"></div>
+                </div>
+            </div>
+            <!-- Manual navigation-->
+            <div class="navigation-mannual">
+                <label for="radio1" class="mannual-btn"></label>
+                <label for="radio2" class="mannual-btn"></label>
+                <label for="radio3" class="mannual-btn"></label>
+            </div>
+            <!-- Manual navigation-->
+            <div class="navigation-mannual">
+                <label for="radio1" class="mannual-btn"></label>
+                <label for="radio2" class="mannual-btn"></label>
+                <label for="radio3" class="mannual-btn"></label>
+            </div>
+        </div>
+        <!-- Album JS-->
+        <script>
+            var counter = 1;
+            setInterval(function () {
+                document.getElementById('radio' + counter).checked = true;
+                counter++;
+                if (counter > 3) {
+                    counter = 1;
+                }
+            }, 4000);
+        </script>
+        <!-- Time/Date Line-->
+        <div class="hwrap">
+            <div class="hmove">
+                <div class="hitem">
+                    <p class="movingline">Welcome to OneGo website! Today is <span id="p1"></span>, and the time is
+                        <span id="p2"></span>.</p>
+                </div>
+            </div>
+        </div>
+        <!-- date JS -->
+        <script>
+            setInterval(function () {
+                var date = new Date();
+                var currentDate = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
+                document.getElementById("p1").innerHTML = currentDate;
+                var hours = date.getHours();
+                var time = function () {
+                    return hours < 12 ? "AM" : "PM";
+                };
+                var modifiedHours = function () {
+                    return hours != 12 ? hours % 12 : hours;
+                };
+                var min = date.getMinutes();
+                var modifiedMinutes = function () {
+                    return min < 10 ? "0" + min : min;
+                };
+                var currentTime = modifiedHours() + ":" + modifiedMinutes() + " " + time();
+                document.getElementById("p2").innerHTML = currentTime;
+            }, 1000);
+        </script>
     </main>
-    <div class="slider">
-        <div class="slides">
-            <!-- Radio buttons-->
-            <input type="radio" name="radioBtn" id="radio1">
-            <input type="radio" name="radioBtn" id="radio2">
-            <input type="radio" name="radioBtn" id="radio3">
-            <!-- Images -->
-            <div class="slide first">
-                <img src="asset/photo1.jpg" alt="p1">
-            </div>
-            <div class="slide second">
-                <img src="asset/photo2.jpg" alt="p2">
-            </div>
-            <div class="slide third">
-                <img src="asset/photo3.jpg" alt="p3">
-            </div>
-            <div class="navigation-auto">
-                <div class="auto-btn-1"></div>
-                <div class="auto-btn-2"></div>
-                <div class="auto-btn-3"></div>
-            </div>
-        </div>
-        <!-- Manual navigation-->
-        <div class="navigation-mannual">
-            <label for="radio1" class="mannual-btn"></label>
-            <label for="radio2" class="mannual-btn"></label>
-            <label for="radio3" class="mannual-btn"></label>
-        </div>
-        <!-- Manual navigation-->
-        <div class="navigation-mannual">
-            <label for="radio1" class="mannual-btn"></label>
-            <label for="radio2" class="mannual-btn"></label>
-            <label for="radio3" class="mannual-btn"></label>
-        </div>
-    </div>
-    <!-- Album JS-->
-    <script>
-        var counter = 1;
-        setInterval(function () {
-            document.getElementById('radio' + counter).checked = true;
-            counter++;
-            if (counter > 3) {
-                counter = 1;
-            }
-        }, 4000);
-    </script>
-    <!-- Time/Date Line-->
-    <div class="hwrap">
-        <div class="hmove">
-            <div class="hitem">
-                <p class="movingline">Welcome to OneGo website! Today is <span id="p1"></span>, and the time is <span id="p2"></span>.</p>
-            </div>
-        </div>
-    </div>
-    <!-- date JS -->
-    <script>
-        setInterval(function () {
-            var date = new Date();
-            var currentDate = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
-            document.getElementById("p1").innerHTML = currentDate;
-            var hours = date.getHours();
-            var time = function() {
-                return hours < 12 ? "AM" : "PM";
-            };
-            var modifiedHours = function() {
-                return hours != 12 ? hours % 12 : hours;
-            };
-            var min = date.getMinutes();
-            var modifiedMinutes = function() {
-                return min < 10 ? "0" + min : min;
-            };
-            var currentTime = modifiedHours() + ":" + modifiedMinutes() + " " + time();
-            document.getElementById("p2").innerHTML = currentTime;
-        }, 1000);
-    </script>
 
     <!-- This would hold the footer of the page -->
     <footer>
