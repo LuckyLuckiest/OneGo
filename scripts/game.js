@@ -87,6 +87,7 @@ function checkCollision() {
     if (obsRect.left < playerRect.left) {
         if (!passed) {
             points++;
+            if (points > 9999) points = 9999;
             if (points % 10 == 0) audio.LEVEL_UP.play();
             document.getElementById("points").innerText = points.toString().padStart(4, "0");
         }
