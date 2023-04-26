@@ -1,0 +1,81 @@
+#fun {
+    background-color: white;
+    border-radius: 5px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+#player {
+    width: 150px;
+    height: 100px;
+    background-image: url("/assets/game/bus1.png");
+    background-size: 150px 100px;
+    background-repeat: no-repeat;
+    position: relative;
+    top: 400px;
+    left: 20px;
+}
+
+.move {
+    animation: move 0.2s infinite linear;
+}
+
+@keyframes move {
+    0% {
+        background-image: url("/assets/game/bus2.png");
+    }
+
+    50% {
+        background-image: url("/assets/game/bus1.png");
+    }
+
+    100% {
+        background-image: url("/assets/game/bus2.png");
+    }
+}
+
+.jump {
+    background-image: url("/assets/game/bus1.png");
+    animation: jump 1.5s linear;
+}
+
+@keyframes jump {
+    0%, 100% {
+        top: 400px;
+    }
+
+    20%, 80% {
+        top: 300px;
+    }
+
+    40%, 60% {
+        top: 250px;
+    }
+
+    45%, 50%, 55% {
+        top: 200px;
+    }
+}
+
+#obs {
+    width: 100px;
+    height: 130px;
+    background-image: url("/assets/game/building.png");
+    background-size: 100px 130px;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.obsMove {
+    animation: obsMove 3s infinite linear;
+}
+
+@keyframes obsMove {
+    0% {
+        right: -1150px;
+    }
+    100% {
+        right: 0px;
+    }
+}

@@ -13,6 +13,17 @@ body main hr {
     margin: 100px;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+}
+
+main {
+    flex: 1;
+}
+
 h1.title {
     margin: 50px;
     padding: 0;
@@ -24,13 +35,13 @@ h1.title {
 }
 
 h2.head {
-   margin: 50px;
-   padding: 0;
-   text-align: center;
-   font-size: 40px;
-   font-weight: normal;
-   color:rgba(255, 255, 255, 0.6);
-   text-shadow: 1px 1px 5px #afadad; 
+    margin: 50px;
+    padding: 0;
+    text-align: center;
+    font-size: 40px;
+    font-weight: normal;
+    color: rgba(255, 255, 255, 0.6);
+    text-shadow: 1px 1px 5px #afadad;
 }
 
 body .picture {
