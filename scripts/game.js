@@ -1,3 +1,4 @@
+// define variables
 const canvas = document.getElementById("fun");
 const player = document.getElementById("player");
 const limit = 1;
@@ -17,17 +18,21 @@ var passed = false;
 var points = 0;
 var count = document.getElementsByClassName("obsMove").length;
 
+// stop the player and the obstacle in their place
 function stationary() {
     player.classList.remove("move", "jump");
     document.getElementById("obs").style.animationPlayState = "paused";
 }
 
+// enforce move class to player to apply css
 function move() {
     if (gameOver) return;
     if (player.classList == "jump") return;
     player.classList.add("move");
 }
 
+
+// apply jump on player
 function jump() {
     if (gameOver) return;
     if (player.classList == "jump") return;
@@ -43,6 +48,7 @@ function jump() {
     }, jumpDuration * 1000);
 }
 
+// move obstacle and remove after a timer
 function obsMove() {
     var obs = document.getElementById("obs");
 
@@ -55,6 +61,7 @@ function obsMove() {
     }, obsMoveDuration * 1000);
 }
 
+// spawn obstacles in the canvas
 function spawnObstacles() {
     if (gameOver) return;
     if (count >= limit) return;
@@ -74,6 +81,7 @@ function spawnObstacles() {
     obsMove();
 }
 
+// check collision for obstacles
 function checkCollision() {
     var obs = document.getElementById("obs");
 
@@ -98,6 +106,7 @@ function checkCollision() {
     }
 }
 
+// game loop
 function gameLoop() {
     checkCollision();
     if (gameOver) {
@@ -107,6 +116,7 @@ function gameLoop() {
     requestAnimationFrame(gameLoop);
 }
 
+// game end screen
 function gameEnded() {
     started = false;
     if (document.getElementById("end") != null) return;
@@ -122,6 +132,7 @@ function gameEnded() {
     stationary();
 }
 
+// start spawning obstacles
 function startSpawnObs() {
     if (gameOver) return;
     setInterval(function () {
@@ -129,6 +140,7 @@ function startSpawnObs() {
     }, Math.floor(Math.random() * 6) * 1000);
 }
 
+// reset the values
 function clear() {
     document.getElementById("obs").remove();
     count = document.getElementsByClassName("obsMove").length;
@@ -139,6 +151,7 @@ function clear() {
     gameOver = false;
 }
 
+// start the game
 function startGame() {
     started = true;
     if (gameOver) clear();
@@ -147,6 +160,7 @@ function startGame() {
     gameLoop();
 }
 
+// jump listener
 document.addEventListener("keydown", function (event) {
     if (!started) return;
     if (event.key === "Enter" || event.key === " " || event.key === "ArrowUp") {
@@ -154,6 +168,7 @@ document.addEventListener("keydown", function (event) {
     }
 });
 
+// start game event
 document.addEventListener("keydown", function (event) {
     startGame();
 });
