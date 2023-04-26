@@ -37,7 +37,7 @@ function jump() {
     setTimeout(function () {
         player.classList.remove("jump");
         move();
-    }, 500);
+    }, 1000);
 }
 
 function obsMove() {
@@ -49,7 +49,7 @@ function obsMove() {
         if (gameOver) return;
         obs.remove();
         count = document.getElementsByClassName("obsMove").length;
-    }, 3000);
+    }, 1000 * 3);
 }
 
 function spawnObstacles() {
@@ -87,6 +87,7 @@ function checkCollision() {
     if (obsRect.left < playerRect.left) {
         if (!passed) {
             points++;
+            if (points % 10 == 0) audio.LEVEL_UP.play();
             document.getElementById("points").innerText = points.toString().padStart(4, "0");
         }
         passed = true;
