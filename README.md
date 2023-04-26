@@ -9,3 +9,8 @@ Introduction to web computing project
 - Responsive website
 - HTML5 and CSS
 - Current working website: https://luckyluckiest.github.io/OneGo/
+## Part 3:
+- Dynamic website
+- Create a funpage
+- Calculation and questionner pages
+- Integration of JS to html and css
