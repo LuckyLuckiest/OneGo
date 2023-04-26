@@ -37,38 +37,34 @@
 
 .jump {
     background-image: url("/assets/game/bus1.png");
-    animation: jump 1s linear;
+    animation: jump 1.5s linear;
 }
 
 @keyframes jump {
-    0% {
+    0%, 100% {
         top: 400px;
     }
 
-    30% {
+    20%, 80% {
         top: 300px;
     }
 
-    50% {
+    40%, 60% {
+        top: 250px;
+    }
+
+    45%, 50%, 55% {
         top: 200px;
-    }
-
-    70% {
-        top: 300px;
-    }
-
-    100% {
-        top: 400px;
     }
 }
 
 #obs {
-    width: 30px;
-    height: 60px;
-    background-color: red;
-    border: 1px solid black;
+    width: 100px;
+    height: 130px;
+    background-image: url("/assets/game/building.png");
+    background-size: 100px 130px;
+    background-repeat: no-repeat;
     position: relative;
-    overflow: hidden;
 }
 
 .obsMove {

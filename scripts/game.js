@@ -2,6 +2,9 @@ const canvas = document.getElementById("fun");
 const player = document.getElementById("player");
 const limit = 1;
 
+const jumpDuration = 1.5; 
+const obsMoveDuration = 3;
+
 const audio = {
     GAME_OVER: new Audio("assets/game/assets_game-over.mp3"),
     JUMP: new Audio("assets/game/assets_jump.mp3"),
@@ -37,7 +40,7 @@ function jump() {
     setTimeout(function () {
         player.classList.remove("jump");
         move();
-    }, 1000);
+    }, jumpDuration * 1000);
 }
 
 function obsMove() {
@@ -49,7 +52,7 @@ function obsMove() {
         if (gameOver) return;
         obs.remove();
         count = document.getElementsByClassName("obsMove").length;
-    }, 1000 * 3);
+    }, obsMoveDuration * 1000);
 }
 
 function spawnObstacles() {
@@ -60,7 +63,7 @@ function spawnObstacles() {
     obs.id = "obs";
     obs.classList.add("obsMove");
 
-    var position = parseInt(canvas.style.height) - 150;
+    var position = parseInt(canvas.style.height) - 230;
 
     obs.style.top = position + "px";
     obs.style.right = "-1150px";
