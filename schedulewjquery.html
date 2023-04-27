@@ -166,6 +166,7 @@
 				margin-left: 320px;
 			}
 			  </style>
+              <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 			  <script>
 				function flight(flightNumber, departureCity, departureTime, arrivalCity, arrivalTime, layovers, price) {
                  this.flightNumber= flightNumber;
@@ -201,20 +202,29 @@
                 }
 					 const FlightCollection = new flightCollection();
 					 displayFlights(FlightCollection.flights);
-                   
-					 function displayFlights(flights) {
-                      const tableBody = document.querySelector('#flightsTable tbody');
-                      flights.forEach((flight) => {
-                      const row= tableBody.insertRow();
-                      row.insertCell().textContent= flight.flightNumber;
-                      row.insertCell().textContent= flight.departureCity;
-                      row.insertCell().textContent= flight.departureTime;
-                      row.insertCell().textContent= flight.arrivalCity;
-                      row.insertCell().textContent= flight.arrivalTime;
-                      row.insertCell().textContent= flight.layovers;
-                      row.insertCell().textContent= flight.price;
+                     //function display flights with jquery
+                     function displayFlights(flights) {
+                      const tableBody= $('#flightsTable tbody');
+                      tableBody.empty();
+                      $.each(flights, function(index, flight) {
+                      const row= $('<tr>');
+                      row.append($('<td>').text(flight.flightNumber));
+                      row.append($('<td>').text(flight.departureCity));
+                      row.append($('<td>').text(flight.departureTime));
+                      row.append($('<td>').text(flight.arrivalCity));
+                      row.append($('<td>').text(flight.arrivalTime));
+                      row.append($('<td>').text(flight.layovers));
+                      row.append($('<td>').text(flight.price));
+                      row.click(function() {
+                      tableBody.find('tr').not(row).hide();
+                      $.each(flights, function(index, flight) {
+                      flight.selected= false;
                       });
-                     }
+                      flight.selected= true;
+                      });
+                      tableBody.append(row);
+                      });
+                      }
 
 					function searchFlights() {
 
@@ -231,32 +241,32 @@
                     }
                      document.getElementById("searchflights").reset();
                     }
+					 //function add flight with jquery
 					 function addFlight() {
-  
-                      const flightNumber= document.getElementById("flightNumber").value;
-                      const departureCity= document.getElementById("departureCity").value;
-                      const departureTime= document.getElementById("departureTime").value;
-                      const arrivalCity = document.getElementById("arrivalCity").value;
-                      const arrivalTime= document.getElementById("arrivalTime").value;
-                      const layovers = document.getElementById("layovers").value;
-                      const price= document.getElementById("price").value;
-                      const table= document.getElementById("flightsTable").getElementsByTagName("tbody")[0];
-                      const newRow = table.insertRow(-1);
-                      const flightNumberCell= newRow.insertCell(0);
-                      const departureCityCell = newRow.insertCell(1);
-                      const departureTimeCell= newRow.insertCell(2);
-                      const arrivalCityCell= newRow.insertCell(3);
-                      const arrivalTimeCell = newRow.insertCell(4);
-                      const layoversCell= newRow.insertCell(5);
-                      const priceCell = newRow.insertCell(6);
-                      flightNumberCell.innerHTML= flightNumber;
-                      departureCityCell.innerHTML = departureCity;
-                      departureTimeCell.innerHTML= departureTime;
-                      arrivalCityCell.innerHTML = arrivalCity;
-                      arrivalTimeCell.innerHTML= arrivalTime;
-                      layoversCell.innerHTML = layovers;
-                      priceCell.innerHTML= price;
-					  FlightCollection.flights.push(new flight(flightNumber, departureCity, departureTime, arrivalCity, arrivalTime, layovers, price));
+
+                      const flightNumber= $('#flightNumber').val();
+                      const departureCity= $('#departureCity').val();
+                      const departureTime= $('#departureTime').val();
+                      const arrivalCity= $('#arrivalCity').val();
+                      const arrivalTime= $('#arrivalTime').val();
+                      const layovers= $('#layovers').val();
+                      const price= $('#price').val(); 
+                      const newRow= $('<tr>');
+                      newRow.append($('<td>').text(flightNumber));
+                      newRow.append($('<td>').text(departureCity));
+                      newRow.append($('<td>').text(departureTime));
+                      newRow.append($('<td>').text(arrivalCity));
+                      newRow.append($('<td>').text(arrivalTime));
+                      newRow.append($('<td>').text(layovers));
+                      newRow.append($('<td>').text(price));
+                      $('#flightsTable tbody').append(newRow);
+                      $('#flightNumber').val('');
+                      $('#departureCity').val('');
+                      $('#departureTime').val('');
+                      $('#arrivalCity').val('');
+                      $('#arrivalTime').val('');
+                      $('#layovers').val('');
+                      $('#price').val('');
                       }
 			</script>
 			</head>
