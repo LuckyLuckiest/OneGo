@@ -8,11 +8,14 @@
     <link rel="stylesheet" href="styles/footer.css">
     <title>One Go</title>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js">
+        // Wait for the page to load before executing any JavaScript code
         $(document).ready(function () {
+            // Attach a click event listener to the create button
             $("#create").click(function () {
+                // Get the values of the policy name and policy input fields using jQuery
                 const policy_name_input = $("#policy_name_input");
                 const policy_input = $("#policy_input");
-
+                // Check if the fields are not empty before creating a new row in the table
                 if (policy_name_input.val() != "" && policy_input.val() != "") {
                     let table = $("#policies");
                     let tr = $("<tr>");
