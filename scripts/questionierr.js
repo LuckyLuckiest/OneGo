@@ -1,8 +1,10 @@
+//get the form element
 let form = document.getElementById("form");
 
 // checks if all the questions were not empty before submitting
 form.addEventListener("submit", (e) => {
     e.preventDefault();
+    // Create a map of question names and their corresponding numbers
     let names = new Map(
         [
             ["services", 1],
@@ -12,14 +14,15 @@ form.addEventListener("submit", (e) => {
             ["stay-services1", 6],
         ]
     );
+    // Create an empty map to store the status of each question
     let status = new Map();
+    // Get the keys (names) of the questions
     let name = names.keys();
-
+    // Iterate through each question and check if it is answered
     for (const iterator of name) {
         status.set(iterator, check(iterator))
     }
-
-    // validates if the question was answered
+// Check if all questions are answered, if not display an alert and scroll to the question
     for (const i of status.keys()) {
         if (!(status.get(i))) {
             document.getElementById(i).scrollIntoView({ behavior: 'smooth' });
@@ -28,8 +31,7 @@ form.addEventListener("submit", (e) => {
             exit(0);
         }
     }
-
-    // validates if the text was not empty
+// Validate the answer to question number 4 (date)
     let value = document.getElementById("text");
     if (value.value == "" || value == null) {
         alert(`the questions number ${4} is not answred`);
@@ -45,7 +47,9 @@ form.addEventListener("submit", (e) => {
 
     }
 
-    // validates if the text area was validated
+
+
+// Check if question number 7 (textarea) is answered
     let textarea = document.getElementById("textarea");
     if (textarea.value.length == 0) {
         alert(`the questions number ${7} is not answred`);
@@ -71,7 +75,7 @@ function check(name) {
     return false;
 }
 
-const textarea = document.getElementById("textarea"); // replace 'myInput' with the ID of your input element
+const textarea = document.getElementById("textarea"); 
 
 textarea.addEventListener('input', function () {
     const value = this.value;
