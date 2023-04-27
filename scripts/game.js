@@ -18,12 +18,17 @@ var passed = false;
 var points = 0;
 var count = document.getElementsByClassName("obsMove").length;
 
-// stop the player and the obstacle in their place
+/**
+ * pauses the player and obstacle entities
+ */
 function stationary() {
     player.classList.remove("move", "jump");
     document.getElementById("obs").style.animationPlayState = "paused";
 }
 
+/**
+ * changes the class of the player from jump to move
+ */
 // enforce move class to player to apply css
 function move() {
     if (gameOver) return;
@@ -32,7 +37,9 @@ function move() {
 }
 
 
-// apply jump on player
+/**
+ * Applys jump to player and outputs jump sound
+ */
 function jump() {
     if (gameOver) return;
     if (player.classList == "jump") return;
@@ -48,7 +55,9 @@ function jump() {
     }, jumpDuration * 1000);
 }
 
-// move obstacle and remove after a timer
+/**
+ * moves the obstacle if it exists
+ */
 function obsMove() {
     var obs = document.getElementById("obs");
 
@@ -61,7 +70,10 @@ function obsMove() {
     }, obsMoveDuration * 1000);
 }
 
-// spawn obstacles in the canvas
+/**
+ * spawns a new obstacle with the specified limit and adds certain positions
+ * into the canvas, then calls the obstacle move function
+ */
 function spawnObstacles() {
     if (gameOver) return;
     if (count >= limit) return;
@@ -81,7 +93,10 @@ function spawnObstacles() {
     obsMove();
 }
 
-// check collision for obstacles
+/**
+ * checks collision of the obstacle with the player and when
+ * a player passes the obstacle to add a point
+ */
 function checkCollision() {
     var obs = document.getElementById("obs");
 
@@ -106,7 +121,10 @@ function checkCollision() {
     }
 }
 
-// game loop
+/**
+ * game loop to check the collision and checks if the
+ * game has ended
+ */
 function gameLoop() {
     checkCollision();
     if (gameOver) {
@@ -116,7 +134,9 @@ function gameLoop() {
     requestAnimationFrame(gameLoop);
 }
 
-// game end screen
+/**
+ * creates a game end screen and plays game over sound
+ */
 function gameEnded() {
     started = false;
     if (document.getElementById("end") != null) return;
@@ -132,7 +152,9 @@ function gameEnded() {
     stationary();
 }
 
-// start spawning obstacles
+/**
+ * spawns an obstacle to the canvas at different intervals
+ */
 function startSpawnObs() {
     if (gameOver) return;
     setInterval(function () {
@@ -140,7 +162,9 @@ function startSpawnObs() {
     }, Math.floor(Math.random() * 6) * 1000);
 }
 
-// reset the values
+/**
+ * resets the values to restart the game
+ */
 function clear() {
     document.getElementById("obs").remove();
     count = document.getElementsByClassName("obsMove").length;
@@ -151,7 +175,9 @@ function clear() {
     gameOver = false;
 }
 
-// start the game
+/**
+ * starts the game with calling the necessary functions
+ */
 function startGame() {
     started = true;
     if (gameOver) clear();
@@ -160,7 +186,10 @@ function startGame() {
     gameLoop();
 }
 
-// jump listener
+/**
+ * checks if the user pressed jump keys to initiate jump
+ * listener
+ */
 document.addEventListener("keydown", function (event) {
     if (!started) return;
     if (event.key === "Enter" || event.key === " " || event.key === "ArrowUp") {
@@ -168,7 +197,9 @@ document.addEventListener("keydown", function (event) {
     }
 });
 
-// start game event
+/**
+ * calls the start game function when there is any key pressed
+ */
 document.addEventListener("keydown", function (event) {
     startGame();
 });

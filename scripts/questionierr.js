@@ -1,6 +1,8 @@
 let form = document.getElementById("form");
+
+// checks if all the questions were not empty before submitting
 form.addEventListener("submit", (e) => {
-    e.preventDefault()
+    e.preventDefault();
     let names = new Map(
         [
             ["services", 1],
@@ -9,7 +11,7 @@ form.addEventListener("submit", (e) => {
             ["car-rental-extras", 5],
             ["stay-services1", 6],
         ]
-    )
+    );
     let status = new Map();
     let name = names.keys();
 
@@ -17,6 +19,7 @@ form.addEventListener("submit", (e) => {
         status.set(iterator, check(iterator))
     }
 
+    // validates if the question was answered
     for (const i of status.keys()) {
         if (!(status.get(i))) {
             document.getElementById(i).scrollIntoView({ behavior: 'smooth' });
@@ -26,6 +29,7 @@ form.addEventListener("submit", (e) => {
         }
     }
 
+    // validates if the text was not empty
     let value = document.getElementById("text");
     if (value.value == "" || value == null) {
         alert(`the questions number ${4} is not answred`);
@@ -33,6 +37,7 @@ form.addEventListener("submit", (e) => {
         document.getElementById("data").innerHTML = "this question is required";
         exit(0);
     } else {
+        // validates the date
         if (validateDate(value.value) == false) {
             alert("Please enter a valid date in the format of YYYY-MM-DD");
             exit(0);
@@ -40,9 +45,7 @@ form.addEventListener("submit", (e) => {
 
     }
 
-
-
-
+    // validates if the text area was validated
     let textarea = document.getElementById("textarea");
     if (textarea.value.length == 0) {
         alert(`the questions number ${7} is not answred`);
@@ -51,15 +54,12 @@ form.addEventListener("submit", (e) => {
         exit(0);
     }
 
-
-
     names.clear();
     status.clear();
     location.reload();
-})
+});
 
-
-
+// checks if the radio buttons is checked
 function check(name) {
 
     let element = document.getElementsByName(name);
@@ -71,11 +71,6 @@ function check(name) {
     return false;
 }
 
-
-
-
-
-
 const textarea = document.getElementById("textarea"); // replace 'myInput' with the ID of your input element
 
 textarea.addEventListener('input', function () {
@@ -86,11 +81,9 @@ textarea.addEventListener('input', function () {
     }
 });
 
+// validates the date according to the input
 function validateDate(input) {
     var dateRegex = /^\d{4}-\d{2}-\d{2}$/;
-    if (!input.match(dateRegex)) {
-
-        return false;
-    }
+    if (!input.match(dateRegex)) return false;
     return true;
 }

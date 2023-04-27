@@ -1,4 +1,4 @@
-
+// inserts data to table
 document.getElementById("create").onclick = function () {
 	let table = document.getElementById("policies");
 	let tr = table.insertRow();
@@ -11,7 +11,6 @@ document.getElementById("create").onclick = function () {
 
 }
 
-
 const policy_name_input = document.getElementById("policy_name_input"); // replace 'myInput' with the ID of your input element
 
 policy_name_input.addEventListener('input', function () {
@@ -21,8 +20,6 @@ policy_name_input.addEventListener('input', function () {
 		this.value = value.slice(0, -1); // remove the last character if it doesn't match the pattern
 	}
 });
-
-
 
 const policy_input = document.getElementById("policy_input"); // replace 'myInput' with the ID of your input element
 

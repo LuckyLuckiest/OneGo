@@ -183,10 +183,12 @@
                 <label for="radio3" class="mannual-btn"></label>
             </div>
         </div>
-        <!-- Album JS-->
+        <!-- Album -->
         <script>
+            // set the counter for the number of images
             var counter = 1;
             setInterval(function () {
+                // change the radio button
                 document.getElementById('radio' + counter).checked = true;
                 counter++;
                 if (counter > 3) {
@@ -194,7 +196,7 @@
                 }
             }, 4000);
         </script>
-        <!-- Time/Date Line-->
+        <!-- Time/Date hover line-->
         <div class="hwrap">
             <div class="hmove">
                 <div class="hitem">
@@ -203,23 +205,29 @@
                 </div>
             </div>
         </div>
-        <!-- date JS -->
+        <!-- date -->
         <script>
+            // check the time and date every second
             setInterval(function () {
+                // create a new instance
                 var date = new Date();
                 var currentDate = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
                 document.getElementById("p1").innerHTML = currentDate;
                 var hours = date.getHours();
+                // get the values if AM or PM
                 var time = function () {
                     return hours < 12 ? "AM" : "PM";
                 };
+                // use 12-hours
                 var modifiedHours = function () {
                     return hours != 12 ? hours % 12 : hours;
                 };
+                // add padding
                 var min = date.getMinutes();
                 var modifiedMinutes = function () {
                     return min < 10 ? "0" + min : min;
                 };
+                // output data
                 var currentTime = modifiedHours() + ":" + modifiedMinutes() + " " + time();
                 document.getElementById("p2").innerHTML = currentTime;
             }, 1000);
