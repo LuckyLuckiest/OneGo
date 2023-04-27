@@ -9,33 +9,33 @@
     <title>One Go</title>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js">
         $(document).ready(function () {
-  $("#create").click(function () {
-    const policy_name_input = $("#policy_name_input");
-    const policy_input = $("#policy_input");
+            $("#create").click(function () {
+                const policy_name_input = $("#policy_name_input");
+                const policy_input = $("#policy_input");
 
-    if (policy_name_input.val() != "" && policy_input.val() != "") {
-      let table = $("#policies");
-      let tr = $("<tr>");
-      let th = $("<th>");
-      let td = $("<td>");
-      tr.append(th);
-      tr.append(td);
-      th.html(policy_name_input.val());
-      td.html(policy_input.val());
-      table.append(tr);
-    } else {
-      alert("You cannot insert an empty data");
-    }
-  });
+                if (policy_name_input.val() != "" && policy_input.val() != "") {
+                    let table = $("#policies");
+                    let tr = $("<tr>");
+                    let th = $("<th>");
+                    let td = $("<td>");
+                    tr.append(th);
+                    tr.append(td);
+                    th.html(policy_name_input.val());
+                    td.html(policy_input.val());
+                    table.append(tr);
+                } else {
+                    alert("You cannot insert an empty data");
+                }
+            });
 
-  $("#policy_name_input, #policy_input").on("input", function () {
-    const value = $(this).val();
-    const regex = /^[A-Za-z0-9\s]+$/; // this regex pattern matches only letters and numbers
-    if (!regex.test(value)) {
-      $(this).val(value.slice(0, -1)); // remove the last character if it doesn't match the pattern
-    }
-  });
-});
+            $("#policy_name_input, #policy_input").on("input", function () {
+                const value = $(this).val();
+                const regex = /^[A-Za-z0-9\s]+$/; // this regex pattern matches only letters and numbers
+                if (!regex.test(value)) {
+                    $(this).val(value.slice(0, -1)); // remove the last character if it doesn't match the pattern
+                }
+            });
+        });
     </script>
 </head>
 
@@ -158,10 +158,10 @@
         <div id="submit">
             <div id="submit">
                 <label id="policy_name">
-                    Enter the policy name:   
+                    Enter the policy name:
                     <input type="text" id="policy_name_input">
                 </label>
-                <label id="policy">Enter the policy:   
+                <label id="policy">Enter the policy:
                     <textarea id="policy_input"></textarea>
                 </label>
                 <button id="create">create a new row</button>
@@ -199,7 +199,7 @@
 </html>
 
 <style>
-    #create{
+    #create {
         margin-top: 30px;
         width: 170px;
         height: 50px;
@@ -211,36 +211,43 @@
         border-style: solid;
         border-color: rgb(95, 91, 91);
     }
-    #create:hover{
+
+    #create:hover {
         background-color: azure;
         color: rgb(67, 41, 122);
         border-color: rgb(67, 41, 122);
     }
-    #policy_name_input{
+
+    #policy_name_input {
         width: 300px;
         height: 25px;
     }
-    #policy_name{
+
+    #policy_name {
         margin-bottom: 30px;
     }
-    #policy_input, #policy_name_input {
+
+    #policy_input,
+    #policy_name_input {
         margin-left: 10px;
         font-size: 20px;
         border-width: 3px;
         border-style: solid;
         border-color: rgb(67, 41, 122);
     }
+
     #policy {
         display: flex;
         justify-content: left;
         height: 300px;
         text-align: left;
     }
-    #policy_input{
+
+    #policy_input {
         width: 300px;
         resize: none;
     }
-    
+
     #submit {
         color: white;
         font-size: 20px;
@@ -252,12 +259,13 @@
         margin-top: 30px;
         margin-bottom: 30px;
     }
+
     .container {
         justify-content: center;
         display: flex;
         margin-top: 50px;
         margin-bottom: 50px;
-        
+
     }
 
     table {
