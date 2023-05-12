@@ -7,6 +7,17 @@
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <link rel="stylesheet" href="styles/web-uni.css">
     <link rel="stylesheet" href="styles/footer.css">
+    <script>
+        function passwordCheck() {
+            var pass = document.getElementById("pwd").value;
+            var con_pass = document.getElementById("cpwd").value;
+            if (pass !== con_pass) {
+                alert("Passwords don't match.");
+                return false;
+            }
+            return true;
+        }
+    </script>
     <title>One Go</title>
 </head>
 
@@ -48,7 +59,7 @@
                 <li>Log in</li>
             </a>
             <li class="dropdown nav-link" style="float: right;">
-                Technical <span class="bi bi-caret-down-fill" style="font-size: 10px;"></span>
+                Technical<span class="bi bi-caret-down-fill" style="font-size: 10px;"></span>
                 <ul class="dropdown-menu">
                     <a href="calculation.html">
                         <li class="dropdown-item nav-link">Calculation</li>
@@ -70,17 +81,17 @@
         <h1 class="title">Register</h1>
 
         <div class="container col-sm-3 p-4 mb-5">
-            <form action="" class="row justify-content-md-center">
+            <form onsubmit="return passwordCheck();" action="backend/register.php" method="post" class="row justify-content-md-center">
                 <div class="row p-2">
                     <div class="col">
                         <div class="form-floating">
-                            <input type="text" class="form-control" id="fname" placeholder="first name" required>
+                            <input type="text" class="form-control" name="fname" id="fname" placeholder="first name" required>
                             <label for="fname" class="form-label">First name</label>
                         </div>
                     </div>
                     <div class="col">
                         <div class="form-floating">
-                            <input type="text" class="form-control" id="lname" placeholder="last name" required>
+                            <input type="text" class="form-control" name="lname" id="lname" placeholder="last name" required>
                             <label for="lname" class="form-label">Last name</label>
                         </div>
                     </div>
@@ -88,7 +99,7 @@
                 <div class="row p-2">
                     <div class="col">
                         <div class="form-floating">
-                            <input type="email" class="form-control" id="emailadd" placeholder="email" required>
+                            <input type="email" class="form-control" name="emailadd" id="emailadd" placeholder="email" required>
                             <label for="emailadd" class="form-label">Email address</label>
                         </div>
                     </div>
@@ -96,7 +107,7 @@
                 <div class="row p-2">
                     <div class="col">
                         <div class="form-floating">
-                            <input type="password" class="form-control" id="pwd" placeholder="password" required>
+                            <input type="password" class="form-control" name="pwd" id="pwd" placeholder="password" required>
                             <label for="pwd" class="form-label">Password</label>
                         </div>
                     </div>
