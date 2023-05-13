@@ -57,19 +57,19 @@
 					</ul>
 				</li>
 				<li class="dropdown split">
-                    Database <span class="bi bi-caret-down-fill" style="font-size: 10px;"></span>
-                    <ul>
-                        <a href="add.html">
-                            <li>Add</li>
-                        </a>
-                        <a href="delete.html">
-                            <li>Delete</li>
-                        </a>
-                        <a href="search.html">
-                            <li>Search</li>
-                        </a>
-                    </ul>
-                </li>
+					Database <span class="bi bi-caret-down-fill" style="font-size: 10px;"></span>
+					<ul>
+						<a href="add.html">
+							<li>Add</li>
+						</a>
+						<a href="delete.html">
+							<li>Delete</li>
+						</a>
+						<a href="search.html">
+							<li>Search</li>
+						</a>
+					</ul>
+				</li>
 			</ul>
 		</nav>
 	</header>
@@ -78,231 +78,230 @@
 		<!-- Every page contains a title -->
 		<h1 class="title">Flight Schedule</h1>
 
-		<body>
 
-			<table id="flightsTable" style="font-size: x-large; color: white;">
-				<thead>
-					<tr>
-						<th>Flight Number</th>
-						<th>Departure City</th>
-						<th>Departure Time</th>
-						<th>Arrival City</th>
-						<th>Arrival Time</th>
-						<th>Layovers</th>
-						<th>Price</th>
-					</tr>
-				</thead>
-				<tbody>
-				</tbody>
-			</table>
-			<br>
-			<div class="container">
-				<form id="addflights">
+		<table id="flightsTable" style="font-size: x-large; color: white;">
+			<thead>
+				<tr>
+					<th>Flight Number</th>
+					<th>Departure City</th>
+					<th>Departure Time</th>
+					<th>Arrival City</th>
+					<th>Arrival Time</th>
+					<th>Layovers</th>
+					<th>Price</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+		<br>
+		<div class="container">
+			<form id="addflights">
+				<label for="flightNumber">Flight Number:</label>
+				<input type="text" id="flightNumber" name="flightNumber" required>
+				<br>
+				<label for="departureCity">Departure City:</label>
+				<input type="text" id="departureCity" name="departureCity" required>
+				<br>
+				<label for="departureTime">Departure Time:</label>
+				<input type="time" id="departureTime" name="departureTime" required>
+				<br>
+				<label for="arrivalCity" style="margin-right: 55px;">Arrival City:</label>
+				<input type="text" id="arrivalCity" name="arrivalCity" required>
+				<br>
+				<label for="arrivalTime" style="margin-right: 55px;">Arrival Time:</label>
+				<input type="time" id="arrivalTime" name="arrivalTime" required>
+				<br>
+				<label for="layovers" style="margin-right: 71px;">Layovers:</label>
+				<input type="text" id="layovers" name="layovers" required>
+				<br>
+				<label for="price" style="margin-right: 110px;">Price:</label>
+				<input type="text" id="price" name="price" required>
+				<br>
+				<button type="button" onclick="addFlight()">Add Flight</button>
+				<br><br>
+				<form id="searchflights">
 					<label for="flightNumber">Flight Number:</label>
-					<input type="text" id="flightNumber" name="flightNumber" required>
-					<br>
-					<label for="departureCity">Departure City:</label>
-					<input type="text" id="departureCity" name="departureCity" required>
-					<br>
-					<label for="departureTime">Departure Time:</label>
-					<input type="time" id="departureTime" name="departureTime" required>
-					<br>
-					<label for="arrivalCity" style="margin-right: 55px;">Arrival City:</label>
-					<input type="text" id="arrivalCity" name="arrivalCity" required>
-					<br>
-					<label for="arrivalTime" style="margin-right: 55px;">Arrival Time:</label>
-					<input type="time" id="arrivalTime" name="arrivalTime" required>
-					<br>
-					<label for="layovers" style="margin-right: 71px;">Layovers:</label>
-					<input type="text" id="layovers" name="layovers" required>
-					<br>
-					<label for="price" style="margin-right: 110px;">Price:</label>
-					<input type="text" id="price" name="price" required>
-					<br>
-					<button type="button" onclick="addFlight()">Add Flight</button>
-					<br><br>
-					<form id="searchflights">
-						<label for="flightNumber">Flight Number:</label>
-						<input type="text" id="flightNum" name="flightNumber" required><br>
-						<button type="button" onclick="searchFlights()">Search Flight</button>
-					</form>
+					<input type="text" id="flightNum" name="flightNumber" required><br>
+					<button type="button" onclick="searchFlights()">Search Flight</button>
 				</form>
-			</div>
-			<style>
-				table {
-					margin-bottom: 3%;
-					border-collapse: collapse;
-					width: 100%;
-				}
+			</form>
+		</div>
+		<style>
+			table {
+				margin-bottom: 3%;
+				border-collapse: collapse;
+				width: 100%;
+			}
 
-				th,
-				td {
-					text-align: left;
-					padding: 27px;
-				}
+			th,
+			td {
+				text-align: left;
+				padding: 27px;
+			}
 
-				th {
-					color: lightslategray;
-					border: white;
-				}
+			th {
+				color: lightslategray;
+				border: white;
+			}
 
-				tr:nth-child(even) {
-					background-color: grey;
-				}
+			tr:nth-child(even) {
+				background-color: grey;
+			}
 
-				input[type="text"] {
-					padding: 5px;
-					border: 1px solid #ccc;
-					border-radius: 4px;
-					margin-bottom: 30px;
-					font-size: large;
-					margin-left: 4%;
-				}
+			input[type="text"] {
+				padding: 5px;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				margin-bottom: 30px;
+				font-size: large;
+				margin-left: 4%;
+			}
 
-				input[type="time"] {
-					padding: 5px;
-					border: 1px solid #ccc;
-					border-radius: 4px;
-					margin-bottom: 30px;
-					font-size: large;
-					margin-left: 2%;
-				}
+			input[type="time"] {
+				padding: 5px;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				margin-bottom: 30px;
+				font-size: large;
+				margin-left: 2%;
+			}
 
-				label {
-					font-size: x-large;
-					color: darkslategray;
-					margin-right: 16px;
-					margin-left: 10px;
-					align-items: center;
-				}
+			label {
+				font-size: x-large;
+				color: darkslategray;
+				margin-right: 16px;
+				margin-left: 10px;
+				align-items: center;
+			}
 
-				button {
-					background-color: white;
-					color: black;
-					padding: 20px;
-					border: none;
-					cursor: pointer;
-					transition: all 0.3s ease-in-out;
-					font-size: large;
-					margin-left: 210px;
-				}
+			button {
+				background-color: white;
+				color: black;
+				padding: 20px;
+				border: none;
+				cursor: pointer;
+				transition: all 0.3s ease-in-out;
+				font-size: large;
+				margin-left: 210px;
+			}
 
-				button[type="button"]:hover {
-					background-color: lightgrey;
-				}
+			button[type="button"]:hover {
+				background-color: lightgrey;
+			}
 
-				.container {
-					width: 600px;
-					border: 5px solid darkcyan;
-					border-radius: 5px;
-					border-style: dotted;
-					background-color: lightblue;
-					font-size: large;
-					padding: 2% 5%;
-					margin-bottom: 50%;
-					margin-top: 6%;
-					margin-left: 320px;
-				}
-			</style>
-			<script>
-				// create constructor
-				function flight(flightNumber, departureCity, departureTime, arrivalCity, arrivalTime, layovers, price) {
-					this.flightNumber = flightNumber;
-					this.departureCity = departureCity;
-					this.departureTime = departureTime;
-					this.arrivalCity = arrivalCity;
-					this.arrivalTime = arrivalTime;
-					this.layovers = layovers;
-					this.price = price;
-					this.selected = false;
-				}
-				// create a map
-				function flightCollection() {
-					this.flights = [
-						new flight('FL001', 'New York', '10:00', 'Dubai', '19:00', '1 Stop', '570 OMR'),
-						new flight('FL002', 'Dubai', '18:00', 'Delhi', '22:00', '2 Stops', '190 OMR'),
-						new flight('FL003', 'Delhi', '14:00', 'New York', '21:00', '1 Stop', '456 OMR'),
-						new flight('FL004', 'New York', '09:00', 'Delhi', '19:00', '2 Stops', '342 OMR'),
-						new flight('FL005', 'Delhi', '06:00', 'Dubai', '12:00', '2 Stops', '190 OMR'),
-						new flight('FL006', 'Dubai', '00:00', 'New York', '17:00', '2 Stops', '418 OMR'),
-						new flight('FL007', 'Dubai', '04:00', 'Muscat', '07:00', '1 Stop', '57 OMR'),
-						new flight('FL008', 'Muscat', '09:00', 'New York', '20:00', '2 Stops', '495 OMR'),
-						new flight('FL009', 'Muscat', '20:00', 'Delhi', '00:00', '1 Stop', '114 OMR'),
-						new flight('FL010', 'New York', '02:00', 'Muscat', '20:00', '1 Stop', '610 OMR')
-					];
-					this.getSelectedFlight = function () {
-						for (var i = 0; i < this.flights.length; i++) {
-							if (this.flights[i].selected) {
-								return this.flights[i];
-							}
-						}
-						return null;
-					}
-				}
-				// create instance
-				const FlightCollection = new flightCollection();
-				displayFlights(FlightCollection.flights);
-
-				// display table data
-				function displayFlights(flights) {
-					const tableBody = document.querySelector('#flightsTable tbody');
-					flights.forEach((flight) => {
-						const row = tableBody.insertRow();
-						row.insertCell().textContent = flight.flightNumber;
-						row.insertCell().textContent = flight.departureCity;
-						row.insertCell().textContent = flight.departureTime;
-						row.insertCell().textContent = flight.arrivalCity;
-						row.insertCell().textContent = flight.arrivalTime;
-						row.insertCell().textContent = flight.layovers;
-						row.insertCell().textContent = flight.price;
-					});
-				}
-
-				// search for flights using flight number
-				function searchFlights() {
-					const searchValue = document.getElementById("flightNum").value.toLowerCase();
-					const table = document.getElementById("flightsTable").getElementsByTagName("tbody")[0];
-					const rows = table.getElementsByTagName("tr");
-					for (let i = 0; i < rows.length; i++) {
-						const flightnum = rows[i].getElementsByTagName("td")[0].innerHTML.toLowerCase();
-						if (flightnum.includes(searchValue)) {
-							rows[i].style.display = "";
-						} else {
-							rows[i].style.display = "none";
+			.container {
+				width: 600px;
+				border: 5px solid darkcyan;
+				border-radius: 5px;
+				border-style: dotted;
+				background-color: lightblue;
+				font-size: large;
+				padding: 2% 5%;
+				margin-bottom: 6%;
+				margin-top: 6%;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		</style>
+		<script>
+			// create constructor
+			function flight(flightNumber, departureCity, departureTime, arrivalCity, arrivalTime, layovers, price) {
+				this.flightNumber = flightNumber;
+				this.departureCity = departureCity;
+				this.departureTime = departureTime;
+				this.arrivalCity = arrivalCity;
+				this.arrivalTime = arrivalTime;
+				this.layovers = layovers;
+				this.price = price;
+				this.selected = false;
+			}
+			// create a map
+			function flightCollection() {
+				this.flights = [
+					new flight('FL001', 'New York', '10:00', 'Dubai', '19:00', '1 Stop', '570 OMR'),
+					new flight('FL002', 'Dubai', '18:00', 'Delhi', '22:00', '2 Stops', '190 OMR'),
+					new flight('FL003', 'Delhi', '14:00', 'New York', '21:00', '1 Stop', '456 OMR'),
+					new flight('FL004', 'New York', '09:00', 'Delhi', '19:00', '2 Stops', '342 OMR'),
+					new flight('FL005', 'Delhi', '06:00', 'Dubai', '12:00', '2 Stops', '190 OMR'),
+					new flight('FL006', 'Dubai', '00:00', 'New York', '17:00', '2 Stops', '418 OMR'),
+					new flight('FL007', 'Dubai', '04:00', 'Muscat', '07:00', '1 Stop', '57 OMR'),
+					new flight('FL008', 'Muscat', '09:00', 'New York', '20:00', '2 Stops', '495 OMR'),
+					new flight('FL009', 'Muscat', '20:00', 'Delhi', '00:00', '1 Stop', '114 OMR'),
+					new flight('FL010', 'New York', '02:00', 'Muscat', '20:00', '1 Stop', '610 OMR')
+				];
+				this.getSelectedFlight = function () {
+					for (var i = 0; i < this.flights.length; i++) {
+						if (this.flights[i].selected) {
+							return this.flights[i];
 						}
 					}
-					document.getElementById("searchflights").reset();
+					return null;
 				}
-				// add flight to table
-				function addFlight() {
-					const flightNumber = document.getElementById("flightNumber").value;
-					const departureCity = document.getElementById("departureCity").value;
-					const departureTime = document.getElementById("departureTime").value;
-					const arrivalCity = document.getElementById("arrivalCity").value;
-					const arrivalTime = document.getElementById("arrivalTime").value;
-					const layovers = document.getElementById("layovers").value;
-					const price = document.getElementById("price").value;
-					const table = document.getElementById("flightsTable").getElementsByTagName("tbody")[0];
-					const newRow = table.insertRow(-1);
-					const flightNumberCell = newRow.insertCell(0);
-					const departureCityCell = newRow.insertCell(1);
-					const departureTimeCell = newRow.insertCell(2);
-					const arrivalCityCell = newRow.insertCell(3);
-					const arrivalTimeCell = newRow.insertCell(4);
-					const layoversCell = newRow.insertCell(5);
-					const priceCell = newRow.insertCell(6);
-					flightNumberCell.innerHTML = flightNumber;
-					departureCityCell.innerHTML = departureCity;
-					departureTimeCell.innerHTML = departureTime;
-					arrivalCityCell.innerHTML = arrivalCity;
-					arrivalTimeCell.innerHTML = arrivalTime;
-					layoversCell.innerHTML = layovers;
-					priceCell.innerHTML = price;
-					FlightCollection.flights.push(new flight(flightNumber, departureCity, departureTime, arrivalCity, arrivalTime, layovers, price));
+			}
+			// create instance
+			const FlightCollection = new flightCollection();
+			displayFlights(FlightCollection.flights);
+
+			// display table data
+			function displayFlights(flights) {
+				const tableBody = document.querySelector('#flightsTable tbody');
+				flights.forEach((flight) => {
+					const row = tableBody.insertRow();
+					row.insertCell().textContent = flight.flightNumber;
+					row.insertCell().textContent = flight.departureCity;
+					row.insertCell().textContent = flight.departureTime;
+					row.insertCell().textContent = flight.arrivalCity;
+					row.insertCell().textContent = flight.arrivalTime;
+					row.insertCell().textContent = flight.layovers;
+					row.insertCell().textContent = flight.price;
+				});
+			}
+
+			// search for flights using flight number
+			function searchFlights() {
+				const searchValue = document.getElementById("flightNum").value.toLowerCase();
+				const table = document.getElementById("flightsTable").getElementsByTagName("tbody")[0];
+				const rows = table.getElementsByTagName("tr");
+				for (let i = 0; i < rows.length; i++) {
+					const flightnum = rows[i].getElementsByTagName("td")[0].innerHTML.toLowerCase();
+					if (flightnum.includes(searchValue)) {
+						rows[i].style.display = "";
+					} else {
+						rows[i].style.display = "none";
+					}
 				}
-			</script>
-			
-		</body>
+				document.getElementById("searchflights").reset();
+			}
+			// add flight to table
+			function addFlight() {
+				const flightNumber = document.getElementById("flightNumber").value;
+				const departureCity = document.getElementById("departureCity").value;
+				const departureTime = document.getElementById("departureTime").value;
+				const arrivalCity = document.getElementById("arrivalCity").value;
+				const arrivalTime = document.getElementById("arrivalTime").value;
+				const layovers = document.getElementById("layovers").value;
+				const price = document.getElementById("price").value;
+				const table = document.getElementById("flightsTable").getElementsByTagName("tbody")[0];
+				const newRow = table.insertRow(-1);
+				const flightNumberCell = newRow.insertCell(0);
+				const departureCityCell = newRow.insertCell(1);
+				const departureTimeCell = newRow.insertCell(2);
+				const arrivalCityCell = newRow.insertCell(3);
+				const arrivalTimeCell = newRow.insertCell(4);
+				const layoversCell = newRow.insertCell(5);
+				const priceCell = newRow.insertCell(6);
+				flightNumberCell.innerHTML = flightNumber;
+				departureCityCell.innerHTML = departureCity;
+				departureTimeCell.innerHTML = departureTime;
+				arrivalCityCell.innerHTML = arrivalCity;
+				arrivalTimeCell.innerHTML = arrivalTime;
+				layoversCell.innerHTML = layovers;
+				priceCell.innerHTML = price;
+				FlightCollection.flights.push(new flight(flightNumber, departureCity, departureTime, arrivalCity, arrivalTime, layovers, price));
+			}
+		</script>
+
 	</main>
 	<!-- This would hold the footer of the page -->
 	<footer>
