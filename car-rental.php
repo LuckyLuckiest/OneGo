@@ -1,3 +1,71 @@
+<?php 
+    session_start();
+    $cars = array();
+    if (isset($_POST["1"])) {
+        array_push($cars, 1);
+        header("Location: checkin.php");
+        $_SESSION["cars"] = $cars;
+    }elseif (isset($_POST["2"])) {
+        array_push($cars, 2);
+        header("Location: checkin.php");
+        $_SESSION["cars"] = $cars;
+    }elseif (isset($_POST["3"])) {
+        array_push($cars, 3);
+        header("Location: checkin.php");
+        $_SESSION["cars"] = $cars;
+    }elseif (isset($_POST["4"])) {
+        array_push($cars, 4);
+        header("Location: checkin.php");
+        $_SESSION["cars"] = $cars;
+    }elseif (isset($_POST["5"])) {
+        array_push($cars, 5);
+        header("Location: checkin.php");
+        $_SESSION["cars"] = $cars;
+    }elseif (isset($_POST["6"])) {
+        array_push($cars, 6);
+        header("Location: checkin.php");
+        $_SESSION["cars"] = $cars;
+    }elseif (isset($_POST["7"])) {
+        array_push($cars, 7);
+        header("Location: checkin.php");
+        $_SESSION["cars"] = $cars;
+    }elseif (isset($_POST["8"])) {
+        array_push($cars, 8);
+        header("Location: checkin.php");
+        $_SESSION["cars"] = $cars;
+    }elseif (isset($_POST["9"])) {
+        array_push($cars, 9);
+        header("Location: checkin.php");
+        $_SESSION["cars"] = $cars;
+    }elseif (isset($_POST["10"])) {
+        array_push($cars, 10);
+        header("Location: checkin.php");
+        $_SESSION["cars"] = $cars;
+    }elseif (isset($_POST["11"])) {
+        array_push($cars, 11);
+        header("Location: checkin.php");
+        $_SESSION["cars"] = $cars;
+    }elseif (isset($_POST["12"])) {
+        array_push($cars, 12);
+        header("Location: checkin.php");
+        $_SESSION["cars"] = $cars;
+    }elseif (isset($_POST["13"])) {
+        array_push($cars, 13);
+        header("Location: checkin.php");
+        $_SESSION["cars"] = $cars;
+    }elseif (isset($_POST['14'])) {
+        array_push($cars, 14);
+        header("Location: checkin.php");
+        $_SESSION["cars"] = $cars;
+    }elseif (isset($_POST["15"])) {
+        array_push($cars, 15);
+        header("Location: checkin.php");
+        $_SESSION["cars"] = $cars;
+    }
+
+?>
+
+
 <html>
 
 <head>
@@ -23,13 +91,13 @@
                 <li class="dropdown" id="active">
                     Services <span class="bi bi-caret-down-fill" style="font-size: 10px;"></span>
                     <ul>
-                        <a href="car-rental.html" id="active">
+                        <a href="car-rental.php" id="active">
                             <li>Car rentals <span class="bi bi-car-front-fill"></span></li>
                         </a>
                         <a href="flights.html">
                             <li>Flights <span class="bi bi-airplane-fill"></span></li>
                         </a>
-                        <a href="stays.html">
+                        <a href="stays.php">
                             <li>Stays <span class="bi bi-building-fill"></span></li>
                         </a>
                     </ul>
@@ -114,7 +182,9 @@
                        <strong> Price per day: 455 OMR</strong>
                     </p>
                 </div>
-                <a href="checkin.html" class="btn btn-outline-dark">Rent</a>
+                <form action="car-rental.php" method="post">
+                    <input type="submit" name="1" class="btn btn-outline-dark" style="margin-top: 10px;"  value="Rent">
+                </form>
             </div>
             <div class="card col-order1 ">
                 <img src="assets/cars/Bugatti.jpg" class="card-img-top" alt="...">
@@ -126,7 +196,9 @@
                         <strong> Price per day: 570 OMR</strong>
                     </p>
                 </div>
-                <a href="checkin.html" class="btn btn-outline-dark">Rent</a>
+                <form action="car-rental.php" method="post">
+                    <input type="submit" name="2" class="btn btn-outline-dark" style="margin-top: 10px;"  value="Rent">
+                </form>
             </div>
             <div class="card col-order1">
                 <img src="assets/cars/Rolls.jpg" class="card-img-top" alt="...">
@@ -138,7 +210,9 @@
                         <strong> Price per day: 760 OMR</strong>
                     </p>
                 </div>
-                <a href="checkin.html" class="btn btn-outline-dark">Rent</a>
+                <form action="car-rental.php" method="post">
+                    <input type="submit" name="3" class="btn btn-outline-dark" style="margin-top: 10px;"  value="Rent">
+                </form>
             </div>
             <div class="card col-order2">
                 <img src="assets/cars/Mclaren.jpg" class="card-img-top" alt="...">
@@ -150,7 +224,9 @@
                         <strong> Price per day: 570 OMR</strong>
                     </p>
                 </div>
-                <a href="checkin.html" class="btn btn-outline-dark">Rent</a>
+                <form action="car-rental.php" method="post">
+                    <input type="submit" name="4" class="btn btn-outline-dark" style="margin-top: 10px;"  value="Rent">
+                </form>
             </div>
             <div class="card col-order2">
                 <img src="assets/cars/Ferrari.jpeg" class="card-img-top" alt="...">
@@ -162,7 +238,9 @@
                         <strong> Price per day: 445 OMR</strong>
                     </p>
                 </div>
-                <a href="checkin.html" class="btn btn-outline-dark">Rent</a>
+                <form action="car-rental.php" method="post">
+                    <input type="submit" name="5" class="btn btn-outline-dark" style="margin-top: 10px;"  value="Rent">
+                </form>
             </div>
             <div class="card col-order2">
                 <img src="assets/cars/Audi.jpg" class="card-img-top" alt="...">
@@ -174,7 +252,9 @@
                         <strong> Price per day: 340 OMR</strong>
                     </p>
                 </div>
-                <a href="checkin.html" class="btn btn-outline-dark">Rent</a>
+                <form action="car-rental.php" method="post">
+                    <input type="submit" name="6" class="btn btn-outline-dark" style="margin-top: 10px;"  value="Rent">
+                </form>
             </div>
         </div>
 
@@ -193,7 +273,9 @@
                         <strong> Price per day: 38 OMR</strong>
                     </p>
                 </div>
-                <a href="checkin.html" class="btn btn-outline-dark">Rent</a>
+                <form action="car-rental.php" method="post">
+                    <input type="submit" name="7" class="btn btn-outline-dark" style="margin-top: 10px;"  value="Rent">
+                </form>
             </div>
             <div class="card col-order1 ">
                 <img src="assets/cars/Accord.jpg" class="card-img-top" alt="...">
@@ -206,7 +288,9 @@
                         
                     </p>
                 </div>
-                <a href="checkin.html" class="btn btn-outline-dark">Rent</a>
+                <form action="car-rental.php" method="post">
+                    <input type="submit" name="8" class="btn btn-outline-dark" style="margin-top: 10px;"  value="Rent">
+                </form>
             </div>
             <div class="card col-order1">
                 <img src="assets/cars/Sonata.jpg" class="card-img-top" alt="...">
@@ -219,7 +303,9 @@
                         <strong>Price per day: 27 OMR</strong>
                     </p>
                 </div>
-                <a href="checkin.html" class="btn btn-outline-dark">Rent</a>
+                <form action="car-rental.php" method="post">
+                    <input type="submit" name="9" class="btn btn-outline-dark" style="margin-top: 10px;"  value="Rent">
+                </form>
             </div>
             <div class="card col-order2">
                 <img src="assets/cars/Corolla.jpg" class="card-img-top" alt="...">
@@ -231,7 +317,9 @@
                         <strong> Price per day: 25 OMR</strong>
                     </p>
                 </div>
-                <a href="checkin.html" class="btn btn-outline-dark">Rent</a>
+                <form action="car-rental.php" method="post">
+                    <input type="submit" name="10" class="btn btn-outline-dark" style="margin-top: 10px;"  value="Rent">
+                </form>
             </div>
             <div class="card col-order2">
                 <img src="assets/cars/Civic.jpg" class="card-img-top" alt="...">
@@ -243,7 +331,9 @@
                         <strong> Price per day: 26 OMR</strong>
                     </p>
                 </div>
-                <a href="checkin.html" class="btn btn-outline-dark">Rent</a>
+                <form action="car-rental.php" method="post">
+                    <input type="submit" name="11" class="btn btn-outline-dark" style="margin-top: 10px;"  value="Rent">
+                </form>
             </div>
             <div class="card col-order2">
                 <img src="assets/cars/Accent.jpg" class="card-img-top" alt="...">
@@ -255,7 +345,9 @@
                         <strong> Price per day: 25 OMR</strong>
                     </p>
                 </div>
-                <a href="checkin.html" class="btn btn-outline-dark">Rent</a>
+                <form action="car-rental.php" method="post">
+                    <input type="submit" name="12" class="btn btn-outline-dark" style="margin-top: 10px;"  value="Rent">
+                </form>
             </div>
         </div>
 
@@ -274,7 +366,9 @@
                         <strong> Price per day: 50 OMR</strong>
                     </p>
                 </div>
-                <a href="checkin.html" class="btn btn-outline-dark">Rent</a>
+                <form action="car-rental.php" method="post">
+                    <input type="submit" name="13" class="btn btn-outline-dark" style="margin-top: 10px;"  value="Rent">
+                </form>
             </div>
             <div class="card col-order1 ">
                 <img src="assets/cars/HEV.jpg" class="card-img-top" alt="...">
@@ -287,7 +381,9 @@
                         <strong> Price per day: 60 OMR</strong>
                     </p>
                 </div>
-                <a href="checkin.html" class="btn btn-outline-dark">Rent</a>
+                <form action="car-rental.php" method="post">
+                    <input type="submit" name="14" class="btn btn-outline-dark" style="margin-top: 10px;"  value="Rent">
+                </form>
             </div>
             <div class="card col-order1">
                 <img src="assets/cars/R1s.jpg" class="card-img-top" alt="...">
@@ -300,8 +396,12 @@
                         <strong> Price per day: 65 OMR</strong>
                     </p>
                 </div>
-                <a href="checkin.html" class="btn btn-outline-dark" style="margin-top: 10px;">Rent</a>
+                <form action="car-rental.php" method="post">
+                    <input type="submit" name="15" class="btn btn-outline-dark" style="margin-top: 10px;"  value="Rent">
+                </form>   
             </div>
+
+            
         </div>
 
         <div class="customer-service">
