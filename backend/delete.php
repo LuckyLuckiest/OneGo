@@ -7,31 +7,31 @@ $connection = new mysqli($server_name, $user_name, $password, $dbname);
 if (!$connection) {
 	die("Failed " . mysqli_connect_error());
 }
-echo "Connection established successfully";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	// delete from flights database
 	if (isset($_POST['delete_flight'])) {
 		$flightId = $_POST["flight_id"];
-		$sql = "DELETE FROM flights WHERE flight_id=:flightId";
-		$stmt = $conn->prepare($sql);
-		$stmt->bindParam(":flightId", $flightId);
-		$stmt->execute();
+		$sql = "DELETE FROM flight WHERE flight_id='$flightId'";
+		$connection->query($sql);
 	}
 	// delete from cars database
 	if (isset($_POST['delete_car'])) {
 		$carId = $_POST["car_id"];
-		$sql = "DELETE FROM cars WHERE car_id=:carId";
-		$stmt = $conn->prepare($sql);
-		$stmt->bindParam(":carId", $carId);
-		$stmt->execute();
+		$sql = "DELETE FROM car_rental WHERE car_id='$carId'";
+		$connection->query($sql);
 	}
 	// delete from stays database
 	if (isset($_POST['delete_hotel'])) {
 		$hotelId = $_POST["hotel_id"];
-		$sql = "DELETE FROM stays WHERE hotel_id=:hotelId";
-		$stmt = $conn->prepare($sql);
-		$stmt->bindParam(":hotelId", $hotelId);
-		$stmt->execute();
+		$sql = "DELETE FROM stay WHERE hotel_id='$hotelId'";
+		$connection->query($sql);
 	}
 }
+
+$connection->close();
+
+header("Location: /delete.html");
+exit;
+
+?>

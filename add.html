@@ -56,6 +56,20 @@
 						</a>
 					</ul>
 				</li>
+				<li class="dropdown split" id="active">
+                    Database <span class="bi bi-caret-down-fill" style="font-size: 10px;"></span>
+                    <ul>
+                        <a href="add.html">
+                            <li>Add</li>
+                        </a>
+                        <a href="delete.html">
+                            <li>Delete</li>
+                        </a>
+                        <a href="search.html">
+                            <li>Search</li>
+                        </a>
+                    </ul>
+                </li>
 			</ul>
 		</nav>
 	</header>
@@ -66,59 +80,67 @@
 			<h1 class="title">Add To Database</h1>
 		</head>
 
-		<body>
-			<div class="container">
-				<form method="post" action="backend/add.php">
-					<label for="flight">Flight Number:</label>
-					<input type="text" name="flight" required><br><br>
-					<label for="from">Departure City:</label>
-					<input type="text" name="from" required><br><br>
-					<label for="to">Arrival City:</label>
-					<input type="text" name="to" required><br><br>
-					<label for="departure">Departure Time:</label>
-					<input type="time" name="departure" required><br><br>
-					<label for="return">Arrival Time:</label>
-					<input type="time" name="return" required><br><br>
-					<label for="class">Class:</label>
-					<input type="text" name="class" required><br><br>
-					<label for="layover">layovers:</label>
-					<input type="text" name="layover" required><br><br>
-					<label for="price">Price:</label>
-					<input type="text" name="price" required><br><br>
-					<input type="submit" value="Add Flight" name="add_flight">
-				</form>
-			</div>
-			<div class="container">
-				<form method="post" action="backend/add.php">
-					<label for="price">Price:</label>
-					<input type="number" step="1" name="price" required><br><br>
-					<label for="name">Car model:</label>
-					<input type="text" name="name" required><br><br>
-					<label for="type">Car type:</label>
-					<input type="text" name="type" required><br><br>
-					<label for="description">Car description:</label>
-					<input type="text" name="description" required><br><br>
-					<label for="img">Image link:</label>
-					<input type="text" name="img" required><br><br>
-					<input type="submit" value="Add Car" name="add_car">
-				</form>
-			</div>
-			<div class="container">
-				<form method="post" action="backend/add.php">
-					<label for="name">Hotel name:</label>
-					<input type="text" name="name" required><br><br>
-					<label for="location">Hotel location:</label>
-					<input type="text" name="location" required><br><br>
-					<label for="property_type">Property Type:</label>
-					<input type="text" name="property_type" required><br><br>
-					<label for="no_guests">Number of guests:</label>
-					<input type="number" step="1" name="no_guests" required><br><br>
-					<label for="hotel_price">Price:</label>
-					<input type="number" step="1" name="price" required><br><br>
-					<input type="submit" value="Add Hotel" name="add_hotel">
-				</form>
-			</div>
-		</body>
+		<hr>
+
+		<h2 class="head">Flight</h2>
+		<br><br>
+		<div class="container">
+			<form method="post" action="backend/add.php">
+				<label for="flight">Flight Number:</label>
+				<input type="text" name="flight" required><br><br>
+				<label for="from">Departure City:</label>
+				<input type="text" name="from" required><br><br>
+				<label for="to">Arrival City:</label>
+				<input type="text" name="to" required><br><br>
+				<label for="departure">Departure Time:</label>
+				<input type="time" name="departure" required><br><br>
+				<label for="return">Arrival Time:</label>
+				<input type="time" name="return" required><br><br>
+				<label for="layover">layovers:</label>
+				<input type="text" name="layover" required><br><br>
+				<label for="price">Price:</label>
+				<input type="number" name="price" required><br><br>
+				<input type="submit" value="Add Flight" name="add_flight">
+			</form>
+		</div>
+		
+		<h2 class="head">Car</h2>
+		<br><br>
+		<div class="container">
+			<form method="post" action="backend/add.php">
+				<label for="cprice">Price:</label>
+				<input type="number" step="1" name="cprice" required><br><br>
+				<label for="cname">Car model:</label>
+				<input type="text" name="cname" required><br><br>
+				<label for="ctype">Car type:</label>
+				<input type="text" name="ctype" required><br><br>
+				<label for="cdescription">Car description:</label>
+				<input type="text" name="cdescription" required><br><br>
+				<label for="cimg">Image link:</label>
+				<input type="text" name="cimg" required><br><br>
+				<input type="submit" value="Add Car" name="add_car">
+			</form>
+		</div>
+
+		<h2 class="head">Hotel</h2>
+		<br><br>
+		<div class="container">
+			<form method="post" action="backend/add.php">
+				<label for="hname">Hotel name:</label>
+				<input type="text" name="hname" required><br><br>
+				<label for="hlocation">Hotel location:</label>
+				<input type="text" name="hlocation" required><br><br>
+				<label for="hprice">Price:</label>
+				<input type="number" step="1" name="hprice" required><br><br>
+				<label for="hproperty_type">Property Type:</label>
+				<input type="text" name="hproperty_type" required><br><br>
+				<label for="hdescription">Property description:</label>
+				<input type="text" name="hdescription" required><br><br>
+				<label for="himg">Image link:</label>
+				<input type="text" name="himg" required><br><br>
+				<input type="submit" value="Add Hotel" name="add_hotel">
+			</form>
+		</div>
 		<style>
 			input[type="text"] {
 				padding: 5px;
