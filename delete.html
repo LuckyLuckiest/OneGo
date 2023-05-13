@@ -61,89 +61,92 @@
 	</header>
 	<!-- All the content of the page is here -->
 	<main>
-<head>
-<h1 class="title">Delete From Database</h1>
-</head>
-<body>
-	<div class="container">
-    <form method="post" action="delete.php">
-        <label for="flight_id">Flight Id:</label>
-        <input type="text" name="flight_id" required><br><br>
-        <input type="submit" value="Delete Flight" name="delete_flight">
-    </form>
-	</div>
-	<div class="container">
-	<form method="post" action="delete.php">
-        <label for="car_id">Car Id:</label>
-        <input type="text" name="car_id" required><br><br>
-        <input type="submit" value="Delete Car" name="delete_car">
-    </form>
-	</div>
-	<div class="container">
-	<form method="post" action="delete.php">
-        <label for="hotel_id">Hotel Id:</label>
-        <input type="text" name="hotel_id" required><br><br>
-        <input type="submit" value="Delete Hotel" name="delete_hotel">
-    </form>
-	</div>
-</body>
-<style>
-input[type="text"] {
-					padding: 5px;
-					border: 1px solid #ccc;
-					border-radius: 4px;
-					margin-bottom: 30px;
-					font-size: large;
-					margin-left: 4%;
-				}
 
-				input[type="time"] {
-					padding: 5px;
-					border: 1px solid #ccc;
-					border-radius: 4px;
-					margin-bottom: 30px;
-					font-size: large;
-					margin-left: 2%;
-				}
-				input[type="number"] {
-					padding: 5px;
-					border: 1px solid #ccc;
-					border-radius: 4px;
-					margin-bottom: 30px;
-					font-size: large;
-					margin-left: 2%;
-				}
+		<head>
+			<h1 class="title">Delete From Database</h1>
+		</head>
 
-				label {
-					font-size: x-large;
-					color: green;
-					margin-right: 16px;
-					margin-left: 100px;
-					align-items: center;
-				}
-                
-				input[type="submit"] {
-					padding: 5px;
-					border: 1px solid #ccc;
-					border-radius: 4px;
-					margin-bottom: 30px;
-					font-size: large;
-					margin-left: 45%;
-				}
-				.container {
-                width: 600px;
-                border: 5px solid darkgreen;
-                border-radius: 5px;
-                border-style: dotted;
-                background-color: lightgreen;
-                font-size: large;
-                padding: 2% 5%;
-                margin-bottom: 3%;
+		<body>
+			<div class="container">
+				<form method="post" action="backend/delete.php">
+					<label for="flight_id">Flight Id:</label>
+					<input type="text" name="flight_id" required><br><br>
+					<input type="submit" value="Delete Flight" name="delete_flight">
+				</form>
+			</div>
+			<div class="container">
+				<form method="post" action="backend/delete.php">
+					<label for="car_id">Car Id:</label>
+					<input type="text" name="car_id" required><br><br>
+					<input type="submit" value="Delete Car" name="delete_car">
+				</form>
+			</div>
+			<div class="container">
+				<form method="post" action="backend/delete.php">
+					<label for="hotel_id">Hotel Id:</label>
+					<input type="text" name="hotel_id" required><br><br>
+					<input type="submit" value="Delete Hotel" name="delete_hotel">
+				</form>
+			</div>
+		</body>
+		<style>
+			input[type="text"] {
+				padding: 5px;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				margin-bottom: 30px;
+				font-size: large;
+				margin-left: 4%;
+			}
+
+			input[type="time"] {
+				padding: 5px;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				margin-bottom: 30px;
+				font-size: large;
+				margin-left: 2%;
+			}
+
+			input[type="number"] {
+				padding: 5px;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				margin-bottom: 30px;
+				font-size: large;
+				margin-left: 2%;
+			}
+
+			label {
+				font-size: x-large;
+				color: green;
+				margin-right: 16px;
+				margin-left: 100px;
+				align-items: center;
+			}
+
+			input[type="submit"] {
+				padding: 5px;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				margin-bottom: 30px;
+				font-size: large;
+				margin-left: 45%;
+			}
+
+			.container {
+				width: 600px;
+				border: 5px solid darkgreen;
+				border-radius: 5px;
+				border-style: dotted;
+				background-color: lightgreen;
+				font-size: large;
+				padding: 2% 5%;
+				margin-bottom: 3%;
 				margin-left: 300px;
-            }
-
-</style>
-</main>
+			}
+		</style>
+	</main>
 	<!-- This would hold the footer of the page -->
 	<footer>
 		<h2>One Go</h2>

@@ -61,36 +61,37 @@
 	</header>
 	<!-- All the content of the page is here -->
 	<main>
-<head>
-<h1 class="title">Search and Dislay From Database</h1>
-</head>
-<main>
-    <body>
-    <div class="container">
-<form action="" method="GET">
-    <label>Search Car</label>
-    <input type="text" name="search_car" >
-    <button type="submit">Search</button>
-</form>
-    </div>
-    <div class="container">
-        <form action="" method="GET">
-            <label>Search Flight</label>
-            <input type="text" name="search_flight" >
-            <button type="submit">Search</button>
-        </form>
-            </div>
-            <div class="container">
-                <form action="" method="GET">
-                    <label>Search Stay</label>
-                    <input type="text" name="search_stay">
-                    <button type="submit">Search</button>
-                </form>
-                    </div>
-</body>
-<style>
-	style>
-input[type="text"] {
+
+		<head>
+			<h1 class="title">Search and Dislay From Database</h1>
+		</head>
+		<main>
+
+			<body>
+				<div class="container">
+					<form action="backend/search.php" method="GET">
+						<label>Search Car</label>
+						<input type="text" name="search_car">
+						<button type="submit">Search</button>
+					</form>
+				</div>
+				<div class="container">
+					<form action="backend/search.php" method="GET">
+						<label>Search Flight</label>
+						<input type="text" name="search_flight">
+						<button type="submit">Search</button>
+					</form>
+				</div>
+				<div class="container">
+					<form action="backend/search.php" method="GET">
+						<label>Search Stay</label>
+						<input type="text" name="search_stay">
+						<button type="submit">Search</button>
+					</form>
+				</div>
+			</body>
+			<style>
+				style>input[type="text"] {
 					padding: 5px;
 					border: 1px solid #ccc;
 					border-radius: 4px;
@@ -106,7 +107,7 @@ input[type="text"] {
 					margin-left: 100px;
 					align-items: center;
 				}
-                
+
 				input[type="submit"] {
 					padding: 5px;
 					border: 1px solid #ccc;
@@ -115,46 +116,47 @@ input[type="text"] {
 					font-size: large;
 					margin-left: 45%;
 				}
+
 				.container {
-                width: 600px;
-                border: 5px solid darkgreen;
-                border-radius: 5px;
-                border-style: dotted;
-                background-color: lightgreen;
-                font-size: large;
-                padding: 2% 5%;
-                margin-bottom: 3%;
-				margin-left: 300px;
-            }
+					width: 600px;
+					border: 5px solid darkgreen;
+					border-radius: 5px;
+					border-style: dotted;
+					background-color: lightgreen;
+					font-size: large;
+					padding: 2% 5%;
+					margin-bottom: 3%;
+					margin-left: 300px;
+				}
+			</style>
 
-</style>
-
-</style>
-</main>
-	<!-- This would hold the footer of the page -->
-	<footer>
-		<h2>One Go</h2>
-		<ul id="social">
-			<a href="https://gmail.com" target="_blank">
-				<li class="bi bi-envelope"></li>
-			</a>
-			<a href="https://whatsapp.com" target="_blank">
-				<li class="bi bi-whatsapp"></li>
-			</a>
-			<a href="https://instagram.com" target="_blank">
-				<li class="bi bi-instagram"></li>
-			</a>
-			<a href="https://youtube.com" target="_blank">
-				<li class="bi bi-youtube"></li>
-			</a>
-			<a href="https://tiktok.com" target="_blank">
-				<li class="bi bi-tiktok"></li>
-			</a>
-			<a href="https://twitter.com" target="_blank">
-				<li class="bi bi-twitter"></li>
-			</a>
-		</ul>
-		<p>Copyright &copy; 2023 OneGo</p>
-	</footer>
+			</style>
+		</main>
+		<!-- This would hold the footer of the page -->
+		<footer>
+			<h2>One Go</h2>
+			<ul id="social">
+				<a href="https://gmail.com" target="_blank">
+					<li class="bi bi-envelope"></li>
+				</a>
+				<a href="https://whatsapp.com" target="_blank">
+					<li class="bi bi-whatsapp"></li>
+				</a>
+				<a href="https://instagram.com" target="_blank">
+					<li class="bi bi-instagram"></li>
+				</a>
+				<a href="https://youtube.com" target="_blank">
+					<li class="bi bi-youtube"></li>
+				</a>
+				<a href="https://tiktok.com" target="_blank">
+					<li class="bi bi-tiktok"></li>
+				</a>
+				<a href="https://twitter.com" target="_blank">
+					<li class="bi bi-twitter"></li>
+				</a>
+			</ul>
+			<p>Copyright &copy; 2023 OneGo</p>
+		</footer>
 </body>
+
 </html>
