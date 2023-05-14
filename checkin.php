@@ -28,7 +28,6 @@ if (isset($_SESSION["stays"])) {
     }
 }
 
-
 $cars = array();
 if (isset($_SESSION["cars"])) {
     if (count($_SESSION["cars"]) >  0) {
