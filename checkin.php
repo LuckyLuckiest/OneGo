@@ -7,7 +7,7 @@ $dbname = "project";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 if (mysqli_connect_error()) {
-        die("Connection failed: " . mysqli_connect_error());
+    die("Connection failed: " . mysqli_connect_error());
 }
 
 $stays = array();
@@ -17,15 +17,14 @@ if (isset($_SESSION["stays"])) {
         foreach ($_SESSION["stays"] as $id) {
             $sql = "SELECT * FROM stay WHERE stay_id = $id";
             $result = mysqli_query($conn, $sql);
-    
+
             // 3. Store the rows in an array
-            while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+            while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
                 foreach ($row as $key => $value) {
                     array_push($stays, $value);
                 }
             }
-    }
-    
+        }
     }
 }
 
@@ -37,24 +36,22 @@ if (isset($_SESSION["cars"])) {
         foreach ($_SESSION["cars"] as $id) {
             $sql = "SELECT * FROM car_rental WHERE car_id = $id";
             $result = mysqli_query($conn, $sql);
-    
+
             // 3. Store the rows in an array
-            while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+            while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
                 foreach ($row as $key => $value) {
                     array_push($cars, $value);
                 }
             }
-    }
-    
+        }
     }
 }
+
 if (isset($_POST["submit"])) {
     session_destroy();
 }
 
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -125,14 +122,14 @@ if (isset($_POST["submit"])) {
         <!-- Every page contains a title -->
         <h1 class="title">Check in</h1>
         <div id="display" style="height: fit-content; font-size: 15px; color:white; margin: 20px;">
-        <h1 id="stays"></h1>
-                <table id="display_table">
-                </table>
+            <h1 id="stays"></h1>
+            <table id="display_table">
+            </table>
         </div>
 
 
         <div id="display_1" style="height: fit-content; font-size: 15px; color:white; margin: 20px;">
-        <h1 id="cars"></h1>
+            <h1 id="cars"></h1>
             <table id="display_table_1">
             </table>
         </div>
@@ -210,91 +207,89 @@ if (isset($_POST["submit"])) {
         <p>Copyright &copy; 2023 OneGo</p>
     </footer>
     <script>
-function createStaystable() {
-     var div = document.getElementById("display");
-     var h1 = document.getElementById("stays");
-     h1.innerHTML = 'stays';
-     h1.style.textAlign = "center"
+        function createStaystable() {
+            var div = document.getElementById("display");
+            var h1 = document.getElementById("stays");
+            h1.innerHTML = 'stays';
+            h1.style.textAlign = "center"
 
-    // div.appendChild(document.createElement("h1").innerHTML = "stays");
-    var table = document.getElementById("display_table");
-    var arr = ["name", "location", "price", "property_type", "discription"];
-    var tr = document.createElement("tr");
-    table.appendChild(tr);
-    for (const iterator of arr) {
-        var td = document.createElement("td");
-        td.innerHTML = iterator;
-        tr.appendChild(td);
-    }
-    
-    
-}
-function createCarRentalsTable() {
-     var div = document.getElementById("display_1");
-     var h1 = document.getElementById("cars");
-     h1.innerHTML = 'cars';
-     h1.style.textAlign = "center"
+            // div.appendChild(document.createElement("h1").innerHTML = "stays");
+            var table = document.getElementById("display_table");
+            var arr = ["name", "location", "price", "property_type", "discription"];
+            var tr = document.createElement("tr");
+            table.appendChild(tr);
+            for (const iterator of arr) {
+                var td = document.createElement("td");
+                td.innerHTML = iterator;
+                tr.appendChild(td);
+            }
 
-    // div.appendChild(document.createElement("h1").innerHTML = "cars");
-    var table = document.getElementById("display_table_1");
-    var arr = ["price", "name", "type", "decription"];
-    var tr = document.createElement("tr");
-    table.appendChild(tr);
-    for (const iterator of arr) {
-        var td = document.createElement("td");
-        td.innerHTML = iterator;
-        tr.appendChild(td);
-    }
-    
-    
-}
-    // Parse the JSON object
-    var stays_rows = <?php echo json_encode($stays); ?>;
-    stays_rows.shift();
-    stays_rows.pop();
 
-    if (stays_rows.length > 0) {
-        createStaystable();
-        var table = document.getElementById("display_table");
-        var tr = document.createElement("tr");
-        table.appendChild(tr);
-        for (const iterator of stays_rows) {
-            var td = document.createElement("td");
-            td.innerHTML = iterator;
-            tr.appendChild(td);
         }
-        var total_stays = stays_rows[2];
-    }else {
-        total_stays = 0
-    }
-    var cars = <?php echo json_encode($cars); ?>;
-    cars.shift();
-    cars.pop();
-    if (cars.length > 0) {
-        createCarRentalsTable();
-        var table = document.getElementById("display_table_1");
-        var tr = document.createElement("tr");
-        table.appendChild(tr);
-         for (const iterator of cars) {
-             var td = document.createElement("td");
-             td.innerHTML = iterator;
-             tr.appendChild(td);
-         }
-        var total_cars = cars[0];
-    }else {
-        total_cars = 0
-    }
 
-    var total = parseInt(total_cars) + parseInt(total_stays);
-     var div = document.getElementById("display_1");
-     var p = document.createElement("p");
-     p.innerHTML = `total = ${total}`;
-     p.style.textAlign = "center";
-     div.appendChild(p);
+        function createCarRentalsTable() {
+            var div = document.getElementById("display_1");
+            var h1 = document.getElementById("cars");
+            h1.innerHTML = 'cars';
+            h1.style.textAlign = "center"
+
+            // div.appendChild(document.createElement("h1").innerHTML = "cars");
+            var table = document.getElementById("display_table_1");
+            var arr = ["price", "name", "type", "decription"];
+            var tr = document.createElement("tr");
+            table.appendChild(tr);
+            for (const iterator of arr) {
+                var td = document.createElement("td");
+                td.innerHTML = iterator;
+                tr.appendChild(td);
+            }
 
 
+        }
+        // Parse the JSON object
+        var stays_rows = <?php echo json_encode($stays); ?>;
+        stays_rows.shift();
+        stays_rows.pop();
 
-</script>
+        if (stays_rows.length > 0) {
+            createStaystable();
+            var table = document.getElementById("display_table");
+            var tr = document.createElement("tr");
+            table.appendChild(tr);
+            for (const iterator of stays_rows) {
+                var td = document.createElement("td");
+                td.innerHTML = iterator;
+                tr.appendChild(td);
+            }
+            var total_stays = stays_rows[2];
+        } else {
+            total_stays = 0
+        }
+        var cars = <?php echo json_encode($cars); ?>;
+        cars.shift();
+        cars.pop();
+        if (cars.length > 0) {
+            createCarRentalsTable();
+            var table = document.getElementById("display_table_1");
+            var tr = document.createElement("tr");
+            table.appendChild(tr);
+            for (const iterator of cars) {
+                var td = document.createElement("td");
+                td.innerHTML = iterator;
+                tr.appendChild(td);
+            }
+            var total_cars = cars[0];
+        } else {
+            total_cars = 0
+        }
+
+        var total = parseInt(total_cars) + parseInt(total_stays);
+        var div = document.getElementById("display_1");
+        var p = document.createElement("p");
+        p.innerHTML = `total = ${total}`;
+        p.style.textAlign = "center";
+        div.appendChild(p);
+    </script>
 </body>
 
 </html>

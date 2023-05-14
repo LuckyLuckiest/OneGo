@@ -78,7 +78,6 @@
 		<!-- Every page contains a title -->
 		<h1 class="title">Flight Schedule</h1>
 
-
 		<table id="flightsTable" style="font-size: x-large; color: white;">
 			<thead>
 				<tr>
@@ -95,9 +94,6 @@
 			</tbody>
 		</table>
 		<br>
-		<form  action="checkin.php"  onsubmit="return validateForm()">
-			<input type="submit" value="Book Flight">
-			</form>
 		<div class="container">
 			<form id="addflights">
 				<label for="flightNumber">Flight Number:</label>
@@ -135,7 +131,6 @@
 				margin-bottom: 3%;
 				border-collapse: collapse;
 				width: 100%;
-				height: 800px;
 			}
 
 			th,
@@ -160,15 +155,6 @@
 				margin-bottom: 30px;
 				font-size: large;
 				margin-left: 4%;
-			}
-
-			input[type="submit"] {
-				padding: 5px;
-				border: 1px solid #ccc;
-				border-radius: 4px;
-				margin-bottom: 50px;
-				font-size: large;
-				margin-left: 45%;
 			}
 
 			input[type="time"] {
@@ -216,9 +202,6 @@
 				margin-left: auto;
 				margin-right: auto;
 			}
-			.selected {
-		     outline: 2px solid yellow;
-	        }
 		</style>
 		<script>
 			// create constructor
@@ -316,33 +299,7 @@
 				priceCell.innerHTML = price;
 				FlightCollection.flights.push(new flight(flightNumber, departureCity, departureTime, arrivalCity, arrivalTime, layovers, price));
 			}
-			    // Add eventlistener to each row
-	            const table=document.getElementById('flightsTable');
-            	table.addEventListener('click', function (event) {
-		        const selectedRow=event.target.parentElement;
-		        const rows=table.getElementsByTagName('tr');
-		        for (let i=0; i< rows.length; i++) {
-			     rows[i].classList.remove('selected');
-		    }
-		        selectedRow.classList.add('selected');
-		        const flightNumber=selectedRow.cells[0].textContent;
-		        const selectedFlight=FlightCollection.flights.find(flight => flight.flightNumber===flightNumber);
-		        if (selectedFlight) {
-			    selectedFlight.selected=true;
-		     }
-	        });
-			// a function to validate the form
-			function validateForm() {
-        const selectedFlight=FlightCollection.getSelectedFlight();
-        if (selectedFlight){
-            return true; 
-        } else {
-            alert('Please select a flight before booking.');
-            return false; 
-        }
-    }
 		</script>
-
 	</main>
 	<!-- This would hold the footer of the page -->
 	<footer>
