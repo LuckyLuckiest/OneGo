@@ -11,38 +11,45 @@ if (mysqli_connect_error()) {
 }
 
 $stays = array();
-if (count($_SESSION["stays"]) >  0) {
+if (isset($_SESSION["stays"])) {
+    if (count($_SESSION["stays"]) >  0) {
 
-    foreach ($_SESSION["stays"] as $id) {
-        $sql = "SELECT * FROM stay WHERE stay_id = $id";
-        $result = mysqli_query($conn, $sql);
-
-        // 3. Store the rows in an array
-        while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-            foreach ($row as $key => $value) {
-                array_push($stays, $value);
+        foreach ($_SESSION["stays"] as $id) {
+            $sql = "SELECT * FROM stay WHERE stay_id = $id";
+            $result = mysqli_query($conn, $sql);
+    
+            // 3. Store the rows in an array
+            while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+                foreach ($row as $key => $value) {
+                    array_push($stays, $value);
+                }
             }
-        }
+    }
+    
+    }
 }
 
-}
 
 $cars = array();
+if (isset($_SESSION["cars"])) {
+    if (count($_SESSION["cars"]) >  0) {
 
-if (count($_SESSION["cars"]) >  0) {
-
-    foreach ($_SESSION["cars"] as $id) {
-        $sql = "SELECT * FROM car_rental WHERE car_id = $id";
-        $result = mysqli_query($conn, $sql);
-
-        // 3. Store the rows in an array
-        while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-            foreach ($row as $key => $value) {
-                array_push($cars, $value);
+        foreach ($_SESSION["cars"] as $id) {
+            $sql = "SELECT * FROM car_rental WHERE car_id = $id";
+            $result = mysqli_query($conn, $sql);
+    
+            // 3. Store the rows in an array
+            while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+                foreach ($row as $key => $value) {
+                    array_push($cars, $value);
+                }
             }
-        }
+    }
+    
+    }
 }
-
+if (isset($_POST["submit"])) {
+    session_destroy();
 }
 
 ?>
@@ -131,7 +138,7 @@ if (count($_SESSION["cars"]) >  0) {
         </div>
         <div class="container">
             <div class="container-item">
-                <form action="https://www.booking.com">
+                <form action="checkin.php" method="post">
                     <h2>Payment</h2>
 
                     <br>
