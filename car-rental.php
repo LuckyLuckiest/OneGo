@@ -1,67 +1,67 @@
-<?php 
-    session_start();
-    $cars = array();
-    if (isset($_POST["1"])) {
-        array_push($cars, 1);
-        header("Location: checkin.php");
-        $_SESSION["cars"] = $cars;
-    }elseif (isset($_POST["2"])) {
-        array_push($cars, 2);
-        header("Location: checkin.php");
-        $_SESSION["cars"] = $cars;
-    }elseif (isset($_POST["3"])) {
-        array_push($cars, 3);
-        header("Location: checkin.php");
-        $_SESSION["cars"] = $cars;
-    }elseif (isset($_POST["4"])) {
-        array_push($cars, 4);
-        header("Location: checkin.php");
-        $_SESSION["cars"] = $cars;
-    }elseif (isset($_POST["5"])) {
-        array_push($cars, 5);
-        header("Location: checkin.php");
-        $_SESSION["cars"] = $cars;
-    }elseif (isset($_POST["6"])) {
-        array_push($cars, 6);
-        header("Location: checkin.php");
-        $_SESSION["cars"] = $cars;
-    }elseif (isset($_POST["7"])) {
-        array_push($cars, 7);
-        header("Location: checkin.php");
-        $_SESSION["cars"] = $cars;
-    }elseif (isset($_POST["8"])) {
-        array_push($cars, 8);
-        header("Location: checkin.php");
-        $_SESSION["cars"] = $cars;
-    }elseif (isset($_POST["9"])) {
-        array_push($cars, 9);
-        header("Location: checkin.php");
-        $_SESSION["cars"] = $cars;
-    }elseif (isset($_POST["10"])) {
-        array_push($cars, 10);
-        header("Location: checkin.php");
-        $_SESSION["cars"] = $cars;
-    }elseif (isset($_POST["11"])) {
-        array_push($cars, 11);
-        header("Location: checkin.php");
-        $_SESSION["cars"] = $cars;
-    }elseif (isset($_POST["12"])) {
-        array_push($cars, 12);
-        header("Location: checkin.php");
-        $_SESSION["cars"] = $cars;
-    }elseif (isset($_POST["13"])) {
-        array_push($cars, 13);
-        header("Location: checkin.php");
-        $_SESSION["cars"] = $cars;
-    }elseif (isset($_POST['14'])) {
-        array_push($cars, 14);
-        header("Location: checkin.php");
-        $_SESSION["cars"] = $cars;
-    }elseif (isset($_POST["15"])) {
-        array_push($cars, 15);
-        header("Location: checkin.php");
-        $_SESSION["cars"] = $cars;
-    }
+<?php
+session_start();
+$cars = array();
+if (isset($_POST["1"])) {
+    array_push($cars, 1);
+    header("Location: checkin.php");
+    $_SESSION["cars"] = $cars;
+} elseif (isset($_POST["2"])) {
+    array_push($cars, 2);
+    header("Location: checkin.php");
+    $_SESSION["cars"] = $cars;
+} elseif (isset($_POST["3"])) {
+    array_push($cars, 3);
+    header("Location: checkin.php");
+    $_SESSION["cars"] = $cars;
+} elseif (isset($_POST["4"])) {
+    array_push($cars, 4);
+    header("Location: checkin.php");
+    $_SESSION["cars"] = $cars;
+} elseif (isset($_POST["5"])) {
+    array_push($cars, 5);
+    header("Location: checkin.php");
+    $_SESSION["cars"] = $cars;
+} elseif (isset($_POST["6"])) {
+    array_push($cars, 6);
+    header("Location: checkin.php");
+    $_SESSION["cars"] = $cars;
+} elseif (isset($_POST["7"])) {
+    array_push($cars, 7);
+    header("Location: checkin.php");
+    $_SESSION["cars"] = $cars;
+} elseif (isset($_POST["8"])) {
+    array_push($cars, 8);
+    header("Location: checkin.php");
+    $_SESSION["cars"] = $cars;
+} elseif (isset($_POST["9"])) {
+    array_push($cars, 9);
+    header("Location: checkin.php");
+    $_SESSION["cars"] = $cars;
+} elseif (isset($_POST["10"])) {
+    array_push($cars, 10);
+    header("Location: checkin.php");
+    $_SESSION["cars"] = $cars;
+} elseif (isset($_POST["11"])) {
+    array_push($cars, 11);
+    header("Location: checkin.php");
+    $_SESSION["cars"] = $cars;
+} elseif (isset($_POST["12"])) {
+    array_push($cars, 12);
+    header("Location: checkin.php");
+    $_SESSION["cars"] = $cars;
+} elseif (isset($_POST["13"])) {
+    array_push($cars, 13);
+    header("Location: checkin.php");
+    $_SESSION["cars"] = $cars;
+} elseif (isset($_POST['14'])) {
+    array_push($cars, 14);
+    header("Location: checkin.php");
+    $_SESSION["cars"] = $cars;
+} elseif (isset($_POST["15"])) {
+    array_push($cars, 15);
+    header("Location: checkin.php");
+    $_SESSION["cars"] = $cars;
+}
 
 ?>
 
@@ -125,20 +125,6 @@
                         </a>
                     </ul>
                 </li>
-                <li class="dropdown split">
-                    Database <span class="bi bi-caret-down-fill" style="font-size: 10px;"></span>
-                    <ul>
-                        <a href="add.html">
-                            <li>Add</li>
-                        </a>
-                        <a href="delete.html">
-                            <li>Delete</li>
-                        </a>
-                        <a href="search.html">
-                            <li>Search</li>
-                        </a>
-                    </ul>
-                </li>
             </ul>
         </nav>
     </header>
@@ -193,11 +179,11 @@
                     <p class="card-text">
                         The Lamborghini Aventador SVJ is a limited edition supercar with a V12 engine, advanced
                         aerodynamics, and cutting-edge technology, capable of reaching top speeds of over 217 mph.<br><br>
-                       <strong> Price per day: 455 OMR</strong>
+                        <strong> Price per day: 455 OMR</strong>
                     </p>
                 </div>
                 <form action="car-rental.php" method="post">
-                    <input type="submit" name="1" class="btn btn-outline-dark" style="margin-top: 10px;"  value="Rent">
+                    <input type="submit" name="1" class="btn btn-outline-dark" style="margin-top: 10px;" value="Rent">
                 </form>
             </div>
             <div class="card col-order1 ">
@@ -211,7 +197,7 @@
                     </p>
                 </div>
                 <form action="car-rental.php" method="post">
-                    <input type="submit" name="2" class="btn btn-outline-dark" style="margin-top: 10px;"  value="Rent">
+                    <input type="submit" name="2" class="btn btn-outline-dark" style="margin-top: 10px;" value="Rent">
                 </form>
             </div>
             <div class="card col-order1">
@@ -225,7 +211,7 @@
                     </p>
                 </div>
                 <form action="car-rental.php" method="post">
-                    <input type="submit" name="3" class="btn btn-outline-dark" style="margin-top: 10px;"  value="Rent">
+                    <input type="submit" name="3" class="btn btn-outline-dark" style="margin-top: 10px;" value="Rent">
                 </form>
             </div>
             <div class="card col-order2">
@@ -239,7 +225,7 @@
                     </p>
                 </div>
                 <form action="car-rental.php" method="post">
-                    <input type="submit" name="4" class="btn btn-outline-dark" style="margin-top: 10px;"  value="Rent">
+                    <input type="submit" name="4" class="btn btn-outline-dark" style="margin-top: 10px;" value="Rent">
                 </form>
             </div>
             <div class="card col-order2">
@@ -253,7 +239,7 @@
                     </p>
                 </div>
                 <form action="car-rental.php" method="post">
-                    <input type="submit" name="5" class="btn btn-outline-dark" style="margin-top: 10px;"  value="Rent">
+                    <input type="submit" name="5" class="btn btn-outline-dark" style="margin-top: 10px;" value="Rent">
                 </form>
             </div>
             <div class="card col-order2">
@@ -267,7 +253,7 @@
                     </p>
                 </div>
                 <form action="car-rental.php" method="post">
-                    <input type="submit" name="6" class="btn btn-outline-dark" style="margin-top: 10px;"  value="Rent">
+                    <input type="submit" name="6" class="btn btn-outline-dark" style="margin-top: 10px;" value="Rent">
                 </form>
             </div>
         </div>
@@ -288,7 +274,7 @@
                     </p>
                 </div>
                 <form action="car-rental.php" method="post">
-                    <input type="submit" name="7" class="btn btn-outline-dark" style="margin-top: 10px;"  value="Rent">
+                    <input type="submit" name="7" class="btn btn-outline-dark" style="margin-top: 10px;" value="Rent">
                 </form>
             </div>
             <div class="card col-order1 ">
@@ -299,11 +285,11 @@
                         and driving performance, featuring fuel-efficient engines, a spacious interior, and advanced
                         safety features such as Honda Sensing technology.<br><br><br>
                         <strong> Price per day: 30 OMR</strong>
-                        
+
                     </p>
                 </div>
                 <form action="car-rental.php" method="post">
-                    <input type="submit" name="8" class="btn btn-outline-dark" style="margin-top: 10px;"  value="Rent">
+                    <input type="submit" name="8" class="btn btn-outline-dark" style="margin-top: 10px;" value="Rent">
                 </form>
             </div>
             <div class="card col-order1">
@@ -318,7 +304,7 @@
                     </p>
                 </div>
                 <form action="car-rental.php" method="post">
-                    <input type="submit" name="9" class="btn btn-outline-dark" style="margin-top: 10px;"  value="Rent">
+                    <input type="submit" name="9" class="btn btn-outline-dark" style="margin-top: 10px;" value="Rent">
                 </form>
             </div>
             <div class="card col-order2">
@@ -332,7 +318,7 @@
                     </p>
                 </div>
                 <form action="car-rental.php" method="post">
-                    <input type="submit" name="10" class="btn btn-outline-dark" style="margin-top: 10px;"  value="Rent">
+                    <input type="submit" name="10" class="btn btn-outline-dark" style="margin-top: 10px;" value="Rent">
                 </form>
             </div>
             <div class="card col-order2">
@@ -346,7 +332,7 @@
                     </p>
                 </div>
                 <form action="car-rental.php" method="post">
-                    <input type="submit" name="11" class="btn btn-outline-dark" style="margin-top: 10px;"  value="Rent">
+                    <input type="submit" name="11" class="btn btn-outline-dark" style="margin-top: 10px;" value="Rent">
                 </form>
             </div>
             <div class="card col-order2">
@@ -360,7 +346,7 @@
                     </p>
                 </div>
                 <form action="car-rental.php" method="post">
-                    <input type="submit" name="12" class="btn btn-outline-dark" style="margin-top: 10px;"  value="Rent">
+                    <input type="submit" name="12" class="btn btn-outline-dark" style="margin-top: 10px;" value="Rent">
                 </form>
             </div>
         </div>
@@ -381,7 +367,7 @@
                     </p>
                 </div>
                 <form action="car-rental.php" method="post">
-                    <input type="submit" name="13" class="btn btn-outline-dark" style="margin-top: 10px;"  value="Rent">
+                    <input type="submit" name="13" class="btn btn-outline-dark" style="margin-top: 10px;" value="Rent">
                 </form>
             </div>
             <div class="card col-order1 ">
@@ -396,7 +382,7 @@
                     </p>
                 </div>
                 <form action="car-rental.php" method="post">
-                    <input type="submit" name="14" class="btn btn-outline-dark" style="margin-top: 10px;"  value="Rent">
+                    <input type="submit" name="14" class="btn btn-outline-dark" style="margin-top: 10px;" value="Rent">
                 </form>
             </div>
             <div class="card col-order1">
@@ -411,11 +397,11 @@
                     </p>
                 </div>
                 <form action="car-rental.php" method="post">
-                    <input type="submit" name="15" class="btn btn-outline-dark" style="margin-top: 10px;"  value="Rent">
-                </form>   
+                    <input type="submit" name="15" class="btn btn-outline-dark" style="margin-top: 10px;" value="Rent">
+                </form>
             </div>
 
-            
+
         </div>
 
         <div class="customer-service">
@@ -423,8 +409,7 @@
                 <div class="card" style="height:fit-content;">
                     <a href="policy.html" style="text-decoration: none; color: inherit;">
                         <div class="card-body">
-                            <p class="card-text"
-                                style="text-align: center; font-size:15px; font-weight:bold;font-style: italic;">Read
+                            <p class="card-text" style="text-align: center; font-size:15px; font-weight:bold;font-style: italic;">Read
                                 car rental policy</p>
                         </div>
                     </a>

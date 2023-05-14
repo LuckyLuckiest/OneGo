@@ -1,37 +1,37 @@
-<?php 
-    session_start();
-    $stays = array();
-    if (isset($_POST["1"])) {
-        array_push($stays, 1);
-        header("Location: checkin.php");
-        $_SESSION["stays"] = $stays;
-    }elseif(isset($_POST["2"])){
-        array_push($stays, 2);
-        header("Location: checkin.php");
-        $_SESSION["stays"] = $stays;
-    }elseif (isset($_POST["3"])) {
-        array_push($stays,3);
-        header("Location: checkin.php");
-        $_SESSION["stays"] = $stays;
-    }elseif (isset($_POST["4"])){
-        array_push($stays,4);
-        header("Location: checkin.php");
-    }elseif (isset($_POST["5"])) {
-        array_push($stays,5);
-        header("Location: checkin.php");
-        $_SESSION["stays"] = $stays;
-    }elseif (isset($_POST["6"])) {
-        array_push($stays,6);
-        header("Location: checkin.php");
-    }elseif (isset($_POST["7"])) {
-        array_push($stays,7); 
-        header("Location: checkin.php");
-        $_SESSION["stays"] = $stays;
-    }elseif (isset($_POST["8"])) {
-        array_push($stays,8);
-        header("Location: checkin.php");
-        $_SESSION["stays"] = $stays;
-    }
+<?php
+session_start();
+$stays = array();
+if (isset($_POST["1"])) {
+    array_push($stays, 1);
+    header("Location: checkin.php");
+    $_SESSION["stays"] = $stays;
+} elseif (isset($_POST["2"])) {
+    array_push($stays, 2);
+    header("Location: checkin.php");
+    $_SESSION["stays"] = $stays;
+} elseif (isset($_POST["3"])) {
+    array_push($stays, 3);
+    header("Location: checkin.php");
+    $_SESSION["stays"] = $stays;
+} elseif (isset($_POST["4"])) {
+    array_push($stays, 4);
+    header("Location: checkin.php");
+} elseif (isset($_POST["5"])) {
+    array_push($stays, 5);
+    header("Location: checkin.php");
+    $_SESSION["stays"] = $stays;
+} elseif (isset($_POST["6"])) {
+    array_push($stays, 6);
+    header("Location: checkin.php");
+} elseif (isset($_POST["7"])) {
+    array_push($stays, 7);
+    header("Location: checkin.php");
+    $_SESSION["stays"] = $stays;
+} elseif (isset($_POST["8"])) {
+    array_push($stays, 8);
+    header("Location: checkin.php");
+    $_SESSION["stays"] = $stays;
+}
 
 
 ?>
@@ -156,7 +156,7 @@
                         <p class="card-text">Price : 33 R.O for one night</p>
                     </div>
                     <form action="stays.php" method="post">
-                        <input type="submit" name="1" class="btn btn-outline-dark" style="margin-top: 10px;"  value="Rent">
+                        <input type="submit" name="1" class="btn btn-outline-dark" style="margin-top: 10px;" value="Rent">
                     </form>
                 </div>
                 <div class="card  text-white mx-3 my-3">
@@ -167,7 +167,7 @@
                         <p class="card-text">Price : 28 RO for 1 night</p>
                     </div>
                     <form action="stays.php" method="post">
-                        <input type="submit" name="2" class="btn btn-outline-dark" style="margin-top: 10px;"  value="Rent">
+                        <input type="submit" name="2" class="btn btn-outline-dark" style="margin-top: 10px;" value="Rent">
                     </form>
                 </div>
 
@@ -179,7 +179,7 @@
                         <p class="card-text">Price : 55 R.O for one night</p>
                     </div>
                     <form action="stays.php" method="post">
-                        <input type="submit" name="3" class="btn btn-outline-dark" style="margin-top: 10px;"  value="Rent">
+                        <input type="submit" name="3" class="btn btn-outline-dark" style="margin-top: 10px;" value="Rent">
                     </form>
                 </div>
 
@@ -191,7 +191,7 @@
                         <p class="card-text">Price : 34 R.O for one night</p>
                     </div>
                     <form action="stays.php" method="post">
-                        <input type="submit" name="4" class="btn btn-outline-dark" style="margin-top: 10px;"  value="Rent">
+                        <input type="submit" name="4" class="btn btn-outline-dark" style="margin-top: 10px;" value="Rent">
                     </form>orm>
                 </div>
 
@@ -203,7 +203,7 @@
                         <p class="card-text">Price : 87 R.O for one night</p>
                     </div>
                     <form action="stays.php" method="post">
-                        <input type="submit" name="5" class="btn btn-outline-dark" style="margin-top: 10px;"  value="Rent">
+                        <input type="submit" name="5" class="btn btn-outline-dark" style="margin-top: 10px;" value="Rent">
                     </form>
                 </div>
 
@@ -215,7 +215,7 @@
                         <p class="card-text">Price : 133 RO for 1 night</p>
                     </div>
                     <form action="stays.php" method="post">
-                        <input type="submit" name="6" class="btn btn-outline-dark" style="margin-top: 10px;"  value="Rent">
+                        <input type="submit" name="6" class="btn btn-outline-dark" style="margin-top: 10px;" value="Rent">
                     </form>
                 </div>
 
@@ -227,7 +227,7 @@
                         <p class="card-text">Price : 260 RO for 1 night</p>
                     </div>
                     <form action="stays.php" method="post">
-                        <input type="submit" name="7" class="btn btn-outline-dark" style="margin-top: 10px;"  value="Rent">
+                        <input type="submit" name="7" class="btn btn-outline-dark" style="margin-top: 10px;" value="Rent">
                     </form>
                 </div>
 
@@ -239,7 +239,7 @@
                         <p class="card-text">Price : 243 RO for 1 night</p>
                     </div>
                     <form action="stays.php" method="post">
-                        <input type="submit" name="8" class="btn btn-outline-dark" style="margin-top: 10px;"  value="Rent">
+                        <input type="submit" name="8" class="btn btn-outline-dark" style="margin-top: 10px;" value="Rent">
                     </form>
                 </div>
             </div>
@@ -323,3 +323,11 @@
     .card-text {
         text-align: justify;
     }
+
+    .image {
+        width: 200px;
+        /* You can set the dimensions to whatever you want */
+        height: 200px;
+        object-fit: cover;
+    }
+</style>
