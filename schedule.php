@@ -1,3 +1,64 @@
+<?php 
+session_start();
+class DatabaseReader {
+    private $conn; // Database connection
+
+    public function __construct($host, $username, $password, $database) {
+        // Create a new database connection
+        $this->conn = new mysqli($host, $username, $password, $database);
+
+        // Check if the connection was successful
+        if ($this->conn->connect_error) {
+            die("Connection failed: " . $this->conn->connect_error);
+        }
+    }
+
+	public function getAllRows($tableName) {
+        $result = $this->conn->query("SELECT * FROM " . $tableName);
+
+        $rows = array();
+
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $rows[] = $row;
+            }
+        }
+
+        return $rows;
+    }
+
+    public function closeConnection() {
+        $this->conn->close();
+    }
+	public function convertTOJson($arr){
+		$jsonString = json_encode($arr);
+  
+		// Write the JSON string to a file using file_put_contents()
+		$file = 'data.json';
+		file_put_contents($file, $jsonString);
+	}
+
+}
+
+$host = "localhost";
+$username = "root";
+$password = "";
+$database = "project";
+
+$reader = new DatabaseReader($host, $username, $password, $database);
+$rows = $reader->getAllRows("flight");
+$reader->convertTOJson($rows);
+$reader->closeConnection();
+
+
+if (isset($_POST["ok"])) {
+	$_SESSION["flight_id"] = $_POST["flight_id"];
+	header("Location: checkin.php");
+}
+
+
+?>
+
 <html lang="en">
 
 <head>
@@ -79,8 +140,9 @@
 		<h1 class="title">Flight Schedule</h1>
 
 		<table id="flightsTable" style="font-size: x-large; color: white;">
-			<thead>
+			<thead id="flights_table_head">
 				<tr>
+					<th>flight id</th>
 					<th>Flight Number</th>
 					<th>Departure City</th>
 					<th>Departure Time</th>
@@ -91,11 +153,45 @@
 				</tr>
 
 			</thead>
-			<tbody>
+			<tbody id="flight_table_body">
 			</tbody>
 		</table>
-		
+		<div id="form_div">
+			<form action="schedule.php" method="post" id="form">
+				<label> Enter the flight id:</label><br>
+				<input type="text" name="flight_id" id="flight_id"><br>
+				<input type="submit" name="ok" id="ok">
+			</form>
+		</div>
 		<style>
+			#form_div {
+				margin: 20 auto;
+				height: 200px;
+				width: 60%;
+				background-color: rgb(240, 255, 255);
+				display: flex;
+				justify-content: center;
+			}
+			#form {
+				margin: 40px;
+			}
+			input {
+				margin: 9px;
+			}
+			#flight_id{
+				width: 200px;
+				border-width: 1px;
+				border-radius: 3px;
+				height: 25px;
+				font-size: 15px;
+			}
+			#ok {
+				width: 200px;
+				height: 25px;
+				background-color: rgb(100, 149, 237);
+				border-radius: 5px;
+				border-width: 1px;
+			}
 			table {
 				margin-bottom: 3%;
 				border-collapse: collapse;
@@ -181,3 +277,47 @@
 	}
 </style>
 
+
+
+<script>
+const request = new XMLHttpRequest();
+request.open('GET', 'data.json', true);
+request.onload = function () {
+  if (request.status >= 200 && request.status < 400) {
+    const jsonData = JSON.parse(request.responseText);
+    var array = jsonData;
+	generateTable(array);
+} else {
+    console.error('Failed to load JSON data.');
+}
+};
+request.onerror = function () {
+  console.error('Failed to load JSON data.');
+};
+request.send();
+
+
+function generateTable(array) {
+  var table = document.getElementById("flightsTable");
+  var thead = document.getElementById("flights_table_head");
+  var tbody = document.getElementById("flight_table_body");
+
+
+
+  // Create table rows
+  array.forEach(function(item) {
+    var row = document.createElement('tr');
+    for (var key in item) {
+      var cell = document.createElement('td');
+      cell.appendChild(document.createTextNode(item[key]));
+      row.appendChild(cell);
+    }
+    tbody.appendChild(row);
+  });
+  table.appendChild(tbody);
+
+  return table;
+}
+
+
+</script>

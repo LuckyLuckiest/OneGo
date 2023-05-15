@@ -45,6 +45,19 @@ if (isset($_SESSION["cars"])) {
         }
     }
 }
+$flight = array();
+if (isset($_SESSION["flight_id"])) {
+            $id = $_SESSION["flight_id"];
+            $sql = "SELECT * FROM flight WHERE flight_id = $id";
+            $result = mysqli_query($conn, $sql);
+
+            // 3. Store the rows in an array
+            while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+                foreach ($row as $key => $value) {
+                    array_push($flight, $value);
+                }
+            }
+}
 
 if (isset($_POST["submit"])) {
     session_destroy();
@@ -130,6 +143,11 @@ if (isset($_POST["submit"])) {
         <div id="display_1" style="height: fit-content; font-size: 15px; color:white; margin: 20px;">
             <h1 id="cars"></h1>
             <table id="display_table_1">
+            </table>
+        </div>
+        <div id="display_2" style="height: fit-content; font-size: 15px; color:white; margin: 20px;">
+            <h1 id="flight"></h1>
+            <table id="display_table_2">
             </table>
         </div>
         <div class="container">
@@ -245,6 +263,25 @@ if (isset($_POST["submit"])) {
 
 
         }
+        function createFlights() {
+            var div = document.getElementById("display_2");
+            var h1 = document.getElementById("flight");
+            h1.innerHTML = 'flight';
+            h1.style.textAlign = "center"
+
+            // div.appendChild(document.createElement("h1").innerHTML = "cars");
+            var table = document.getElementById("display_table_2");
+            var arr = ["flight_id", "Flight Number", "	Departure City", "Departure Time", "Arrival City", "Arrival Time", "Layovers", "Price"];
+            var tr = document.createElement("tr");
+            table.appendChild(tr);
+            for (const iterator of arr) {
+                var td = document.createElement("td");
+                td.innerHTML = iterator;
+                tr.appendChild(td);
+            }
+
+
+        }
         // Parse the JSON object
         var stays_rows = <?php echo json_encode($stays); ?>;
         stays_rows.shift();
@@ -281,12 +318,28 @@ if (isset($_POST["submit"])) {
         } else {
             total_cars = 0
         }
-
-        var total = parseInt(total_cars) + parseInt(total_stays);
-        var div = document.getElementById("display_1");
+        var flight = <?php echo json_encode($flight); ?>;
+        console.log(flight);
+        if (flight.length > 0) {
+            createFlights();
+            var table = document.getElementById("display_table_2");
+            var tr = document.createElement("tr");
+            table.appendChild(tr);
+            for (const iterator of flight) {
+                var td = document.createElement("td");
+                td.innerHTML = iterator;
+                tr.appendChild(td);
+            }
+            var total_flight = flight[7];
+        } else {
+            total_flight = 0
+        }
+        var total = parseInt(total_cars) + parseInt(total_stays) + parseInt(total_flight);
+        var div = document.getElementById("display_2");
         var p = document.createElement("p");
         p.innerHTML = `total = ${total}`;
         p.style.textAlign = "center";
+        p.style.fontSize = "22px"
         div.appendChild(p);
     </script>
 </body>
@@ -294,6 +347,24 @@ if (isset($_POST["submit"])) {
 </html>
 
 <style>
+    #display_table, #display_table_1, #display_table_2 {
+			margin: 3% auto;
+            border-width: 2px;
+			border-collapse: collapse;
+			width: 80%;
+            font-size: 25px;
+	}
+    th, td {
+    border: 2px solid white;
+    padding: 8px;
+    text-align: left;
+
+  }
+  th {
+    background-color: #f2f2f2;
+  }
+  
+
     body {
         font-family: Arial, sans-serif;
         margin: 0;
