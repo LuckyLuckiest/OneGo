@@ -124,6 +124,20 @@ if (isset($_POST["submit"])) {
                         </a>
                     </ul>
                 </li>
+                <li class="dropdown split">
+                    Database <span class="bi bi-caret-down-fill" style="font-size: 10px;"></span>
+                    <ul>
+                        <a href="add.html">
+                            <li>Add</li>
+                        </a>
+                        <a href="delete.html">
+                            <li>Delete</li>
+                        </a>
+                        <a href="search.html">
+                            <li>Search</li>
+                        </a>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </header>
