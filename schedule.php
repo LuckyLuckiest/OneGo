@@ -1,43 +1,47 @@
-<?php 
+<?php
 session_start();
-class DatabaseReader {
-    private $conn; // Database connection
+class DatabaseReader
+{
+	private $conn; // Database connection
 
-    public function __construct($host, $username, $password, $database) {
-        // Create a new database connection
-        $this->conn = new mysqli($host, $username, $password, $database);
+	public function __construct($host, $username, $password, $database)
+	{
+		// Create a new database connection
+		$this->conn = new mysqli($host, $username, $password, $database);
 
-        // Check if the connection was successful
-        if ($this->conn->connect_error) {
-            die("Connection failed: " . $this->conn->connect_error);
-        }
-    }
+		// Check if the connection was successful
+		if ($this->conn->connect_error) {
+			die("Connection failed: " . $this->conn->connect_error);
+		}
+	}
 
-	public function getAllRows($tableName) {
-        $result = $this->conn->query("SELECT * FROM " . $tableName);
+	public function getAllRows($tableName)
+	{
+		$result = $this->conn->query("SELECT * FROM " . $tableName);
 
-        $rows = array();
+		$rows = array();
 
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                $rows[] = $row;
-            }
-        }
+		if ($result->num_rows > 0) {
+			while ($row = $result->fetch_assoc()) {
+				$rows[] = $row;
+			}
+		}
 
-        return $rows;
-    }
+		return $rows;
+	}
 
-    public function closeConnection() {
-        $this->conn->close();
-    }
-	public function convertTOJson($arr){
+	public function closeConnection()
+	{
+		$this->conn->close();
+	}
+	public function convertTOJson($arr)
+	{
 		$jsonString = json_encode($arr);
-  
+
 		// Write the JSON string to a file using file_put_contents()
 		$file = 'data.json';
 		file_put_contents($file, $jsonString);
 	}
-
 }
 
 $host = "localhost";
@@ -172,19 +176,23 @@ if (isset($_POST["ok"])) {
 				display: flex;
 				justify-content: center;
 			}
+
 			#form {
 				margin: 40px;
 			}
+
 			input {
 				margin: 9px;
 			}
-			#flight_id{
+
+			#flight_id {
 				width: 200px;
 				border-width: 1px;
 				border-radius: 3px;
 				height: 25px;
 				font-size: 15px;
 			}
+
 			#ok {
 				width: 200px;
 				height: 25px;
@@ -192,6 +200,7 @@ if (isset($_POST["ok"])) {
 				border-radius: 5px;
 				border-width: 1px;
 			}
+
 			table {
 				margin-bottom: 3%;
 				border-collapse: collapse;
@@ -212,7 +221,6 @@ if (isset($_POST["ok"])) {
 			tr:nth-child(even) {
 				background-color: grey;
 			}
-
 		</style>
 
 	</main>
@@ -280,44 +288,42 @@ if (isset($_POST["ok"])) {
 
 
 <script>
-const request = new XMLHttpRequest();
-request.open('GET', 'data.json', true);
-request.onload = function () {
-  if (request.status >= 200 && request.status < 400) {
-    const jsonData = JSON.parse(request.responseText);
-    var array = jsonData;
-	generateTable(array);
-} else {
-    console.error('Failed to load JSON data.');
-}
-};
-request.onerror = function () {
-  console.error('Failed to load JSON data.');
-};
-request.send();
+	const request = new XMLHttpRequest();
+	request.open('GET', 'data.json', true);
+	request.onload = function() {
+		if (request.status >= 200 && request.status < 400) {
+			const jsonData = JSON.parse(request.responseText);
+			var array = jsonData;
+			generateTable(array);
+		} else {
+			console.error('Failed to load JSON data.');
+		}
+	};
+	request.onerror = function() {
+		console.error('Failed to load JSON data.');
+	};
+	request.send();
 
 
-function generateTable(array) {
-  var table = document.getElementById("flightsTable");
-  var thead = document.getElementById("flights_table_head");
-  var tbody = document.getElementById("flight_table_body");
+	function generateTable(array) {
+		var table = document.getElementById("flightsTable");
+		var thead = document.getElementById("flights_table_head");
+		var tbody = document.getElementById("flight_table_body");
 
 
 
-  // Create table rows
-  array.forEach(function(item) {
-    var row = document.createElement('tr');
-    for (var key in item) {
-      var cell = document.createElement('td');
-      cell.appendChild(document.createTextNode(item[key]));
-      row.appendChild(cell);
-    }
-    tbody.appendChild(row);
-  });
-  table.appendChild(tbody);
+		// Create table rows
+		array.forEach(function(item) {
+			var row = document.createElement('tr');
+			for (var key in item) {
+				var cell = document.createElement('td');
+				cell.appendChild(document.createTextNode(item[key]));
+				row.appendChild(cell);
+			}
+			tbody.appendChild(row);
+		});
+		table.appendChild(tbody);
 
-  return table;
-}
-
-
+		return table;
+	}
 </script>
